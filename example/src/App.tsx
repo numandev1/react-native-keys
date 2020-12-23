@@ -4,7 +4,7 @@ import JniKeys from 'react-native-jni-keys';
 
 export default function App() {
   React.useEffect(() => {
-    console.log(JniKeys, 'JniKeys');
+    console.log(JniKeys.getKey("nomi"), 'JniKeys');
   }, []);
   return (
     <View style={styles.container}>

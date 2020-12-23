@@ -1,16 +1,16 @@
 module.exports.makeCppFileTemplateAndroid = (data) => {
   return `
   #include "crypto.hpp"
+  #include <string>
   Crypto::Crypto() {
   
   }
 
 
   std::string Crypto::getJniJsonStringyfyData() {
-    string jsonStringyfyData= '${data}'; //Any chars will work
+    std::string jsonStringyfyData= "${data}"; //Any chars will work
     return jsonStringyfyData;
   }
-
   `;
 };
 
@@ -24,9 +24,10 @@ module.exports.makeHppFileTemplateAndroid = () => {
 
   class Crypto {
   public:Crypto();
-    std::string getJniJsonStringyfyData(std::string);
+    std::string getJniJsonStringyfyData();
   };
   #endif
+  
   `;
 };
 
@@ -42,6 +43,7 @@ module.exports.makeCMakeListsTemplateAndroid = () => {
 
 module.exports.makeMediatorTemplateAndroid = () => {
   return `
+  
   #include <jni.h>
   #include <string>
   #include "crypto.hpp"
@@ -49,7 +51,7 @@ module.exports.makeMediatorTemplateAndroid = () => {
 
 
   extern "C" JNIEXPORT jstring JNICALL
-  Java_com_entertainer_CLibController_getJniJsonStringyfyData(JNIEnv * env, jobject thiz) {
+  Java_com_reactnativejnikeys_CLibController_getJniJsonStringyfyData(JNIEnv * env, jobject thiz) {
       auto *crypto = new Crypto();
       return env->NewStringUTF(crypto->getJniJsonStringyfyData().c_str());
   }
