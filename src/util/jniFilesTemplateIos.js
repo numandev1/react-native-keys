@@ -1,5 +1,4 @@
-module.exports.makeCppFileTemplate=(data)=>{
-
+module.exports.makeCppFileTemplate = (data) => {
   return `
   #include "crypto.hpp"
   Crypto::Crypto() {
@@ -12,10 +11,10 @@ module.exports.makeCppFileTemplate=(data)=>{
     return jsonStringyfyData;
   }
 
-  `
-}
+  `;
+};
 
-module.exports.makeHppFileTemplate=()=>{
+module.exports.makeHppFileTemplate = () => {
   return `
   #ifndef crypto_hpp
   #define crypto_hpp
@@ -28,10 +27,10 @@ module.exports.makeHppFileTemplate=()=>{
     std::string getJniJsonStringyfyData(std::string);
   };
   #endif
-  `
-}
+  `;
+};
 
-module.exports.makeCryptographicPackageHTemplate=()=>{
+module.exports.makeCryptographicPackageHTemplate = () => {
   return `
   #import <Foundation/Foundation.h>
   #import <React/RCTBridgeModule.h>
@@ -43,10 +42,10 @@ module.exports.makeCryptographicPackageHTemplate=()=>{
   @end
 
   NS_ASSUME_NONNULL_END
-  `
-}
+  `;
+};
 
-module.exports.makeCryptographicPackageMMTemplate=()=>{
+module.exports.makeCryptographicPackageMMTemplate = () => {
   return `
   #import "CryptographicPackage.h"
   #import "crypto.hpp"
@@ -90,5 +89,5 @@ module.exports.makeCryptographicPackageMMTemplate=()=>{
 
 
   @end
-  `
-}
+  `;
+};
