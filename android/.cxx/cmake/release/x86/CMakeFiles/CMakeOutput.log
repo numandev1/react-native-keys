@@ -1,19 +1,19 @@
 The target system is: Android - 1 - i686
 The host system is: Darwin - 19.5.0 - x86_64
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_27027"
-[1/2] Building C object CMakeFiles/cmTC_27027.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_27027
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_14985"
+[1/2] Building C object CMakeFiles/cmTC_14985.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_14985
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_50600"
-[1/2] Building C object CMakeFiles/cmTC_50600.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_50600
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_6c739"
+[1/2] Building C object CMakeFiles/cmTC_6c739.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_6c739
 Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)
 Target: i686-none-linux-android16
 Thread model: posix
@@ -23,16 +23,16 @@ Found candidate GCC installation: /Users/nomanismaeel/Library/Android/sdk/ndk/22
 Selected GCC installation: /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
- "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_50600 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_50600.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o
+ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_6c739 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_6c739.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_50600"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_50600.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_50600]
+  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_6c739"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_6c739.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_6c739]
   ignore line: [Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)]
   ignore line: [Target: i686-none-linux-android16]
   ignore line: [Thread model: posix]
@@ -44,7 +44,7 @@ Parsed C implicit link information from above output:
   ignore line: [@m32]
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
-  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_50600 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_50600.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o]
+  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_6c739 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_6c739.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o]
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld] ==> ignore
     arg [--sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -60,7 +60,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_50600] ==> ignore
+    arg [cmTC_6c739] ==> ignore
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386]
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
@@ -79,7 +79,7 @@ Parsed C implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_50600.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_6c739.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -102,11 +102,11 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_321da"
-[1/2] Building C object CMakeFiles/cmTC_321da.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_321da
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_e68ba"
+[1/2] Building C object CMakeFiles/cmTC_e68ba.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_e68ba
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -116,11 +116,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_b3652"
-[1/2] Building C object CMakeFiles/cmTC_b3652.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_b3652
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_16dcd"
+[1/2] Building C object CMakeFiles/cmTC_16dcd.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_16dcd
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -130,11 +130,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_43499"
-[1/2] Building C object CMakeFiles/cmTC_43499.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_43499
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_f56a5"
+[1/2] Building C object CMakeFiles/cmTC_f56a5.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_f56a5
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -142,19 +142,19 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_7fe40"
-[1/2] Building CXX object CMakeFiles/cmTC_7fe40.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_7fe40
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_8cfb0"
+[1/2] Building CXX object CMakeFiles/cmTC_8cfb0.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_8cfb0
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_f32f1"
-[1/2] Building CXX object CMakeFiles/cmTC_f32f1.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_f32f1
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_b3268"
+[1/2] Building CXX object CMakeFiles/cmTC_b3268.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_b3268
 Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)
 Target: i686-none-linux-android16
 Thread model: posix
@@ -164,16 +164,16 @@ Found candidate GCC installation: /Users/nomanismaeel/Library/Android/sdk/ndk/22
 Selected GCC installation: /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
- "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_f32f1 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_f32f1.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o
+ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_b3268 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_b3268.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_f32f1"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_f32f1.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_f32f1]
+  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_b3268"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_b3268.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_b3268]
   ignore line: [Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)]
   ignore line: [Target: i686-none-linux-android16]
   ignore line: [Thread model: posix]
@@ -185,7 +185,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@m32]
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
-  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_f32f1 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_f32f1.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o]
+  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=both --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_b3268 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_b3268.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtend_android.o]
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld] ==> ignore
     arg [--sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -201,7 +201,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f32f1] ==> ignore
+    arg [cmTC_b3268] ==> ignore
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/16/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/i386]
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/i686-linux-android/4.9.x]
@@ -220,7 +220,7 @@ Parsed CXX implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_f32f1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_b3268.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-Bstatic] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-Bdynamic] ==> ignore
@@ -247,11 +247,11 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_41b18"
-[1/2] Building CXX object CMakeFiles/cmTC_41b18.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_41b18
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_07f67"
+[1/2] Building CXX object CMakeFiles/cmTC_07f67.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_07f67
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -314,11 +314,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_6767c"
-[1/2] Building CXX object CMakeFiles/cmTC_6767c.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_6767c
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_50c98"
+[1/2] Building CXX object CMakeFiles/cmTC_50c98.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_50c98
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -381,11 +381,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_b15aa"
-[1/2] Building CXX object CMakeFiles/cmTC_b15aa.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_b15aa
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_9e2e2"
+[1/2] Building CXX object CMakeFiles/cmTC_9e2e2.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_9e2e2
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

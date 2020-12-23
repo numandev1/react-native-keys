@@ -7,7 +7,7 @@
 
   class Crypto {
   public:Crypto();
-    std::string getJniJsonStringyfyData(std::string);
+    std::string getJniJsonStringyfyData();
   };
   #endif
   

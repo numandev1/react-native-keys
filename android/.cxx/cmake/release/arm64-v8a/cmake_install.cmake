@@ -1,4 +1,4 @@
-# Install script for directory: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c
+# Install script for directory: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

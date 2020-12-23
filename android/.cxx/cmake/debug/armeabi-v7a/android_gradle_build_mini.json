@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "c-lib-Debug-armeabi-v7a": {
+      "artifactName": "c-lib",
+      "buildCommand": "/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/armeabi-v7a --target c-lib",
+      "abi": "armeabi-v7a",
+      "output": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/build/intermediates/cmake/debug/obj/armeabi-v7a/libc-lib.so"
+    }
+  }
+}

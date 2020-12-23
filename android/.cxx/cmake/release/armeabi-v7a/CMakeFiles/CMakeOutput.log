@@ -1,19 +1,19 @@
 The target system is: Android - 1 - armv7-a
 The host system is: Darwin - 19.5.0 - x86_64
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_14ee3"
-[1/2] Building C object CMakeFiles/cmTC_14ee3.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_14ee3
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_caa80"
+[1/2] Building C object CMakeFiles/cmTC_caa80.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_caa80
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_fb75a"
-[1/2] Building C object CMakeFiles/cmTC_fb75a.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_fb75a
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_4454d"
+[1/2] Building C object CMakeFiles/cmTC_4454d.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_4454d
 Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)
 Target: armv7-none-linux-android16
 Thread model: posix
@@ -25,16 +25,16 @@ Candidate multilib: armv7-a;@march=armv7-a
 Candidate multilib: armv7-a/thumb;@march=armv7-a@mthumb
 Candidate multilib: .;
 Selected multilib: armv7-a/thumb;@march=armv7-a@mthumb
- "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_fb75a /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_fb75a.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o
+ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_4454d /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_4454d.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_fb75a"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_fb75a.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_fb75a]
+  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_4454d"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_4454d.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_4454d]
   ignore line: [Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)]
   ignore line: [Target: armv7-none-linux-android16]
   ignore line: [Thread model: posix]
@@ -51,7 +51,7 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [Selected multilib: armv7-a/thumb]
   ignore line: [@march=armv7-a@mthumb]
-  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_fb75a /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_fb75a.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o]
+  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_4454d /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_4454d.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o]
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld] ==> ignore
     arg [--sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -70,7 +70,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_fb75a] ==> ignore
+    arg [cmTC_4454d] ==> ignore
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm]
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb]
@@ -94,7 +94,7 @@ Parsed C implicit link information from above output:
     arg [libunwind.a] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_fb75a.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_4454d.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -120,11 +120,11 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_e6751"
-[1/2] Building C object CMakeFiles/cmTC_e6751.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_e6751
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_1c23e"
+[1/2] Building C object CMakeFiles/cmTC_1c23e.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_1c23e
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -134,11 +134,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_db625"
-[1/2] Building C object CMakeFiles/cmTC_db625.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_db625
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_a9841"
+[1/2] Building C object CMakeFiles/cmTC_a9841.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_a9841
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -148,11 +148,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_57296"
-[1/2] Building C object CMakeFiles/cmTC_57296.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_57296
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_0ac59"
+[1/2] Building C object CMakeFiles/cmTC_0ac59.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_0ac59
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -160,19 +160,19 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_0b477"
-[1/2] Building CXX object CMakeFiles/cmTC_0b477.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_0b477
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_2712a"
+[1/2] Building CXX object CMakeFiles/cmTC_2712a.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_2712a
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_e3e6f"
-[1/2] Building CXX object CMakeFiles/cmTC_e3e6f.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_e3e6f
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_92d91"
+[1/2] Building CXX object CMakeFiles/cmTC_92d91.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_92d91
 Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)
 Target: armv7-none-linux-android16
 Thread model: posix
@@ -184,16 +184,16 @@ Candidate multilib: armv7-a;@march=armv7-a
 Candidate multilib: armv7-a/thumb;@march=armv7-a@mthumb
 Candidate multilib: .;
 Selected multilib: armv7-a/thumb;@march=armv7-a@mthumb
- "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_e3e6f /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_e3e6f.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o
+ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_92d91 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_92d91.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_e3e6f"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_e3e6f.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_e3e6f]
+  ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_92d91"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_92d91.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_92d91]
   ignore line: [Android (6875598, based on r399163b) clang version 11.0.5 (https://android.googlesource.com/toolchain/llvm-project 87f1315dfbea7c137aa2e6d362dbb457e388158d)]
   ignore line: [Target: armv7-none-linux-android16]
   ignore line: [Thread model: posix]
@@ -210,7 +210,7 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [Selected multilib: armv7-a/thumb]
   ignore line: [@march=armv7-a@mthumb]
-  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_e3e6f /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_e3e6f.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o]
+  link line: [ "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld" --sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -pie -z noexecstack -EL --warn-shared-textrel -z now -z relro -z max-page-size=4096 -X --hash-style=both --enable-new-dtags --eh-frame-hdr -m armelf_linux_eabi -dynamic-linker /system/bin/linker -o cmTC_92d91 /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/../lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16 -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/../../lib -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/../../../../arm-linux-androideabi/lib/armv7-a/thumb -L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id=sha1 --no-rosegment --fatal-warnings --exclude-libs libunwind.a --no-undefined --gc-sections CMakeFiles/cmTC_92d91.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtend_android.o]
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/ld] ==> ignore
     arg [--sysroot=/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -229,7 +229,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_e3e6f] ==> ignore
+    arg [cmTC_92d91] ==> ignore
     arg [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/16/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/11.0.5/lib/linux/arm]
     arg [-L/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb] ==> dir [/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb]
@@ -253,7 +253,7 @@ Parsed CXX implicit link information from above output:
     arg [libunwind.a] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_e3e6f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_92d91.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-Bstatic] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-Bdynamic] ==> ignore
@@ -283,11 +283,11 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_81e58"
-[1/2] Building CXX object CMakeFiles/cmTC_81e58.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_81e58
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_f6753"
+[1/2] Building CXX object CMakeFiles/cmTC_f6753.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_f6753
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -350,11 +350,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_9fe97"
-[1/2] Building CXX object CMakeFiles/cmTC_9fe97.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_9fe97
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_6135f"
+[1/2] Building CXX object CMakeFiles/cmTC_6135f.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_6135f
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -417,11 +417,11 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_97c96"
-[1/2] Building CXX object CMakeFiles/cmTC_97c96.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_97c96
+Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_48fac"
+[1/2] Building CXX object CMakeFiles/cmTC_48fac.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_48fac
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

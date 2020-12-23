@@ -28,8 +28,6 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for JniKeysExample:
           // packages.add(new MyReactNativePackage());
-          packages.add(new JniKeysPackage());
-
           return packages;
         }
 

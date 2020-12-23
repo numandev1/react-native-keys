@@ -20,6 +20,7 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
     JniKeysModule(ReactApplicationContext context) {
         super(context);
         reactContext = context;
+        Log.e("JNI log", "JniKeysModule: "+getKey("nomi"));
     }
 
 

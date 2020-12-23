@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86 --target clean"
+  ],
+  "libraries": {
+    "c-lib-Debug-x86": {
+      "artifactName": "c-lib",
+      "buildCommand": "/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86 --target c-lib",
+      "abi": "x86",
+      "output": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/build/intermediates/cmake/debug/obj/x86/libc-lib.so"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-module.exports.makeCppFileTemplate = (data) => {
+module.exports.makeCppFileTemplateIOS = (data) => {
   return `
   #include "crypto.hpp"
   Crypto::Crypto() {
@@ -14,7 +14,7 @@ module.exports.makeCppFileTemplate = (data) => {
   `;
 };
 
-module.exports.makeHppFileTemplate = () => {
+module.exports.makeHppFileTemplateIOS = () => {
   return `
   #ifndef crypto_hpp
   #define crypto_hpp
@@ -30,7 +30,7 @@ module.exports.makeHppFileTemplate = () => {
   `;
 };
 
-module.exports.makeCryptographicPackageHTemplate = () => {
+module.exports.makeCryptographicPackageHTemplateIOS = () => {
   return `
   #import <Foundation/Foundation.h>
   #import <React/RCTBridgeModule.h>
@@ -45,7 +45,7 @@ module.exports.makeCryptographicPackageHTemplate = () => {
   `;
 };
 
-module.exports.makeCryptographicPackageMMTemplate = () => {
+module.exports.makeCryptographicPackageMMTemplateIOS = () => {
   return `
   #import "CryptographicPackage.h"
   #import "crypto.hpp"
