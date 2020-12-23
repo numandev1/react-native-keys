@@ -1,0 +1,6 @@
+def stdout = new ByteArrayOutputStream()
+
+task callCL(type: Exec) {
+    def proc = "../node_modules/react-native-jni-keys/jniAndroid.js".execute()
+    proc.waitForProcessOutput(System.out, System.err)
+}

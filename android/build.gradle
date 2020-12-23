@@ -48,6 +48,11 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+    externalNativeBuild {
+       cmake {
+           path "src/main/java/com/reactnativejnikeys/c/CMakeLists.txt"
+       }
+   }
 }
 
 repositories {

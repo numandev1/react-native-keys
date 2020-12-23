@@ -1,0 +1,31 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a --target clean"
+	],
+	"libraries" : 
+	{
+		"c-lib-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "c-lib",
+			"buildCommand" : "/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a --target c-lib",
+			"buildType" : "release",
+			"output" : "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/build/intermediates/cmake/release/obj/armeabi-v7a/libc-lib.so",
+			"toolchain" : "9479421189712673993"
+		}
+	},
+	"toolchains" : 
+	{
+		"9479421189712673993" : 
+		{
+			"cCompilerExecutable" : "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

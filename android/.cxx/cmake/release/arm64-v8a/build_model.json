@@ -1,0 +1,70 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/android",
+      "sdkFolder": "/Users/nomanismaeel/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/build/intermediates",
+      "gradleModulePathName": ":reactnativejnikeys",
+      "moduleRootFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android",
+      "makeFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/android/.cxx",
+      "cxxFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx",
+      "ndkFolder": "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061",
+      "ndkVersion": "22.0.7026061",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "release",
+    "soFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/build/intermediates/cmake/release/lib",
+    "objFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/build/intermediates/cmake/release/obj",
+    "jsonFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release",
+    "gradleBuildOutputFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 16,
+  "cxxBuildFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a",
+  "jsonFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a",
+  "objFolder": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/build/intermediates/cmake/release/obj/arm64-v8a",
+  "buildCommandFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/build_command.txt",
+  "buildOutputFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/build_output.txt",
+  "modelOutputFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/build_generation_state.json",
+    "cacheKeyFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cxx/release/arm64-v8a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/arm64-v8a/compile_commands.json"
+}

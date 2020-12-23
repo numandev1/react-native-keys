@@ -22,12 +22,13 @@
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "postinstall": "./src/util/postInsall.js"
   },
   "keywords": [
     "react-native",
@@ -119,7 +120,10 @@
       ]
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
@@ -130,6 +134,13 @@
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "fs-extra": "^9.0.1"
   }
 }
