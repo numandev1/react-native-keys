@@ -9,6 +9,10 @@
   },
   {
     "level": "INFO",
+    "message": "- force flag, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
     "message": "- missing previous command file /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/android/.cxx/cmake/release/x86_64/build_command.txt, will remove stale json folder"
   },
   {
