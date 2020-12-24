@@ -10,7 +10,9 @@ const {
 
 const makeIosJnuFiles = () => {
   const secureKeys = getJniKeys();
-  const cppFileContent = makeCppFileTemplateIOS(JSON.stringify(secureKeys).replace(/(\")/g, '\\"'));
+  const cppFileContent = makeCppFileTemplateIOS(
+    JSON.stringify(secureKeys).replace(/(\")/g, '\\"')
+  );
   const isDoneCreatedIosCppFile = makeFileInIosDir(
     cppFileContent,
     'crypto.cpp'
@@ -37,7 +39,7 @@ const makeIosJnuFiles = () => {
   console.log(
     'secureKeys',
     isDoneCreatedIosCppFile,
-    isDoneCreatedIosHppFile,
+    isDoneCreatedIosHppFile
     // isDoneCreatedIosCryptographicPackageHFile,
     // isDoneCreatedIosCryptographicPackageMMFile
   );
