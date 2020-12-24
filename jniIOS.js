@@ -10,7 +10,7 @@ const {
 
 const makeIosJnuFiles = () => {
   const secureKeys = getJniKeys();
-  const cppFileContent = makeCppFileTemplateIOS(JSON.stringify(secureKeys));
+  const cppFileContent = makeCppFileTemplateIOS(JSON.stringify(secureKeys).replace(/(\")/g, '\\"'));
   const isDoneCreatedIosCppFile = makeFileInIosDir(
     cppFileContent,
     'crypto.cpp'
@@ -22,24 +22,24 @@ const makeIosJnuFiles = () => {
     'crypto.hpp'
   );
 
-  const cryptographicPackageHFileContent = makeCryptographicPackageHTemplateIOS();
-  const isDoneCreatedIosCryptographicPackageHFile = makeFileInIosDir(
-    cryptographicPackageHFileContent,
-    'CryptographicPackage.h'
-  );
+  // const cryptographicPackageHFileContent = makeCryptographicPackageHTemplateIOS();
+  // const isDoneCreatedIosCryptographicPackageHFile = makeFileInIosDir(
+  //   cryptographicPackageHFileContent,
+  //   'CryptographicPackage.h'
+  // );
 
-  const cryptographicPackageMMFileContent = makeCryptographicPackageMMTemplateIOS();
-  const isDoneCreatedIosCryptographicPackageMMFile = makeFileInIosDir(
-    cryptographicPackageMMFileContent,
-    'CryptographicPackage.mm'
-  );
+  // const cryptographicPackageMMFileContent = makeCryptographicPackageMMTemplateIOS();
+  // const isDoneCreatedIosCryptographicPackageMMFile = makeFileInIosDir(
+  //   cryptographicPackageMMFileContent,
+  //   'CryptographicPackage.mm'
+  // );
 
   console.log(
     'secureKeys',
     isDoneCreatedIosCppFile,
     isDoneCreatedIosHppFile,
-    isDoneCreatedIosCryptographicPackageHFile,
-    isDoneCreatedIosCryptographicPackageMMFile
+    // isDoneCreatedIosCryptographicPackageHFile,
+    // isDoneCreatedIosCryptographicPackageMMFile
   );
 };
 makeIosJnuFiles();

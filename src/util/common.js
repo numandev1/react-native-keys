@@ -1,7 +1,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 const PROJECT_ROOT_DIR_PATH = path.join(__dirname, '../../../../');
-const IOS_DIR_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
+const IOS_DIR_PATH = path.join(
+  PROJECT_ROOT_DIR_PATH,
+  'node_modules',
+  'react-native-jni-keys',
+  'ios'
+);
 const ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   'node_modules',
