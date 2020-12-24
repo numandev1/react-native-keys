@@ -3,12 +3,12 @@ module.exports.makeCppFileTemplateIOS = (data) => {
   #include "crypto.hpp"
   #include <string>
   Crypto::Crypto() {
-  
+
   }
 
 
   std::string Crypto::getJniJsonStringyfyData() {
-    std::string jsonStringyfyData= "${data}"; //Any chars will work
+    std::string jsonStringyfyData= ""; //Any chars will work
     return jsonStringyfyData;
   }
   `;
@@ -16,7 +16,8 @@ module.exports.makeCppFileTemplateIOS = (data) => {
 
 module.exports.makeHppFileTemplateIOS = () => {
   return `
-  #if defined __cplusplus
+  #ifndef crypto_hpp
+  #define crypto_hpp
 
   #include <stdio.h>
   #include <string>
