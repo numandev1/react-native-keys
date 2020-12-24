@@ -1,17 +1,19 @@
-import * as React from 'react';
+import React,{useEffect,useState} from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import JniKeys from 'react-native-jni-keys';
 
 export default function App() {
-  React.useEffect(() => {
+  const [result,setResult]=useState("");
+  useEffect(() => {
     (async () => {
-      console.log(await JniKeys.getKey('younas'), 'test');
-      // console.log(await JniKeys.getKey('iqbal'), 'JniKeys');
+      const value=await JniKeys.getKey('younas');
+      setResult(value);
+      console.log(value,'test');
     })();
   }, []);
   return (
     <View style={styles.container}>
-      <Text>Result: </Text>
+      <Text>Result: {result}</Text>
     </View>
   );
 }
