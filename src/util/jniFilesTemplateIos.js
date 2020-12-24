@@ -8,7 +8,7 @@ module.exports.makeCppFileTemplateIOS = (data) => {
 
 
   std::string Crypto::getJniJsonStringyfyData() {
-    std::string jsonStringyfyData= ""; //Any chars will work
+    std::string jsonStringyfyData= "${data}"; //Any chars will work
     return jsonStringyfyData;
   }
   `;

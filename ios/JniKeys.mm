@@ -1,6 +1,6 @@
 #import "JniKeys.h"
-#import "crypto.hpp"
-
+#import "./crypto.cpp"
+#import "./crypto.hpp"
 @implementation JniKeys
 
 RCT_EXPORT_MODULE();

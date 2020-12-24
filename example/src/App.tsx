@@ -5,7 +5,7 @@ import JniKeys from 'react-native-jni-keys';
 export default function App() {
   React.useEffect(() => {
     (async () => {
-      console.log(await JniKeys.getKey('nomi'), 'test');
+      console.log(await JniKeys.getKey('younas'), 'test');
       // console.log(await JniKeys.getKey('iqbal'), 'JniKeys');
     })();
   }, []);
