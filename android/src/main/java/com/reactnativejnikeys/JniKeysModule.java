@@ -48,7 +48,7 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
     @NonNull
     @Override
     public String getName() {
-        return null;
+        return "JniKeys";
     }
   }
   
