@@ -16,7 +16,7 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
     public static final String REACT_CLASS = "JniKeys";
     private static ReactApplicationContext reactContext;
 
-    private JSONObject jniData;
+    static private JSONObject jniData;
 
     JniKeysModule(ReactApplicationContext context) {
         super(context);
@@ -25,17 +25,23 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
 
 
     @ReactMethod
-    public String getKey(String key,Promise promise) {
+    static public void getKey(String key,Promise promise) {
+        String value=getKeySync(key);
+        promise.resolve(value);
+    }
+
+
+    static public String getKeySync(String key) {
 
         try {
             if (jniData == null)
                 jniData = new JSONObject(CLibController.getInstance().getJniJsonStringyfyData());
 
             if (jniData.has(key)) {
-                promise.resolve(jniData.getString(key));
+                return jniData.getString(key);
             }
         } catch (Exception ignore) {
-            promise.resolve("");
+            return "";
         }
         return "";
     }
@@ -50,4 +56,3 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
         return REACT_CLASS;
     }
   }
-  
