@@ -21,7 +21,8 @@
               ReactApplicationContext reactContext) {
           List<NativeModule> modules = new ArrayList<>();
   
-  
+            modules.add(new JniKeysModule(reactContext));
+            
           return modules;
       }
   
