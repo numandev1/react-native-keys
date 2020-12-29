@@ -13,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JniKeysModule extends ReactContextBaseJavaModule {
+    public static final String REACT_CLASS = "JniKeys";
     private static ReactApplicationContext reactContext;
 
     private JSONObject jniData;
@@ -20,23 +21,22 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
     JniKeysModule(ReactApplicationContext context) {
         super(context);
         reactContext = context;
-        Log.e("JNI log", "JniKeysModule: "+getKey("nomi"));
     }
 
 
-    // the package will be used by this name in javascript
-    public String getKey(String key) {
+    @ReactMethod
+    public String getKey(String key,Promise promise) {
 
         try {
             if (jniData == null)
                 jniData = new JSONObject(CLibController.getInstance().getJniJsonStringyfyData());
 
-            if (jniData.has(key))
-                return jniData.getString(key);
+            if (jniData.has(key)) {
+                promise.resolve(jniData.getString(key));
+            }
         } catch (Exception ignore) {
+            promise.resolve("");
         }
-
-
         return "";
     }
 
@@ -45,10 +45,9 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
        promise.resolve("I am sample Methods");
     }
 
-    @NonNull
     @Override
     public String getName() {
-        return "JniKeys";
+        return REACT_CLASS;
     }
   }
   
