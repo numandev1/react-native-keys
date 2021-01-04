@@ -121,9 +121,9 @@ NSString *value = [JniKeys getKeySync:@"key1"];   //value1
 
 - Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate JNI keys on native ios side (into node_modules) Make sure to select your target under _Provide build settings from_, so `$SRCROOT` environment variables is available to the script.
 
-   ```
+```
 "${SRCROOT}/../node_modules/react-native-jni-keys/jniIOS.js"
-   ```
+```
 
 #### Android
 
@@ -150,7 +150,7 @@ Then edit the newly created scheme to make it use a different env file. From the
 - Expand the "Build" settings on left
 - Click "Pre-actions", and under the plus sign select "New Run Script Action"
 - Where it says "Type a script or drag a script file", type:
-  ```
+ ```
 "${SRCROOT}/../node_modules/react-native-jni-keys/jniIOS.js"
   ```
 Also ensure that "Provide build settings from", just above the script, has a value selected so that PROJECT_DIR is set.
