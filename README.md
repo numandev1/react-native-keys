@@ -2,6 +2,12 @@
 
 secure keys through jni c++. **Note:** it is more secure than [react-native-config](https://github.com/luggit/react-native-config "react-native-config")
 
+## Installation
+
+```sh
+yarn add react-native-jni-keys
+```
+
 ## Basic Usage
 
 Create a new file `.jnikeys.json` in the root of your React Native app and add keys in `secure` object like this:
