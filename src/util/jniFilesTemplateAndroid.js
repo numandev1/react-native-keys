@@ -49,7 +49,6 @@ module.exports.makeHppFileTemplateAndroid = () => {
   `;
 };
 
-
 module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
   return `
   package com.reactnativejnikeys;

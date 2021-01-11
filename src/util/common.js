@@ -29,7 +29,7 @@ const ANDROID_JNI_DIR_PATH = path.join(
   'com',
   'reactnativejnikeys'
 );
-console.log(ANDROID_JNI_DIR_PATH,"ANDROID_JNI_DIR_PATHANDROID_JNI_DIR_PATH")
+console.log(ANDROID_JNI_DIR_PATH, 'ANDROID_JNI_DIR_PATHANDROID_JNI_DIR_PATH');
 module.exports.getJniKeys = () => {
   const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}jnikeys.json`;
   const jnikeysJson = fs.readJSONSync(jniJsonFilePath);
@@ -59,14 +59,13 @@ module.exports.makeFileInAndroidDir = (fileContent, fileName) => {
 
 module.exports.makeFileInAndroidForBridgeJniDir = (fileContent, fileName) => {
   try {
-    const filePath=path.join(ANDROID_JNI_DIR_PATH,fileName);
-    fs.outputFileSync(filePath,fileContent);
+    const filePath = path.join(ANDROID_JNI_DIR_PATH, fileName);
+    fs.outputFileSync(filePath, fileContent);
     return true;
   } catch (error) {
     return false;
   }
 };
-
 
 module.exports.makeEncryptionFile = (key) => {
   return `
