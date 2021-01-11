@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 public class JniKeysModule extends ReactContextBaseJavaModule {
     public static final String REACT_CLASS = "JniKeys";
+    public static final String PRIVATE_KEY = "";
     private static ReactApplicationContext reactContext;
 
     static private JSONObject jniData;
@@ -35,7 +36,7 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
 
         try {
             if (jniData == null)
-                jniData = new JSONObject(CLibController.getInstance().getJniJsonStringyfyData());
+                jniData = new JSONObject(CLibController.getInstance().getJniJsonStringyfyData(PRIVATE_KEY));
 
             if (jniData.has(key)) {
                 return jniData.getString(key);
@@ -48,7 +49,7 @@ public class JniKeysModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void sampleMethod(Promise promise) {
-       promise.resolve("I am sample Methods");
+        promise.resolve("I am sample Methods");
     }
 
     @Override

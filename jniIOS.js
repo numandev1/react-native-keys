@@ -1,17 +1,17 @@
 #! /usr/bin/env node
-
-const { getJniKeys, makeFileInIosDir } = require('./src/util/common');
+const SHA256 = require("crypto-js/sha256");
+const { getJniKeys, makeFileInIosDir, makeEncryptionFile } = require('./src/util/common');
 const {
   makeCppFileTemplateIOS,
   makeHppFileTemplateIOS,
-  makeCryptographicPackageHTemplateIOS,
-  makeCryptographicPackageMMTemplateIOS,
+  makeJniKeysPackageMMTemplateIOS,
 } = require('./src/util/jniFilesTemplateIos');
 
 const makeIosJnuFiles = () => {
   const secureKeys = getJniKeys();
+  const stringifyKeys=JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateIOS(
-    JSON.stringify(secureKeys).replace(/(\")/g, '\\"')
+    stringifyKeys.replace(/(\")/g, '\\"')
   );
   const isDoneCreatedIosCppFile = makeFileInIosDir(
     cppFileContent,
@@ -23,25 +23,27 @@ const makeIosJnuFiles = () => {
     hppFileContent,
     'crypto.hpp'
   );
-
-  // const cryptographicPackageHFileContent = makeCryptographicPackageHTemplateIOS();
-  // const isDoneCreatedIosCryptographicPackageHFile = makeFileInIosDir(
-  //   cryptographicPackageHFileContent,
-  //   'CryptographicPackage.h'
-  // );
-
-  // const cryptographicPackageMMFileContent = makeCryptographicPackageMMTemplateIOS();
-  // const isDoneCreatedIosCryptographicPackageMMFile = makeFileInIosDir(
-  //   cryptographicPackageMMFileContent,
-  //   'CryptographicPackage.mm'
-  // );
+  
+  const encryptionFileContent = makeEncryptionFile();
+  const isDoneCreatedIosEncryptionFile = makeFileInIosDir(
+    encryptionFileContent,
+    'encrypt.h'
+  );
+  
+  const privateKey=SHA256(stringifyKeys).toString();
+  const halfKey=privateKey.substr(privateKey.length/2);
+  const jniKeysPackageMMFile = makeJniKeysPackageMMTemplateIOS(halfKey);
+  const isDoneCreatedNniKeysPackageFile = makeFileInIosDir(
+    jniKeysPackageMMFile,
+    'JniKeys.mm'
+  );
 
   console.log(
     'secureKeys',
     isDoneCreatedIosCppFile,
-    isDoneCreatedIosHppFile
-    // isDoneCreatedIosCryptographicPackageHFile,
-    // isDoneCreatedIosCryptographicPackageMMFile
+    isDoneCreatedIosHppFile,
+    isDoneCreatedIosEncryptionFile,
+    isDoneCreatedNniKeysPackageFile
   );
 };
 makeIosJnuFiles();

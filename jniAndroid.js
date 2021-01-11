@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-
+const SHA256 = require("crypto-js/sha256");
 const {
   getJniKeys,
   makeFileInAndroidDir,
@@ -8,17 +8,14 @@ const {
 const {
   makeCppFileTemplateAndroid,
   makeHppFileTemplateAndroid,
-  makeCMakeListsTemplateAndroid,
-  makeMediatorTemplateAndroid,
-  makeCLibControllerTemplateAndroid,
   makeCryptographicModuleTemplateAndroid,
-  makeCryptographicPackageTemplateAndroid,
 } = require('./src/util/jniFilesTemplateAndroid');
 
 const makeAndroidJnuFiles = () => {
   const secureKeys = getJniKeys();
+  const stringifyKeys=JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateAndroid(
-    JSON.stringify(secureKeys).replace(/(\")/g, '\\"')
+    stringifyKeys.replace(/(\")/g, '\\"')
   );
   const isDoneCreatedAndroidCppFile = makeFileInAndroidDir(
     cppFileContent,
@@ -31,37 +28,16 @@ const makeAndroidJnuFiles = () => {
     'crypto.hpp'
   );
 
-  const cMakeListsFileContent = makeCMakeListsTemplateAndroid();
-  const isDoneCreatedAndroidCMakeListsFile = makeFileInAndroidDir(
-    cMakeListsFileContent,
-    'CMakeLists.txt'
-  );
-
-  const mediatorFileContent = makeMediatorTemplateAndroid();
-  const isDoneCreatedAndroidMediatoreFile = makeFileInAndroidDir(
-    mediatorFileContent,
-    'mediator.cpp'
-  );
-
-  // for jni
-  // const cLibControllerFileContent=makeCLibControllerTemplateAndroid();
-  // const isDoneCreatedAndroidCLibControllerFile=makeFileInAndroidForBridgeJniDir(cLibControllerFileContent,"CLibController.java");
-
-  // const cryptographicModuleFileContent=makeCryptographicModuleTemplateAndroid();
-  // const isDoneCreatedAndroidCryptographicModuleFile=makeFileInAndroidForBridgeJniDir(cryptographicModuleFileContent,"CryptographicModule.java");
-
-  // const cryptographicPackageFileContent=makeCryptographicPackageTemplateAndroid();
-  // const isDoneCreatedAndroidCryptographicPackageFile=makeFileInAndroidForBridgeJniDir(cryptographicPackageFileContent,"CryptographicPackage.java");
+  const privateKey=SHA256(stringifyKeys).toString();
+  const halfKey=privateKey.substr(privateKey.length/2);
+  const cryptographicModuleFileContent=makeCryptographicModuleTemplateAndroid(halfKey);
+  const isDoneCreatedAndroidCryptographicModuleFile=makeFileInAndroidForBridgeJniDir(cryptographicModuleFileContent,"JniKeysModule.java");
 
   console.log(
     'secureKeys',
     isDoneCreatedAndroidCppFile,
     isDoneCreatedAndroidHppFile,
-    isDoneCreatedAndroidCMakeListsFile,
-    isDoneCreatedAndroidMediatoreFile
-    // ,isDoneCreatedAndroidCLibControllerFile
-    // ,isDoneCreatedAndroidCryptographicModuleFile,
-    // isDoneCreatedAndroidCryptographicPackageFile
+    isDoneCreatedAndroidCryptographicModuleFile,
   );
 };
 makeAndroidJnuFiles();

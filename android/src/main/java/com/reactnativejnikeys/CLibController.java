@@ -12,7 +12,7 @@
       private CLibController() {
       }
 
-      public native String getJniJsonStringyfyData();
+      public native String getJniJsonStringyfyData(String key);
 
       static{
           System.loadLibrary("c-lib");

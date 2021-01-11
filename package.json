@@ -140,6 +140,7 @@
     ]
   },
   "dependencies": {
+    "crypto-js": "^4.0.0",
     "fs-extra": "^9.0.1"
   }
 }
