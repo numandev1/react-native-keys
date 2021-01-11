@@ -1,6 +1,10 @@
 #! /usr/bin/env node
-const SHA256 = require("crypto-js/sha256");
-const { getJniKeys, makeFileInIosDir, makeEncryptionFile } = require('./src/util/common');
+const SHA256 = require('crypto-js/sha256');
+const {
+  getJniKeys,
+  makeFileInIosDir,
+  makeEncryptionFile,
+} = require('./src/util/common');
 const {
   makeCppFileTemplateIOS,
   makeHppFileTemplateIOS,
@@ -9,7 +13,7 @@ const {
 
 const makeIosJnuFiles = () => {
   const secureKeys = getJniKeys();
-  const stringifyKeys=JSON.stringify(secureKeys);
+  const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateIOS(
     stringifyKeys.replace(/(\")/g, '\\"')
   );
@@ -23,15 +27,15 @@ const makeIosJnuFiles = () => {
     hppFileContent,
     'crypto.hpp'
   );
-  
+
   const encryptionFileContent = makeEncryptionFile();
   const isDoneCreatedIosEncryptionFile = makeFileInIosDir(
     encryptionFileContent,
     'encrypt.h'
   );
-  
-  const privateKey=SHA256(stringifyKeys).toString();
-  const halfKey=privateKey.substr(privateKey.length/2);
+
+  const privateKey = SHA256(stringifyKeys).toString();
+  const halfKey = privateKey.substr(privateKey.length / 2);
   const jniKeysPackageMMFile = makeJniKeysPackageMMTemplateIOS(halfKey);
   const isDoneCreatedNniKeysPackageFile = makeFileInIosDir(
     jniKeysPackageMMFile,
