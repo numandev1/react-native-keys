@@ -4,7 +4,7 @@ const {
   getJniKeys,
   makeFileInIosDir,
   makeEncryptionFile,
-  getIosEnviromentFile
+  getIosEnviromentFile,
 } = require('./src/util/common');
 const {
   makeCppFileTemplateIOS,
@@ -12,9 +12,8 @@ const {
   makeJniKeysPackageMMTemplateIOS,
 } = require('./src/util/jniFilesTemplateIos');
 
-
 const makeIosJnuFiles = () => {
-  const JNI_FILE_NAME=getIosEnviromentFile();
+  const JNI_FILE_NAME = getIosEnviromentFile();
   const secureKeys = getJniKeys(JNI_FILE_NAME);
   const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateIOS(

@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
-const DEFAULT_FILE_NAME="jnikeys.json";
+const DEFAULT_FILE_NAME = 'jnikeys.json';
 const PROJECT_ROOT_DIR_PATH = path.join(__dirname, '../../../../');
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const IOS_DIR_PATH = path.join(
@@ -60,19 +60,14 @@ module.exports.makeFileInAndroidDir = (fileContent, fileName) => {
 
 module.exports.getIosEnviromentFile = () => {
   try {
-    let JNI_FILE_NAME=process.env.JNIFILE;
-    if(JNI_FILE_NAME)
-    {
+    let JNI_FILE_NAME = process.env.JNIFILE;
+    if (JNI_FILE_NAME) {
       return JNI_FILE_NAME;
-    }
-    else if(process.env.CONFIGURATION==="Debug")
-    {
-      const debugFile=process.env.DEBUG_JNIFILE||DEFAULT_FILE_NAME;
+    } else if (process.env.CONFIGURATION === 'Debug') {
+      const debugFile = process.env.DEBUG_JNIFILE || DEFAULT_FILE_NAME;
       return debugFile;
-    }
-    else if(process.env.CONFIGURATION==="Release")
-    {
-      const debugFile=process.env.RELEASE_JNIFILE||DEFAULT_FILE_NAME;
+    } else if (process.env.CONFIGURATION === 'Release') {
+      const debugFile = process.env.RELEASE_JNIFILE || DEFAULT_FILE_NAME;
       return debugFile;
     }
     return DEFAULT_FILE_NAME;
@@ -83,9 +78,8 @@ module.exports.getIosEnviromentFile = () => {
 
 module.exports.getAndroidEnviromentFile = () => {
   try {
-    let JNI_FILE_NAME=process.env.JNIFILE;
-    if(JNI_FILE_NAME)
-    {
+    let JNI_FILE_NAME = process.env.JNIFILE;
+    if (JNI_FILE_NAME) {
       return JNI_FILE_NAME;
     }
     return DEFAULT_FILE_NAME;
