@@ -1,6 +1,45 @@
-def stdout = new ByteArrayOutputStream()
+#!/usr/bin/env groovy
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+
+def getCurrentFlavor() {
+  Gradle gradle = getGradle()
+
+  // match optional modules followed by the task
+  // (?:.*:)* is a non-capturing group to skip any :foo:bar: if they exist
+  // *[a-z]+([A-Za-z]+) will capture the flavor part of the task name onward (e.g., assembleRelease --> Release)
+  def pattern = Pattern.compile("(?:.*:)*[a-z]+([A-Z][A-Za-z0-9]+)")
+  def flavor = ""
+
+  gradle.getStartParameter().getTaskNames().any { name ->
+    Matcher matcher = pattern.matcher(name)
+    if (matcher.find()) {
+      flavor = matcher.group(1).toLowerCase()
+      return true
+    }
+  }
+
+  return flavor
+}
 
 task callCL(type: Exec) {
-    def proc = "../node_modules/react-native-jni-keys/jniAndroid.js".execute()
-    proc.waitForProcessOutput(System.out, System.err)
+  def flavor = getCurrentFlavor()
+  def jniFile = ""
+  def exportCommand="";
+  if (System.env['JNIFILE']) {
+    jniFile = System.env['JNIFILE']
+    exportCommand="export JNIFILE="+jniFile+" && ";
+  }
+  else if (project.hasProperty("jniConfigFiles")) {
+    project.ext.jniConfigFiles.any { pair ->
+      if (flavor.startsWith(pair.key.toLowerCase())) {
+        jniFile = pair.value
+        exportCommand="export JNIFILE="+jniFile+" && ";
+        return true
+      }
+    }
+  }
+  def proc =["/bin/sh", "-c", exportCommand+' ../node_modules/react-native-jni-keys/jniAndroid.js'].execute()
+  proc.consumeProcessOutput(System.out, System.err)
 }

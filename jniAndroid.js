@@ -4,6 +4,7 @@ const {
   getJniKeys,
   makeFileInAndroidDir,
   makeFileInAndroidForBridgeJniDir,
+  getAndroidEnviromentFile
 } = require('./src/util/common');
 const {
   makeCppFileTemplateAndroid,
@@ -12,7 +13,8 @@ const {
 } = require('./src/util/jniFilesTemplateAndroid');
 
 const makeAndroidJnuFiles = () => {
-  const secureKeys = getJniKeys();
+  const JNI_FILE_NAME=getAndroidEnviromentFile();
+  const secureKeys = getJniKeys(JNI_FILE_NAME);
   const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateAndroid(
     stringifyKeys.replace(/(\")/g, '\\"')
@@ -39,7 +41,7 @@ const makeAndroidJnuFiles = () => {
   );
 
   console.log(
-    'secureKeys',
+    'test',
     isDoneCreatedAndroidCppFile,
     isDoneCreatedAndroidHppFile,
     isDoneCreatedAndroidCryptographicModuleFile

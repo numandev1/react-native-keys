@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
+const DEFAULT_FILE_NAME="jnikeys.json";
 const PROJECT_ROOT_DIR_PATH = path.join(__dirname, '../../../../');
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const IOS_DIR_PATH = path.join(
@@ -30,8 +31,8 @@ const ANDROID_JNI_DIR_PATH = path.join(
   'reactnativejnikeys'
 );
 console.log(ANDROID_JNI_DIR_PATH, 'ANDROID_JNI_DIR_PATHANDROID_JNI_DIR_PATH');
-module.exports.getJniKeys = () => {
-  const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}jnikeys.json`;
+module.exports.getJniKeys = (JNI_FILE_NAME) => {
+  const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${JNI_FILE_NAME}`;
   const jnikeysJson = fs.readJSONSync(jniJsonFilePath);
   const secureKeys = jnikeysJson.secure;
   return secureKeys;
@@ -54,6 +55,42 @@ module.exports.makeFileInAndroidDir = (fileContent, fileName) => {
     return true;
   } catch (error) {
     return false;
+  }
+};
+
+module.exports.getIosEnviromentFile = () => {
+  try {
+    let JNI_FILE_NAME=process.env.JNIFILE;
+    if(JNI_FILE_NAME)
+    {
+      return JNI_FILE_NAME;
+    }
+    else if(process.env.CONFIGURATION==="Debug")
+    {
+      const debugFile=process.env.DEBUG_JNIFILE||DEFAULT_FILE_NAME;
+      return debugFile;
+    }
+    else if(process.env.CONFIGURATION==="Release")
+    {
+      const debugFile=process.env.RELEASE_JNIFILE||DEFAULT_FILE_NAME;
+      return debugFile;
+    }
+    return DEFAULT_FILE_NAME;
+  } catch (error) {
+    return DEFAULT_FILE_NAME;
+  }
+};
+
+module.exports.getAndroidEnviromentFile = () => {
+  try {
+    let JNI_FILE_NAME=process.env.JNIFILE;
+    if(JNI_FILE_NAME)
+    {
+      return JNI_FILE_NAME;
+    }
+    return DEFAULT_FILE_NAME;
+  } catch (error) {
+    return DEFAULT_FILE_NAME;
   }
 };
 
