@@ -297,7 +297,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
 					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
 					"\"${PODS_ROOT}/Headers/Public/glog\"",
-					"\"${PODS_ROOT}/Headers/Public/react-native-jni-keys\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-keys\"",
 					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 				);
 				INFOPLIST_FILE = JniKeysExample/Info.plist;
@@ -355,7 +355,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
 					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
 					"\"${PODS_ROOT}/Headers/Public/glog\"",
-					"\"${PODS_ROOT}/Headers/Public/react-native-jni-keys\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-keys\"",
 					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 				);
 				INFOPLIST_FILE = JniKeysExample/Info.plist;

@@ -1,7 +1,7 @@
 The target system is: Android - 1 - x86_64
 The host system is: Darwin - 19.5.0 - x86_64
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_573e0"
 [1/2] Building C object CMakeFiles/cmTC_573e0.dir/testCCompiler.c.o
@@ -9,7 +9,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_e4048"
 [1/2] Building C object CMakeFiles/cmTC_e4048.dir/CMakeCCompilerABI.c.o
@@ -28,7 +28,7 @@ Selected multilib: .;@m64
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_e4048"]
   ignore line: [[1/2] Building C object CMakeFiles/cmTC_e4048.dir/CMakeCCompilerABI.c.o]
@@ -104,7 +104,7 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_f0baf"
 [1/2] Building C object CMakeFiles/cmTC_f0baf.dir/feature_tests.c.o
@@ -118,7 +118,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_f3a7d"
 [1/2] Building C object CMakeFiles/cmTC_f3a7d.dir/feature_tests.c.o
@@ -132,7 +132,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_ba865"
 [1/2] Building C object CMakeFiles/cmTC_ba865.dir/feature_tests.c.o
@@ -144,7 +144,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_47076"
 [1/2] Building CXX object CMakeFiles/cmTC_47076.dir/testCXXCompiler.cxx.o
@@ -152,7 +152,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_84495"
 [1/2] Building CXX object CMakeFiles/cmTC_84495.dir/CMakeCXXCompilerABI.cpp.o
@@ -171,7 +171,7 @@ Selected multilib: .;@m64
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(CMAKE_LINKER-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_84495"]
   ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_84495.dir/CMakeCXXCompilerABI.cpp.o]
@@ -251,7 +251,7 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_8e47a"
 [1/2] Building CXX object CMakeFiles/cmTC_8e47a.dir/feature_tests.cxx.o
@@ -318,7 +318,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_1329a"
 [1/2] Building CXX object CMakeFiles/cmTC_1329a.dir/feature_tests.cxx.o
@@ -385,7 +385,7 @@ Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
+Change Dir: /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86_64/CMakeFiles/CMakeTmp
 
 Run Build Command:"/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja" "cmTC_da692"
 [1/2] Building CXX object CMakeFiles/cmTC_da692.dir/feature_tests.cxx.o

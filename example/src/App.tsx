@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import JniKeys from 'react-native-jni-keys';
+import JniKeys from 'react-native-keys';
 
 export default function App() {
   const [result, setResult] = useState('');

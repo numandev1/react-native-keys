@@ -14,8 +14,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -24,8 +24,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -34,8 +34,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -44,8 +44,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -54,8 +54,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -64,8 +64,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -74,8 +74,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -84,8 +84,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -94,8 +94,8 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
 
 
 CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake:453 (message):
@@ -104,7 +104,5 @@ CMake Warning at /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/
   values may be wrong or missing.  Update to CMake 3.10 or newer to use
   CMake's built-in compiler identification.
 Call Stack (most recent call first):
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
-  /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)
-
-
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/3.6.0-rc2/CMakeSystem.cmake:6 (include)
+  /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/CMakeTmp/CMakeLists.txt:2 (project)

@@ -1,6 +1,6 @@
 {
-  "name": "react-native-jni-keys-example",
-  "description": "Example app for react-native-jni-keys",
+  "name": "react-native-keys-example",
+  "description": "Example app for react-native-keys",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "16.11.0",
     "react-native": "0.62.2",
-    "react-native-jni-keys":"../"
+    "react-native-keys":"../"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

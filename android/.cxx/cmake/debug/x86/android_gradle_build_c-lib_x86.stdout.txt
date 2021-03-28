@@ -1,3 +1,3 @@
 [1/3] Building CXX object CMakeFiles/c-lib.dir/mediator.cpp.o
 [2/3] Building CXX object CMakeFiles/c-lib.dir/crypto.cpp.o
-[3/3] Linking CXX shared library /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/build/intermediates/cmake/debug/obj/x86/libc-lib.so
+[3/3] Linking CXX shared library /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/build/intermediates/cmake/debug/obj/x86/libc-lib.so

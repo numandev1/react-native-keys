@@ -40,6 +40,6 @@ task callCL(type: Exec) {
       }
     }
   }
-  def proc =["/bin/sh", "-c", exportCommand+' ../node_modules/react-native-jni-keys/jniAndroid.js'].execute()
+  def proc =["/bin/sh", "-c", exportCommand+' ../node_modules/react-native-keys/jniAndroid.js'].execute()
   proc.consumeProcessOutput(System.out, System.err)
 }

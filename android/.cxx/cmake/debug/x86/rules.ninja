@@ -42,7 +42,7 @@ rule CXX_SHARED_LIBRARY_LINKER__c-lib
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake -H/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c -B/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/debug/x86
+  command = /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake -H/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/src/main/java/com/reactnativejnikeys/c -B/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/debug/x86
   description = Re-running CMake...
   generator = 1
 
@@ -61,4 +61,3 @@ rule CLEAN
 rule HELP
   command = /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja -t targets
   description = All primary targets available:
-

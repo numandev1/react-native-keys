@@ -6,13 +6,13 @@ const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const IOS_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   'node_modules',
-  'react-native-jni-keys',
+  'react-native-keys',
   'ios'
 );
 const ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   'node_modules',
-  'react-native-jni-keys',
+  'react-native-keys',
   'android',
   'src',
   'main',

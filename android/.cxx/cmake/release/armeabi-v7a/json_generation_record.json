@@ -5,7 +5,7 @@
   },
   {
     "level": "INFO",
-    "message": "rebuilding JSON /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json due to:"
+    "message": "rebuilding JSON /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json due to:"
   },
   {
     "level": "INFO",
@@ -21,23 +21,23 @@
   },
   {
     "level": "INFO",
-    "message": "  - /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/c/CMakeLists.txt"
+    "message": "  - /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/src/main/c/CMakeLists.txt"
   },
   {
     "level": "INFO",
-    "message": "removing stale contents from \u0027/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a\u0027"
+    "message": "removing stale contents from \u0027/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a\u0027"
   },
   {
     "level": "INFO",
-    "message": "created folder \u0027/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a\u0027"
+    "message": "created folder \u0027/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a\u0027"
   },
   {
     "level": "INFO",
-    "message": "executing cmake Executable : /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake\narguments : \n-H/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c\n-B/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_PLATFORM\u003dandroid-16\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/build/intermediates/cmake/release/obj/armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+    "message": "executing cmake Executable : /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake\narguments : \n-H/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/src/main/java/com/reactnativejnikeys/c\n-B/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_PLATFORM\u003dandroid-16\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/build/intermediates/cmake/release/obj/armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
   },
   {
     "level": "INFO",
-    "message": "Executable : /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake\narguments : \n-H/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/src/main/java/com/reactnativejnikeys/c\n-B/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_PLATFORM\u003dandroid-16\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/build/intermediates/cmake/release/obj/armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+    "message": "Executable : /Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/cmake\narguments : \n-H/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/src/main/java/com/reactnativejnikeys/c\n-B/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a\n-DANDROID_ABI\u003darmeabi-v7a\n-DANDROID_PLATFORM\u003dandroid-16\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/build/intermediates/cmake/release/obj/armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/Users/nomanismaeel/Library/Android/sdk/cmake/3.6.4111459/bin/ninja\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
   },
   {
     "level": "INFO",
@@ -45,11 +45,11 @@
   },
   {
     "level": "INFO",
-    "message": "write build output /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/build_output.txt"
+    "message": "write build output /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a/build_output.txt"
   },
   {
     "level": "INFO",
-    "message": "write command file /Users/nomanismaeel/Documents/ReactNative/package/react-native-jni-keys/example/node_modules/react-native-jni-keys/android/.cxx/cmake/release/armeabi-v7a/build_command.txt"
+    "message": "write command file /Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/armeabi-v7a/build_command.txt"
   },
   {
     "level": "INFO",

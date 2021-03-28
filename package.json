@@ -1,6 +1,6 @@
 {
-  "name": "react-native-jni-keys",
-  "version": "0.1.0",
+  "name": "react-native-keys",
+  "version": "0.0.2",
   "description": "secure keys through jni",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-jni-keys.podspec",
+    "react-native-keys.podspec",
     "!lib/typescript/example",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -34,13 +34,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/nomi9995/react-native-jni-keys",
+  "repository": "https://github.com/nomi9995/react-native-keys",
   "author": "Muhammad Numan <muhammadnuman70@gmail.com> (https://github.com/nomi9995)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nomi9995/react-native-jni-keys/issues"
+    "url": "https://github.com/nomi9995/react-native-keys/issues"
   },
-  "homepage": "https://github.com/nomi9995/react-native-jni-keys#readme",
+  "homepage": "https://github.com/nomi9995/react-native-keys#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.16.2",
