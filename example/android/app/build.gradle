@@ -78,6 +78,8 @@ import com.android.build.OutputFile
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
+//IS_EXAMPLE flag is for contribution not for production
+project.ext.IS_EXAMPLE = true;
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: project(':react-native-keys').projectDir.getPath() + "/jniKeys.gradle"

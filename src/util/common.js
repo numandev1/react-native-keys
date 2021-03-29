@@ -8,16 +8,20 @@ const PROJECT_ROOT_DIR_PATH = path.join(
 );
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const JNI_IOS_PATH = path.join('node_modules', 'react-native-keys', 'ios');
+const JNI_ANDROID_PATH = path.join(
+  'node_modules',
+  'react-native-keys',
+  'android'
+);
 const JNI_IOS_EXAMPLE_PATH = path.join('../', 'ios');
+const JNI_ANDROID_EXAMPLE_PATH = path.join('../', 'android');
 const IOS_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? JNI_IOS_EXAMPLE_PATH : JNI_IOS_PATH
 );
 const ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
-  'node_modules',
-  'react-native-keys',
-  'android',
+  isExample ? JNI_ANDROID_EXAMPLE_PATH : JNI_ANDROID_PATH,
   'src',
   'main',
   'java',
@@ -26,7 +30,7 @@ const ANDROID_DIR_PATH = path.join(
   'c'
 );
 const ANDROID_JNI_DIR_PATH = path.join(
-  PACKAGE_ROOT_DIR_PATH,
+  isExample ? '../' : PACKAGE_ROOT_DIR_PATH,
   'android',
   'src',
   'main',
@@ -35,7 +39,6 @@ const ANDROID_JNI_DIR_PATH = path.join(
   'reactnativejnikeys'
 );
 
-console.log(ANDROID_JNI_DIR_PATH, 'ANDROID_JNI_DIR_PATHANDROID_JNI_DIR_PATH');
 module.exports.getJniKeys = (JNI_FILE_NAME) => {
   const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${JNI_FILE_NAME}`;
   const jnikeysJson = fs.readJSONSync(jniJsonFilePath);
@@ -46,7 +49,6 @@ module.exports.getJniKeys = (JNI_FILE_NAME) => {
 module.exports.makeFileInIosDir = (fileContent, fileName) => {
   try {
     const iosCppFilePath = path.join(IOS_DIR_PATH, fileName);
-    console.log(iosCppFilePath, 'iosCppFilePatheeee');
     fs.outputFileSync(iosCppFilePath, fileContent);
     return true;
   } catch (error) {
