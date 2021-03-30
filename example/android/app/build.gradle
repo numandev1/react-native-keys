@@ -80,6 +80,10 @@ project.ext.react = [
 ]
 //IS_EXAMPLE flag is for contribution not for production
 project.ext.IS_EXAMPLE = true;
+project.ext.jniConfigFiles = [
+  debug: "jnikeys.json",
+  release: "jnikeys.staging.json",
+]
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: project(':react-native-keys').projectDir.getPath() + "/jniKeys.gradle"
@@ -127,9 +131,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     defaultConfig {
-        applicationId "com.example.reactnativejnikeys"
+        applicationId project.keys.get('APP_ID')
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

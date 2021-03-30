@@ -25,7 +25,7 @@ def getCurrentFlavor() {
 
 task callCL(type: Exec) {
   def flavor = getCurrentFlavor()
-  def jniFile = ""
+  def jniFile = "jnikeys.json"
   def exportCommand="";
   if (System.env['JNIFILE']) {
     jniFile = System.env['JNIFILE']
@@ -50,4 +50,59 @@ task callCL(type: Exec) {
   }
   def proc =["/bin/sh", "-c", exportCommand].execute()
   proc.consumeProcessOutput(System.out, System.err)
+
+  ////
+  def keys = [:]
+  File f = new File("$project.rootDir/../$jniFile");
+  if (!f.exists()) {
+    f = new File("$envFile");
+  }
+
+  if (f.exists()) {
+    def parsedJson = new groovy.json.JsonSlurper().parseText(f.text)
+    println(parsedJson.public)
+    parsedJson.public.each { key, value ->
+      keys.put(key, value.replace('"', '\\"'))
+    }
+  } else {
+    println("**************************")
+    println("*** Missing KEYs file ****")
+    println("**************************")
+  }
+
+  project.ext.set("keys", keys)
 }
+
+android {
+  defaultConfig {
+    project.keys.each { k, v ->
+      def escaped = v.replaceAll("%","\\\\u0025")
+      buildConfigField "String", k, "\"$v\""
+      resValue "string", k, "\"$escaped\""
+    }
+  }
+}
+
+// this is remaining
+tasks.whenTaskAdded { task ->
+  if (project.hasProperty("jniConfigFiles")) {
+    project.envConfigFiles.each { envConfigName, envConfigFile ->
+      if (task.name.toLowerCase() == "generate"+envConfigName+"buildconfig") {
+        task.doFirst() {
+          android.applicationVariants.all { variant ->
+            def variantConfigString = variant.getName()
+            if (envConfigName.contains(variantConfigString.toLowerCase())) {
+              loadDotEnv(envConfigName)
+              project.env.each { k, v ->
+                def escaped = v.replaceAll("%","\\\\u0025")
+                variant.buildConfigField "String", k, "\"$v\""
+                variant.resValue "string", k, "\"$escaped\""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

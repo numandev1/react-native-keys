@@ -1,9 +1,15 @@
 {
-  "secure":{
-    "abc":"12345678",
-    "cde":"5678",
-    "younas":"younas",
-    "nomi":"123456",
-    "iqbal":"nomi nomi"
+  "secure": {
+    "abc": "12345678",
+    "cde": "5678",
+    "younas": "younas",
+    "nomi": "123456",
+    "iqbal": "nomi nomi"
+  },
+  "public": {
+    "APP_NAME": "RNKEYS",
+    "public1": "numan",
+    "public2": "usman",
+    "APP_ID": "com.example.reactnativejnikeys"
   }
 }
