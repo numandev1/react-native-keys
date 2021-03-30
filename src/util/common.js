@@ -30,7 +30,7 @@ const ANDROID_DIR_PATH = path.join(
   'c'
 );
 const ANDROID_JNI_DIR_PATH = path.join(
-  isExample ? '../' : PACKAGE_ROOT_DIR_PATH,
+  PACKAGE_ROOT_DIR_PATH,
   'android',
   'src',
   'main',
