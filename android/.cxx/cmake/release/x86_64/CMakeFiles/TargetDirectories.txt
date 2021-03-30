@@ -1,3 +1,0 @@
-/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
-/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
-/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/.cxx/cmake/release/x86_64/CMakeFiles/c-lib.dir

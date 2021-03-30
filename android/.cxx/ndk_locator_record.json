@@ -1,5 +1,5 @@
 {
-  "ndkFolder": "/Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061",
+  "ndkFolder": "/Users/apple/Library/Android/sdk/ndk/22.1.7171670",
   "messages": [
     {
       "level": "INFO",
@@ -15,23 +15,23 @@
     },
     {
       "level": "INFO",
-      "message": "sdkFolder is /Users/nomanismaeel/Library/Android/sdk"
+      "message": "sdkFolder is /Users/apple/Library/Android/sdk"
     },
     {
       "level": "INFO",
-      "message": "Considering /Users/nomanismaeel/Library/Android/sdk/ndk-bundle in SDK ndk-bundle folder"
+      "message": "Considering /Users/apple/Library/Android/sdk/ndk-bundle in SDK ndk-bundle folder"
     },
     {
       "level": "INFO",
-      "message": "Considering /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061 in SDK ndk folder"
+      "message": "Considering /Users/apple/Library/Android/sdk/ndk/22.1.7171670 in SDK ndk folder"
     },
     {
       "level": "INFO",
-      "message": "Rejected /Users/nomanismaeel/Library/Android/sdk/ndk-bundle in SDK ndk-bundle folder because that location has no source.properties"
+      "message": "Rejected /Users/apple/Library/Android/sdk/ndk-bundle in SDK ndk-bundle folder because that location has no source.properties"
     },
     {
       "level": "INFO",
-      "message": "No user requested version, choosing /Users/nomanismaeel/Library/Android/sdk/ndk/22.0.7026061 which is version 22.0.7026061"
+      "message": "No user requested version, choosing /Users/apple/Library/Android/sdk/ndk/22.1.7171670 which is version 22.1.7171670"
     }
   ]
 }

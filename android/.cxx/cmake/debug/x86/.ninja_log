@@ -1,4 +1,0 @@
-# ninja log v5
-2	539	0	CMakeFiles/c-lib.dir/crypto.cpp.o	ffed819f6d992b28
-0	549	0	CMakeFiles/c-lib.dir/mediator.cpp.o	97bb8207e1af8e64
-549	639	0	/Users/nomanismaeel/Documents/ReactNative/package/react-native-keys/example/node_modules/react-native-keys/android/build/intermediates/cmake/debug/obj/x86/libc-lib.so	98e22b576d8e9a46
