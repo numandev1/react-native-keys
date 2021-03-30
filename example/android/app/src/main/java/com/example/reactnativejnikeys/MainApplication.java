@@ -10,7 +10,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-
+import com.reactnativejnikeys.JniKeysPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for JniKeysExample:
             // packages.add(new MyReactNativePackage());
+             packages.add(new JniKeysPackage());
           return packages;
         }
 
