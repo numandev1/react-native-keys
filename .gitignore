@@ -28,8 +28,10 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-.cxx/**
-android/.cxx/**
+*.cxx
+android/.cxx/*
+crypto.cpp
+JniKeysModule.java
 # Android/IJ
 #
 .idea

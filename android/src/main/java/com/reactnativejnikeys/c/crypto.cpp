@@ -6,12 +6,12 @@
   using namespace std;
 
   Crypto::Crypto() {
-  
+
   }
 
 
   std::string Crypto::getJniJsonStringyfyData(string key) {
-    std::string jsonStringyfyData= "{}";
+    std::string jsonStringyfyData= "{\"abc\":\"12345678\",\"cde\":\"5678\",\"younas\":\"younas\",\"nomi\":\"123456\",\"iqbal\":\"nomi nomi\"}";
       string hash;
       int len=jsonStringyfyData.length();
       char cahrtot[len+1];
@@ -25,6 +25,7 @@
       else
       {
           return "";
-      } 
+      }
+    
   }
   
