@@ -23,7 +23,7 @@ def getCurrentFlavor() {
   return flavor
 }
 
-task callCL(type: Exec) {
+def loadKeys(){
   def flavor = getCurrentFlavor()
   def jniFile = "jnikeys.json"
   def exportCommand="";
@@ -73,6 +73,10 @@ task callCL(type: Exec) {
   project.ext.set("keys", keys)
 }
 
+task callCL(type: Exec) {
+  loadKeys();
+}
+
 android {
   defaultConfig {
     project.keys.each { k, v ->
@@ -85,24 +89,13 @@ android {
 
 // this is remaining
 tasks.whenTaskAdded { task ->
-  if (project.hasProperty("jniConfigFiles")) {
-    project.envConfigFiles.each { envConfigName, envConfigFile ->
-      if (task.name.toLowerCase() == "generate"+envConfigName+"buildconfig") {
         task.doFirst() {
-          android.applicationVariants.all { variant ->
-            def variantConfigString = variant.getName()
-            if (envConfigName.contains(variantConfigString.toLowerCase())) {
-              loadDotEnv(envConfigName)
-              project.env.each { k, v ->
+              loadKeys();
+              project.keys.each { k, v ->
                 def escaped = v.replaceAll("%","\\\\u0025")
                 variant.buildConfigField "String", k, "\"$v\""
                 variant.resValue "string", k, "\"$escaped\""
               }
             }
-          }
-        }
-      }
-    }
-  }
 }
 
