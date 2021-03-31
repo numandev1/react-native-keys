@@ -14,7 +14,8 @@ const {
 
 const makeAndroidJnuFiles = () => {
   const JNI_FILE_NAME = getAndroidEnviromentFile();
-  const secureKeys = getJniKeys(JNI_FILE_NAME);
+  const allKeys = getJniKeys(JNI_FILE_NAME);
+  const secureKeys = allKeys.secure;
   const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateAndroid(
     stringifyKeys.replace(/(\")/g, '\\"')

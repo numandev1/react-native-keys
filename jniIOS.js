@@ -5,16 +5,20 @@ const {
   makeFileInIosDir,
   makeEncryptionFile,
   getIosEnviromentFile,
+  makeFileInProjectDirectoryIos,
 } = require('./src/util/common');
 const {
   makeCppFileTemplateIOS,
   makeHppFileTemplateIOS,
   makeJniKeysPackageMMTemplateIOS,
+  makeXcConfigFIlle,
 } = require('./src/util/jniFilesTemplateIos');
 
 const makeIosJnuFiles = () => {
   const JNI_FILE_NAME = getIosEnviromentFile();
-  const secureKeys = getJniKeys(JNI_FILE_NAME);
+  const allKeys = getJniKeys(JNI_FILE_NAME);
+  const secureKeys = allKeys.secure;
+  const publicKeys = allKeys.public;
   const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateIOS(
     stringifyKeys.replace(/(\")/g, '\\"')
@@ -44,12 +48,19 @@ const makeIosJnuFiles = () => {
     'JniKeys.mm'
   );
 
+  const xcConfigFileContent = makeXcConfigFIlle(publicKeys);
+  const isDoneCreatedIosxcConfigFile = makeFileInProjectDirectoryIos(
+    xcConfigFileContent,
+    'tmp.xcconfig'
+  );
+
   console.log(
     'test',
     isDoneCreatedIosCppFile,
     isDoneCreatedIosHppFile,
     isDoneCreatedIosEncryptionFile,
-    isDoneCreatedNniKeysPackageFile
+    isDoneCreatedNniKeysPackageFile,
+    isDoneCreatedIosxcConfigFile
   );
 };
 makeIosJnuFiles();

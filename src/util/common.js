@@ -39,16 +39,28 @@ const ANDROID_JNI_DIR_PATH = path.join(
   'reactnativejnikeys'
 );
 
+const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
+
 module.exports.getJniKeys = (JNI_FILE_NAME) => {
   const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${JNI_FILE_NAME}`;
   const jnikeysJson = fs.readJSONSync(jniJsonFilePath);
-  const secureKeys = jnikeysJson.secure;
+  const secureKeys = jnikeysJson;
   return secureKeys;
 };
 
 module.exports.makeFileInIosDir = (fileContent, fileName) => {
   try {
     const iosCppFilePath = path.join(IOS_DIR_PATH, fileName);
+    fs.outputFileSync(iosCppFilePath, fileContent);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+module.exports.makeFileInProjectDirectoryIos = (fileContent, fileName) => {
+  try {
+    const iosCppFilePath = path.join(PROJECT_DIRECTORY_IOS_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
     return true;
   } catch (error) {

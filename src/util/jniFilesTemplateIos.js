@@ -108,3 +108,15 @@ module.exports.makeJniKeysPackageMMTemplateIOS = (key) => {
   @end
   `;
 };
+
+module.exports.makeXcConfigFIlle = (keys) => {
+  try {
+    let env_keys = [];
+    for (let [key, value] of Object.entries(keys)) {
+      env_keys.push(`${key}=${value}`);
+    }
+    return env_keys.join('\n');
+  } catch (error) {
+    return '';
+  }
+};
