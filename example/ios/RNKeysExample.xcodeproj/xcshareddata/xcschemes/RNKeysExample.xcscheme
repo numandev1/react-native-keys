@@ -15,9 +15,9 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "JniKeysExample.app"
-                     BlueprintName = "JniKeysExample"
-                     ReferencedContainer = "container:JniKeysExample.xcodeproj">
+                     BuildableName = "RNKeysExample.app"
+                     BlueprintName = "RNKeysExample"
+                     ReferencedContainer = "container:RNKeysExample.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "JniKeysExample.app"
-               BlueprintName = "JniKeysExample"
-               ReferencedContainer = "container:JniKeysExample.xcodeproj">
+               BuildableName = "RNKeysExample.app"
+               BlueprintName = "RNKeysExample"
+               ReferencedContainer = "container:RNKeysExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "JniKeysExample.app"
-            BlueprintName = "JniKeysExample"
-            ReferencedContainer = "container:JniKeysExample.xcodeproj">
+            BuildableName = "RNKeysExample.app"
+            BlueprintName = "RNKeysExample"
+            ReferencedContainer = "container:RNKeysExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -86,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "JniKeysExample.app"
-            BlueprintName = "JniKeysExample"
-            ReferencedContainer = "container:JniKeysExample.xcodeproj">
+            BuildableName = "RNKeysExample.app"
+            BlueprintName = "RNKeysExample"
+            ReferencedContainer = "container:RNKeysExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -103,9 +103,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "JniKeysExample.app"
-            BlueprintName = "JniKeysExample"
-            ReferencedContainer = "container:JniKeysExample.xcodeproj">
+            BuildableName = "RNKeysExample.app"
+            BlueprintName = "RNKeysExample"
+            ReferencedContainer = "container:RNKeysExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
