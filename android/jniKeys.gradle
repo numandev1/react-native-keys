@@ -86,16 +86,3 @@ android {
     }
   }
 }
-
-// this is remaining
-//tasks.whenTaskAdded { task ->
-//        task.doFirst() {
-//              loadKeys();
-//              project.keys.each { k, v ->
-//                def escaped = v.replaceAll("%","\\\\u0025")
-//                variant.buildConfigField "String", k, "\"$v\""
-//                variant.resValue "string", k, "\"$escaped\""
-//              }
-//            }
-//}
-
