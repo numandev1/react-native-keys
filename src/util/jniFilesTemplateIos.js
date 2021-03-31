@@ -72,6 +72,7 @@ module.exports.makeJniKeysPackageMMTemplateIOS = (key) => {
   #import "JniKeys.h"
   #import "./crypto.cpp"
   #import "./crypto.hpp"
+  #import "GeneratedDotEnv.m"
   @implementation JniKeys
 
   RCT_EXPORT_MODULE();
@@ -90,6 +91,14 @@ module.exports.makeJniKeysPackageMMTemplateIOS = (key) => {
       }
   }
 
+  + (NSDictionary *)env {
+    return (NSDictionary *)DOT_ENV;
+  }
+
+  + (NSString *)envFor: (NSString *)key {
+      NSString *value = (NSString *)[self.env objectForKey:key];
+      return value;
+  }
 
   RCT_EXPORT_METHOD(getKey:(NSString *) key
                   getBasicWithResolver:(RCTPromiseResolveBlock)resolve
@@ -118,5 +127,18 @@ module.exports.makeXcConfigFIlle = (keys) => {
     return env_keys.join('\n');
   } catch (error) {
     return '';
+  }
+};
+
+module.exports.makeGeneratedDotEnvTemplateIOS = (keys) => {
+  try {
+    let env_keys = [];
+    for (let [key, value] of Object.entries(keys)) {
+      env_keys.push(`@"${key}":@"${value}"`);
+    }
+    const dotEnv = env_keys.join();
+    return `#define DOT_ENV @{ ${dotEnv} };`;
+  } catch (error) {
+    return `#define DOT_ENV @{};`;
   }
 };

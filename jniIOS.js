@@ -12,6 +12,7 @@ const {
   makeHppFileTemplateIOS,
   makeJniKeysPackageMMTemplateIOS,
   makeXcConfigFIlle,
+  makeGeneratedDotEnvTemplateIOS,
 } = require('./src/util/jniFilesTemplateIos');
 
 const makeIosJnuFiles = () => {
@@ -54,13 +55,20 @@ const makeIosJnuFiles = () => {
     'tmp.xcconfig'
   );
 
+  const generatedDotEnvContent = makeGeneratedDotEnvTemplateIOS(publicKeys);
+  const isGeneratedDotEnvFile = makeFileInIosDir(
+    generatedDotEnvContent,
+    'GeneratedDotEnv.m'
+  );
+
   console.log(
     'test',
     isDoneCreatedIosCppFile,
     isDoneCreatedIosHppFile,
     isDoneCreatedIosEncryptionFile,
     isDoneCreatedNniKeysPackageFile,
-    isDoneCreatedIosxcConfigFile
+    isDoneCreatedIosxcConfigFile,
+    isGeneratedDotEnvFile
   );
 };
 makeIosJnuFiles();
