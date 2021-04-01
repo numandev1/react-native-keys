@@ -25,37 +25,40 @@ def getCurrentFlavor() {
 
 def loadKeys(){
   def flavor = getCurrentFlavor()
-  def jniFile = "jnikeys.json"
+  def keysFile = "keys.json"
   def exportCommand="";
-  if (System.env['JNIFILE']) {
-    jniFile = System.env['JNIFILE']
-    exportCommand="export JNIFILE="+jniFile+" && ";
+  if (System.env['KEYSFILE']) {
+    keysFile = System.env['KEYSFILE']
+    exportCommand="export KEYSFILE="+keysFile+" && ";
   }
   else if (project.hasProperty("jniConfigFiles")) {
     project.ext.jniConfigFiles.any { pair ->
       if (flavor.startsWith(pair.key.toLowerCase())) {
-        jniFile = pair.value
-        exportCommand="export JNIFILE="+jniFile+" && ";
+        keysFile = pair.value
+        exportCommand="export KEYSFILE="+keysFile+" && ";
         return true
       }
     }
   }
   if(project.ext.IS_EXAMPLE)
   {
-    exportCommand=exportCommand+"export IS_EXAMPLE='TRUE' && ../../jniAndroid.js"
+    exportCommand=exportCommand+"export IS_EXAMPLE='TRUE' && ../../keysAndroid.js"
   }
   else
   {
-    exportCommand=exportCommand+" ../node_modules/react-native-keys/jniAndroid.js"
+    exportCommand=exportCommand+" ../node_modules/react-native-keys/keysAndroid.js"
   }
   def proc =["/bin/sh", "-c", exportCommand].execute()
   proc.consumeProcessOutput(System.out, System.err)
 
   ////
   def keys = [:]
-  File f = new File("$project.rootDir/../$jniFile");
+  File f = new File("$project.rootDir/../$keysFile");
   if (!f.exists()) {
-    f = new File("$envFile");
+    println("**************************")
+    println("*** Missing KEYs file ****")
+    println("**************************")
+    return;
   }
 
   if (f.exists()) {

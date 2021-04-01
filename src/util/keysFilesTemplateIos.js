@@ -50,14 +50,14 @@ module.exports.makeHppFileTemplateIOS = () => {
   `;
 };
 
-module.exports.makeJniKeysPackageHTemplateIOS = () => {
+module.exports.makeKeysPackageHTemplateIOS = () => {
   return `
   #import <Foundation/Foundation.h>
   #import <React/RCTBridgeModule.h>
 
   NS_ASSUME_NONNULL_BEGIN
 
-  @interface JniKeys : NSObject <RCTBridgeModule>
+  @interface Keys : NSObject <RCTBridgeModule>
   + (NSString *)getKeySync: (NSString *)key;
 
   @end
@@ -67,13 +67,13 @@ module.exports.makeJniKeysPackageHTemplateIOS = () => {
   `;
 };
 
-module.exports.makeJniKeysPackageMMTemplateIOS = (key) => {
+module.exports.makeKeysPackageMMTemplateIOS = (key) => {
   return `
-  #import "JniKeys.h"
+  #import "Keys.h"
   #import "./crypto.cpp"
   #import "./crypto.hpp"
   #import "GeneratedDotEnv.m"
-  @implementation JniKeys
+  @implementation Keys
 
   RCT_EXPORT_MODULE();
   string privateKey="${key}";
@@ -105,7 +105,7 @@ module.exports.makeJniKeysPackageMMTemplateIOS = (key) => {
                   rejecter:(RCTPromiseRejectBlock)reject)
   {
       @try {
-          NSString* value = [JniKeys getKeySync:key];
+          NSString* value = [Keys getKeySync:key];
           resolve(value);
       }
       @catch (NSException *exception) {

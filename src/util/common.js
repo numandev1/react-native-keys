@@ -1,27 +1,27 @@
 const fs = require('fs-extra');
 const path = require('path');
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
-const DEFAULT_FILE_NAME = 'jnikeys.json';
+const DEFAULT_FILE_NAME = 'keys.json';
 const PROJECT_ROOT_DIR_PATH = path.join(
   __dirname,
   isExample ? '../../example/' : '../../../../'
 );
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
-const JNI_IOS_PATH = path.join('node_modules', 'react-native-keys', 'ios');
-const JNI_ANDROID_PATH = path.join(
+const KEYS_IOS_PATH = path.join('node_modules', 'react-native-keys', 'ios');
+const KEYS_ANDROID_PATH = path.join(
   'node_modules',
   'react-native-keys',
   'android'
 );
-const JNI_IOS_EXAMPLE_PATH = path.join('../', 'ios');
-const JNI_ANDROID_EXAMPLE_PATH = path.join('../', 'android');
+const KEYS_IOS_EXAMPLE_PATH = path.join('../', 'ios');
+const KEYS_ANDROID_EXAMPLE_PATH = path.join('../', 'android');
 const IOS_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
-  isExample ? JNI_IOS_EXAMPLE_PATH : JNI_IOS_PATH
+  isExample ? KEYS_IOS_EXAMPLE_PATH : KEYS_IOS_PATH
 );
 const ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
-  isExample ? JNI_ANDROID_EXAMPLE_PATH : JNI_ANDROID_PATH,
+  isExample ? KEYS_ANDROID_EXAMPLE_PATH : KEYS_ANDROID_PATH,
   'src',
   'main',
   'java',
@@ -29,7 +29,7 @@ const ANDROID_DIR_PATH = path.join(
   'rnkeys',
   'c'
 );
-const ANDROID_JNI_DIR_PATH = path.join(
+const ANDROID_KEYS_DIR_PATH = path.join(
   PACKAGE_ROOT_DIR_PATH,
   'android',
   'src',
@@ -41,10 +41,10 @@ const ANDROID_JNI_DIR_PATH = path.join(
 
 const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
 
-module.exports.getJniKeys = (JNI_FILE_NAME) => {
-  const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${JNI_FILE_NAME}`;
-  const jnikeysJson = fs.readJSONSync(jniJsonFilePath);
-  const secureKeys = jnikeysJson;
+module.exports.getKeys = (KEYS_FILE_NAME) => {
+  const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${KEYS_FILE_NAME}`;
+  const keysJson = fs.readJSONSync(jniJsonFilePath);
+  const secureKeys = keysJson;
   return secureKeys;
 };
 
@@ -80,14 +80,14 @@ module.exports.makeFileInAndroidDir = (fileContent, fileName) => {
 
 module.exports.getIosEnviromentFile = () => {
   try {
-    let JNI_FILE_NAME = process.env.JNIFILE;
-    if (JNI_FILE_NAME) {
-      return JNI_FILE_NAME;
+    let KEYS_FILE_NAME = process.env.KEYSFILE;
+    if (KEYS_FILE_NAME) {
+      return KEYS_FILE_NAME;
     } else if (process.env.CONFIGURATION === 'Debug') {
-      const debugFile = process.env.DEBUG_JNIFILE || DEFAULT_FILE_NAME;
+      const debugFile = process.env.DEBUG_KEYSFILE || DEFAULT_FILE_NAME;
       return debugFile;
     } else if (process.env.CONFIGURATION === 'Release') {
-      const debugFile = process.env.RELEASE_JNIFILE || DEFAULT_FILE_NAME;
+      const debugFile = process.env.RELEASE_KEYSFILE || DEFAULT_FILE_NAME;
       return debugFile;
     }
     return DEFAULT_FILE_NAME;
@@ -98,9 +98,9 @@ module.exports.getIosEnviromentFile = () => {
 
 module.exports.getAndroidEnviromentFile = () => {
   try {
-    let JNI_FILE_NAME = process.env.JNIFILE;
-    if (JNI_FILE_NAME) {
-      return JNI_FILE_NAME;
+    let KEYS_FILE_NAME = process.env.KEYSFILE;
+    if (KEYS_FILE_NAME) {
+      return KEYS_FILE_NAME;
     }
     return DEFAULT_FILE_NAME;
   } catch (error) {
@@ -110,7 +110,7 @@ module.exports.getAndroidEnviromentFile = () => {
 
 module.exports.makeFileInAndroidForBridgeJniDir = (fileContent, fileName) => {
   try {
-    const filePath = path.join(ANDROID_JNI_DIR_PATH, fileName);
+    const filePath = path.join(ANDROID_KEYS_DIR_PATH, fileName);
     fs.outputFileSync(filePath, fileContent);
     return true;
   } catch (error) {

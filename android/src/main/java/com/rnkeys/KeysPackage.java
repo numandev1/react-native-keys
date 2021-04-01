@@ -9,7 +9,7 @@
   import java.util.Collections;
   import java.util.List;
 
-  public class JniKeysPackage implements ReactPackage {
+  public class KeysPackage implements ReactPackage {
 
       @Override
       public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
@@ -21,7 +21,7 @@
               ReactApplicationContext reactContext) {
           List<NativeModule> modules = new ArrayList<>();
 
-            modules.add(new JniKeysModule(reactContext));
+            modules.add(new KeysModule(reactContext));
 
           return modules;
       }

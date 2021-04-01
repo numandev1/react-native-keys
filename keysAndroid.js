@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const SHA256 = require('crypto-js/sha256');
 const {
-  getJniKeys,
+  getKeys,
   makeFileInAndroidDir,
   makeFileInAndroidForBridgeJniDir,
   getAndroidEnviromentFile,
@@ -10,11 +10,11 @@ const {
   makeCppFileTemplateAndroid,
   makeHppFileTemplateAndroid,
   makeCryptographicModuleTemplateAndroid,
-} = require('./src/util/jniFilesTemplateAndroid');
+} = require('./src/util/keysFilesTemplateAndroid');
 
 const makeAndroidJnuFiles = () => {
-  const JNI_FILE_NAME = getAndroidEnviromentFile();
-  const allKeys = getJniKeys(JNI_FILE_NAME);
+  const KEYS_FILE_NAME = getAndroidEnviromentFile();
+  const allKeys = getKeys(KEYS_FILE_NAME);
   const secureKeys = allKeys.secure;
   const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateAndroid(
@@ -38,7 +38,7 @@ const makeAndroidJnuFiles = () => {
   );
   const isDoneCreatedAndroidCryptographicModuleFile = makeFileInAndroidForBridgeJniDir(
     cryptographicModuleFileContent,
-    'JniKeysModule.java'
+    'KeysModule.java'
   );
 
   console.log(

@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const SHA256 = require('crypto-js/sha256');
 const {
-  getJniKeys,
+  getKeys,
   makeFileInIosDir,
   makeEncryptionFile,
   getIosEnviromentFile,
@@ -10,14 +10,14 @@ const {
 const {
   makeCppFileTemplateIOS,
   makeHppFileTemplateIOS,
-  makeJniKeysPackageMMTemplateIOS,
+  makeKeysPackageMMTemplateIOS,
   makeXcConfigFIlle,
   makeGeneratedDotEnvTemplateIOS,
-} = require('./src/util/jniFilesTemplateIos');
+} = require('./src/util/keysFilesTemplateIos');
 
 const makeIosJnuFiles = () => {
-  const JNI_FILE_NAME = getIosEnviromentFile();
-  const allKeys = getJniKeys(JNI_FILE_NAME);
+  const KEYS_FILE_NAME = getIosEnviromentFile();
+  const allKeys = getKeys(KEYS_FILE_NAME);
   const secureKeys = allKeys.secure;
   const publicKeys = allKeys.public;
   const stringifyKeys = JSON.stringify(secureKeys);
@@ -43,10 +43,10 @@ const makeIosJnuFiles = () => {
 
   const privateKey = SHA256(stringifyKeys).toString();
   const halfKey = privateKey.substr(privateKey.length / 2);
-  const jniKeysPackageMMFile = makeJniKeysPackageMMTemplateIOS(halfKey);
+  const jniKeysPackageMMFile = makeKeysPackageMMTemplateIOS(halfKey);
   const isDoneCreatedNniKeysPackageFile = makeFileInIosDir(
     jniKeysPackageMMFile,
-    'JniKeys.mm'
+    'Keys.mm'
   );
 
   const xcConfigFileContent = makeXcConfigFIlle(publicKeys);

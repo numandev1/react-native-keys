@@ -31,7 +31,7 @@ project.xcworkspace
 *.cxx
 android/.cxx/*
 crypto.cpp
-JniKeysModule.java
+KeysModule.java
 # Android/IJ
 #
 .idea

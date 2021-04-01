@@ -64,14 +64,14 @@ module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
   import org.json.JSONException;
   import org.json.JSONObject;
   
-  public class JniKeysModule extends ReactContextBaseJavaModule {
-      public static final String REACT_CLASS = "JniKeys";
+  public class KeysModule extends ReactContextBaseJavaModule {
+      public static final String REACT_CLASS = "Keys";
       public static final String PRIVATE_KEY = "${key}";
       private static ReactApplicationContext reactContext;
   
       static private JSONObject jniData;
   
-      JniKeysModule(ReactApplicationContext context) {
+      KeysModule(ReactApplicationContext context) {
           super(context);
           reactContext = context;
       }

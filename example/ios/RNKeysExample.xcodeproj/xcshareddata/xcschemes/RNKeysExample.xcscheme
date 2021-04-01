@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;exec &gt; ${PROJECT_DIR}/prebuild.log 2&gt;&amp;1&#10;echo &quot;hello world&quot;&#10;# IS_EXAMPLE flag is for contribution not for production&#10;export IS_EXAMPLE=TRUE&#10;&quot;${SRCROOT}/../../jniIOS.js&quot;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;exec &gt; ${PROJECT_DIR}/prebuild.log 2&gt;&amp;1&#10;echo &quot;hello world&quot;&#10;# IS_EXAMPLE flag is for contribution not for production&#10;export IS_EXAMPLE=TRUE&#10;&quot;${SRCROOT}/../../keysIOS.js&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -32,10 +32,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83CBBA2D1A601D0E00E9B192"
-               BuildableName = "libReact.a"
+               BlueprintIdentifier = "1BEE828C124E6416179B904A9F66D794"
+               BuildableName = "React"
                BlueprintName = "React"
-               ReferencedContainer = "container:../node_modules/react-native/React/React.xcodeproj">
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

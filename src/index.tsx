@@ -1,5 +1,5 @@
 import { NativeModules } from 'react-native';
 
-const { JniKeys } = NativeModules;
+const { Keys } = NativeModules;
 
-export default JniKeys;
+export default Keys;

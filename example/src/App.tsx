@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import JniKeys from 'react-native-keys';
+import Keys from 'react-native-keys';
 
 export default function App() {
   const [result, setResult] = useState('');
   useEffect(() => {
     (async () => {
-      const value = await JniKeys.getKey('secure_key');
+      const value = await Keys.getKey('secure_key');
       setResult(value);
       console.log(value, 'test');
     })();

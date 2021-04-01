@@ -11,7 +11,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#import "JniKeys.h"
+#import "Keys.h"
 
 #if DEBUG
 #import <FlipperKit/FlipperClient.h>
@@ -39,7 +39,7 @@ static void InitializeFlipper(UIApplication *application) {
     InitializeFlipper(application);
   #endif
   
-  NSString *appId = [JniKeys envFor:@"APP_ID"];
+  NSString *appId = [Keys envFor:@"APP_ID"];
   NSLog(@"my app id is %@",appId);
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

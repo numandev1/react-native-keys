@@ -10,7 +10,7 @@ yarn add react-native-keys
 
 ## Basic Usage
 
-Create a new file `.jnikeys.json` in the root of your React Native app and add keys in `secure` object like this:
+Create a new file `.keys.json` in the root of your React Native app and add keys in `secure` object like this:
 
 ```
 {
@@ -26,9 +26,9 @@ Then access variables defined there from your app:
 ## React Native
 
 ```js
-import JniKeys from 'react-native-keys';
+import Keys from 'react-native-keys';
 
-const value = await JniKeys.getKey('key1'); //value1
+const value = await Keys.getKey('key1'); //value1
 ```
 
 Keep in mind It's [basically impossible to prevent users from reverse engineering mobile app secrets](https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/) but we can more secure key than [react-native-config](https://github.com/luggit/react-native-config 'react-native-config'),
@@ -61,9 +61,9 @@ if cocoapods are used in the project then pod has to be installed as well:
 - Manual Link (iOS)
 
   1.  In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-  2.  Go to `node_modules` ➜ `react-native-keys` and add `JniKeys.xcodeproj`
-  3.  Expand the `JniKeys.xcodeproj` ➜ `Products` folder
-  4.  In the project navigator, select your project. Add `JniKeys.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+  2.  Go to `node_modules` ➜ `react-native-keys` and add `Keys.xcodeproj`
+  3.  Expand the `Keys.xcodeproj` ➜ `Products` folder
+  4.  In the project navigator, select your project. Add `Keys.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
   5.  And go the Build Settings tab. Make sure All is toggled on (instead of Basic)
   6.  Look for Header Search Paths and add `$(SRCROOT)/../node_modules/react-native-keys/ios/**` as `non-recursive`
 
@@ -88,13 +88,13 @@ if cocoapods are used in the project then pod has to be installed as well:
   **MainApplication.java**
 
   ```diff
-  + import com.rnkeys.JniKeysPackage;
+  + import com.rnkeys.KeysPackage;
 
   @Override
   protected List<ReactPackage> getPackages() {
   	   return Arrays.asList(
           		new MainReactPackage()
-  +      		new JniKeysPackage()
+  +      		new KeysPackage()
       );
   }
   ```
@@ -106,9 +106,9 @@ if cocoapods are used in the project then pod has to be installed as well:
 you can only read jni key into java file.
 
 ```java
-import com.rnkeys.JniKeysModule;
+import com.rnkeys.KeysModule;
 
-JniKeysModule.getKeySync("key1");   //value1
+KeysModule.getKeySync("key1");   //value1
 ```
 
 ### iOS
@@ -117,13 +117,13 @@ Read variables declared in `.env` from your Obj-C classes like:
 
 ```objective-c
 // import header
-#import "JniKeys.h"
+#import "Keys.h"
 
 // then read individual keys like:
-NSString *value = [JniKeys getKeySync:@"key1"];   //value1
+NSString *value = [Keys getKeySync:@"key1"];   //value1
 ```
 
-- Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate JNI keys on native ios side (into node*modules) Make sure to select your target under \_Provide build settings from*, so `$SRCROOT` environment variables is available to the script.
+- Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate KEYS keys on native ios side (into node*modules) Make sure to select your target under \_Provide build settings from*, so `$SRCROOT` environment variables is available to the script.
 
 ```
 "${SRCROOT}/../node_modules/react-native-keys/jniIOS.js"

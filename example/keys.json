@@ -2,7 +2,7 @@
   "secure": {
     "abc": "12345678",
     "cde": "5678",
-    "secure_key": "test 123"
+    "secure_key": "test 1234"
   },
   "public": {
     "APP_NAME": "RNKEYS",

@@ -1,9 +1,9 @@
 
-  #import "JniKeys.h"
+  #import "Keys.h"
   #import "./crypto.cpp"
   #import "./crypto.hpp"
   #import "GeneratedDotEnv.m"
-  @implementation JniKeys
+  @implementation Keys
 
   RCT_EXPORT_MODULE();
   string privateKey="c8913b62407357b669fa6c0c27a1292d";
@@ -35,7 +35,7 @@
                   rejecter:(RCTPromiseRejectBlock)reject)
   {
       @try {
-          NSString* value = [JniKeys getKeySync:key];
+          NSString* value = [Keys getKeySync:key];
           resolve(value);
       }
       @catch (NSException *exception) {
@@ -45,4 +45,3 @@
   }
 
   @end
-  

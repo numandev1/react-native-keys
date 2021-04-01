@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  JniKeysExample
+//  KeysExample
 //
 
 import Foundation
