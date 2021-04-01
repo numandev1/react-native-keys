@@ -1,5 +1,5 @@
 
-  package com.reactnativejnikeys;
+  package com.rnkeys;
 
   public class CLibController {
 

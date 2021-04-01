@@ -51,7 +51,7 @@ module.exports.makeHppFileTemplateAndroid = () => {
 
 module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
   return `
-  package com.reactnativejnikeys;
+  package com.rnkeys;
   import android.util.Log;
   
   import androidx.annotation.NonNull;

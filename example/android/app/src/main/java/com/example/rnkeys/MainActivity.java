@@ -1,4 +1,4 @@
-package com.example.reactnativejnikeys;
+package com.example.rnkeys;
 
 import com.facebook.react.ReactActivity;
 

@@ -25,9 +25,8 @@
   }
 
   extern "C" JNIEXPORT jstring JNICALL
-  Java_com_reactnativejnikeys_CLibController_getJniJsonStringyfyData(JNIEnv * env, jobject thiz,jstring key) {
+  Java_com_rnkeys_CLibController_getJniJsonStringyfyData(JNIEnv * env, jobject thiz,jstring key) {
       auto *crypto = new Crypto();
       std::string _key{jstring2string(env,key)};
       return env->NewStringUTF(crypto->getJniJsonStringyfyData(_key).c_str());
   }
-

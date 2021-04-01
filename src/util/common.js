@@ -26,7 +26,7 @@ const ANDROID_DIR_PATH = path.join(
   'main',
   'java',
   'com',
-  'reactnativejnikeys',
+  'rnkeys',
   'c'
 );
 const ANDROID_JNI_DIR_PATH = path.join(
@@ -36,7 +36,7 @@ const ANDROID_JNI_DIR_PATH = path.join(
   'main',
   'java',
   'com',
-  'reactnativejnikeys'
+  'rnkeys'
 );
 
 const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');

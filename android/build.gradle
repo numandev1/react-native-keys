@@ -50,7 +50,7 @@ android {
   }
     externalNativeBuild {
        cmake {
-           path "src/main/java/com/reactnativejnikeys/c/CMakeLists.txt"
+           path "src/main/java/com/rnkeys/c/CMakeLists.txt"
        }
    }
 }

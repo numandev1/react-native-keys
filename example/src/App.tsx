@@ -6,7 +6,7 @@ export default function App() {
   const [result, setResult] = useState('');
   useEffect(() => {
     (async () => {
-      const value = await JniKeys.getKey('younas');
+      const value = await JniKeys.getKey('secure_key');
       setResult(value);
       console.log(value, 'test');
     })();
