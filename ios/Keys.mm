@@ -6,7 +6,7 @@
   @implementation Keys
 
   RCT_EXPORT_MODULE();
-  string privateKey="c8913b62407357b669fa6c0c27a1292d";
+  string privateKey="781db1c63f175b3dd18324db8ba28048";
   + (NSString *)getKeySync: (NSString *)key {
       @try {
           NSString* stringfyData = [NSString stringWithCString:Crypto().getJniJsonStringyfyData(privateKey).c_str() encoding:[NSString defaultCStringEncoding]];
@@ -45,3 +45,4 @@
   }
 
   @end
+  
