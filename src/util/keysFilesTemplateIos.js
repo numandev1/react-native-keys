@@ -58,7 +58,7 @@ module.exports.makeKeysPackageHTemplateIOS = () => {
   NS_ASSUME_NONNULL_BEGIN
 
   @interface Keys : NSObject <RCTBridgeModule>
-  + (NSString *)getKeySync: (NSString *)key;
+  + (NSString *)secureFor: (NSString *)key;
 
   @end
 
@@ -77,7 +77,7 @@ module.exports.makeKeysPackageMMTemplateIOS = (key) => {
 
   RCT_EXPORT_MODULE();
   string privateKey="${key}";
-  + (NSString *)getKeySync: (NSString *)key {
+  + (NSString *)secureFor: (NSString *)key {
       @try {
           NSString* stringfyData = [NSString stringWithCString:Crypto().getJniJsonStringyfyData(privateKey).c_str() encoding:[NSString defaultCStringEncoding]];
           NSLog(stringfyData);
@@ -91,21 +91,21 @@ module.exports.makeKeysPackageMMTemplateIOS = (key) => {
       }
   }
 
-  + (NSDictionary *)env {
+  + (NSDictionary *)public_keys {
     return (NSDictionary *)DOT_ENV;
   }
 
-  + (NSString *)envFor: (NSString *)key {
-      NSString *value = (NSString *)[self.env objectForKey:key];
+  + (NSString *)publicFor: (NSString *)key {
+      NSString *value = (NSString *)[self.public_keys objectForKey:key];
       return value;
   }
 
-  RCT_EXPORT_METHOD(getKey:(NSString *) key
+  RCT_EXPORT_METHOD(secureFor:(NSString *) key
                   getBasicWithResolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
   {
       @try {
-          NSString* value = [Keys getKeySync:key];
+          NSString* value = [Keys secureFor:key];
           resolve(value);
       }
       @catch (NSException *exception) {

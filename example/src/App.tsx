@@ -6,9 +6,8 @@ export default function App() {
   const [result, setResult] = useState('');
   useEffect(() => {
     (async () => {
-      const value = await Keys.getKey('secure_key');
+      const value = await Keys.secureFor('secure2');
       setResult(value);
-      console.log(value, 'test');
     })();
   }, []);
   return (

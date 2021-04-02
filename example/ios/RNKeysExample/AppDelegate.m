@@ -39,8 +39,12 @@ static void InitializeFlipper(UIApplication *application) {
     InitializeFlipper(application);
   #endif
   
-  NSString *appId = [Keys envFor:@"APP_ID"];
-  NSLog(@"my app id is %@",appId);
+  NSString *appId = [Keys publicFor:@"APP_ID"];
+  NSLog(@"this key is from public= %@",appId);
+  
+  
+  NSString *secure1Value = [Keys secureFor:@"secure1"];
+  NSLog(@"this key is from secure= %@",secure1Value);
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge

@@ -26,13 +26,13 @@
   
   
       @ReactMethod
-      static public void getKey(String key,Promise promise) {
-          String value=getKeySync(key);
+      static public void secureFor(String key,Promise promise) {
+          String value=secureFor(key);
           promise.resolve(value);
       }
   
   
-      static public String getKeySync(String key) {
+      static public String secureFor(String key) {
   
           try {
               if (jniData == null)
@@ -57,4 +57,3 @@
           return REACT_CLASS;
       }
     }  
-  

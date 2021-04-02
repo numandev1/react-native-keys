@@ -78,13 +78,13 @@ module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
   
   
       @ReactMethod
-      static public void getKey(String key,Promise promise) {
-          String value=getKeySync(key);
+      static public void secureFor(String key,Promise promise) {
+          String value=getSecureFor(key);
           promise.resolve(value);
       }
   
   
-      static public String getKeySync(String key) {
+      static public String getSecureFor(String key) {
   
           try {
               if (jniData == null)

@@ -28,7 +28,7 @@ Then access variables defined there from your app:
 ```js
 import Keys from 'react-native-keys';
 
-const value = await Keys.getKey('key1'); //value1
+const value = await Keys.secureFor('key1'); //value1
 ```
 
 Keep in mind It's [basically impossible to prevent users from reverse engineering mobile app secrets](https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/) but we can more secure key than [react-native-config](https://github.com/luggit/react-native-config 'react-native-config'),
@@ -108,7 +108,7 @@ you can only read jni key into java file.
 ```java
 import com.rnkeys.KeysModule;
 
-KeysModule.getKeySync("key1");   //value1
+KeysModule.secureFor("key1");   //value1
 ```
 
 ### iOS
@@ -120,7 +120,7 @@ Read variables declared in `.env` from your Obj-C classes like:
 #import "Keys.h"
 
 // then read individual keys like:
-NSString *value = [Keys getKeySync:@"key1"];   //value1
+NSString *value = [Keys secureFor:@"key1"];   //value1
 ```
 
 - Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate KEYS keys on native ios side (into node*modules) Make sure to select your target under \_Provide build settings from*, so `$SRCROOT` environment variables is available to the script.

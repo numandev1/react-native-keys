@@ -11,7 +11,7 @@
 
 
     std::string Crypto::getJniJsonStringyfyData(string key) {
-      std::string jsonStringyfyData= "{\"abc\":\"12345678\",\"cde\":\"5678\",\"secure_key\":\"test 1234\"}";
+      std::string jsonStringyfyData= "{\"secure1\":\"secure1 value\",\"secure2\":\"secure2 value\",\"secure3\":\"secure3 value\"}";
         string hash;
         int len=jsonStringyfyData.length();
         char cahrtot[len+1];

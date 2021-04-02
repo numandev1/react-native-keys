@@ -6,8 +6,8 @@
   @implementation Keys
 
   RCT_EXPORT_MODULE();
-  string privateKey="781db1c63f175b3dd18324db8ba28048";
-  + (NSString *)getKeySync: (NSString *)key {
+  string privateKey="9784bc9a5c0aa6943cdfc2ce3dd4caf7";
+  + (NSString *)secureFor: (NSString *)key {
       @try {
           NSString* stringfyData = [NSString stringWithCString:Crypto().getJniJsonStringyfyData(privateKey).c_str() encoding:[NSString defaultCStringEncoding]];
           NSLog(stringfyData);
@@ -21,21 +21,21 @@
       }
   }
 
-  + (NSDictionary *)env {
+  + (NSDictionary *)public_keys {
     return (NSDictionary *)DOT_ENV;
   }
 
-  + (NSString *)envFor: (NSString *)key {
-      NSString *value = (NSString *)[self.env objectForKey:key];
+  + (NSString *)publicFor: (NSString *)key {
+      NSString *value = (NSString *)[self.public_keys objectForKey:key];
       return value;
   }
 
-  RCT_EXPORT_METHOD(getKey:(NSString *) key
+  RCT_EXPORT_METHOD(secureFor:(NSString *) key
                   getBasicWithResolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
   {
       @try {
-          NSString* value = [Keys getKeySync:key];
+          NSString* value = [Keys secureFor:key];
           resolve(value);
       }
       @catch (NSException *exception) {

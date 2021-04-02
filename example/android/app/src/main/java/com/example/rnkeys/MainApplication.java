@@ -2,6 +2,8 @@ package com.example.rnkeys;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -11,6 +13,9 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.rnkeys.KeysPackage;
+
+import static com.rnkeys.KeysModule.getSecureFor;
+
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -47,6 +52,8 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager()); // Remove this line if you don't want Flipper enabled
+    String secureValue=getSecureFor("secure3");
+    Log.d("secure(JNI)", "this value is from secure: "+secureValue);
   }
 
   /**
