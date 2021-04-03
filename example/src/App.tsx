@@ -9,7 +9,7 @@ export default function App() {
     (async () => {
       const value1 = await Keys.secureFor('secure2');
       setJniValue(value1);
-      const value2 = await Keys.APP_ID;
+      const value2 = Keys.APP_ID;
       setPublicValue(value2);
     })();
   }, []);
