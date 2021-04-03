@@ -277,7 +277,14 @@ Then edit the newly created scheme to make it use a different env file. From the
 - Click "Pre-actions", and under the plus sign select "New Run Script Action"
 - Where it says "Type a script or drag a script file", type:
 
-```
+you can also set different file for debug and release build like this.
+
+```sh
+export DEBUG_JNIFILE=keys,debug.json
+export RELEASE_JNIFILE=keys.staging.json
+
+#above DEBUG_JNIFILE and RELEASE_JNIFILE variable are optional
+
 "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
 ```
 
