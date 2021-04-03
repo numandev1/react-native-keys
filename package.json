@@ -1,6 +1,6 @@
 {
   "name": "react-native-keys",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "secure keys through jni",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -91,7 +91,8 @@
     },
     "npm": {
       "publish": true,
-      "skipChecks": true
+      "skipChecks": true,
+      "ignoreVersion": true
     },
     "github": {
       "release": true
