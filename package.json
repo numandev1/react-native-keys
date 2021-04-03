@@ -1,6 +1,6 @@
 {
   "name": "react-native-keys",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "secure keys through jni",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -86,8 +86,8 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
+      "commitMessage": "chore: release 0.0.4",
+      "tagName": "v0.0.4"
     },
     "npm": {
       "publish": true,
