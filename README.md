@@ -10,13 +10,20 @@ yarn add react-native-keys
 
 ## Basic Usage
 
-Create a new file `.keys.json` in the root of your React Native app and add keys in `secure` object like this:
+Create a new file `keys.json` in the root of your React Native app and add keys in `secure` object for JNI and add keys in public for without jni usage like this:
 
 ```
 {
-  "secure":{
-    "key1":"value1",
-    "key2":"value2"
+  "secure": {
+    "secure1": "secure1 value",
+    "secure2": "secure2 value",
+    "secure3": "secure3 value"
+  },
+  "public": {
+    "APP_NAME": "RNKEYS",
+    "public1": "numan",
+    "public2": "usman",
+    "APP_ID": "com.example.rnkeys"
   }
 }
 ```
