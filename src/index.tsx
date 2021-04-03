@@ -1,5 +1,7 @@
 import { NativeModules } from 'react-native';
 
 const { Keys } = NativeModules;
-
-export default Keys;
+export default {
+  ...Keys.getConstants(),
+  ...Keys,
+};

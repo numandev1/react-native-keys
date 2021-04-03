@@ -52,6 +52,8 @@ module.exports.makeHppFileTemplateAndroid = () => {
 module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
   return `
   package com.rnkeys;
+  import android.content.Context;
+  import android.content.res.Resources;
   import android.util.Log;
   
   import androidx.annotation.NonNull;
@@ -63,6 +65,10 @@ module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
   
   import org.json.JSONException;
   import org.json.JSONObject;
+
+  import java.lang.reflect.Field;
+  import java.util.HashMap;
+  import java.util.Map;
   
   public class KeysModule extends ReactContextBaseJavaModule {
       public static final String REACT_CLASS = "Keys";
@@ -107,6 +113,37 @@ module.exports.makeCryptographicModuleTemplateAndroid = (key) => {
       @Override
       public String getName() {
           return REACT_CLASS;
+      }
+
+      @Override
+      public Map<String, Object> getConstants() {
+        final Map<String, Object> constants = new HashMap<>();
+  
+        try {
+          Context context = getReactApplicationContext();
+          int resId = context.getResources().getIdentifier("build_config_package", "string", context.getPackageName());
+          String className;
+          try {
+            className = context.getString(resId);
+          } catch (Resources.NotFoundException e) {
+            className = getReactApplicationContext().getApplicationContext().getPackageName();
+          }
+          Class clazz = Class.forName(className + ".BuildConfig");
+          Field[] fields = clazz.getDeclaredFields();
+          for(Field f: fields) {
+            try {
+              constants.put(f.getName(), f.get(null));
+            }
+            catch (IllegalAccessException e) {
+              Log.d("ReactNative", "ReactConfig: Could not access BuildConfig field " + f.getName());
+            }
+          }
+        }
+        catch (ClassNotFoundException e) {
+          Log.d("ReactNative", "ReactConfig: Could not find BuildConfig class");
+        }
+  
+        return constants;
       }
     }  
   `;
