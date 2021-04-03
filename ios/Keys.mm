@@ -30,6 +30,10 @@
       return value;
   }
 
+  - (NSDictionary *)constantsToExport {
+    return (NSDictionary *)DOT_ENV;
+  }
+
   RCT_EXPORT_METHOD(secureFor:(NSString *) key
                   getBasicWithResolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
