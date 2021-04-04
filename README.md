@@ -68,7 +68,6 @@ Link the library:
 
 (Note: For React Native 0.60 or greater, [autolinking](https://reactnative.dev/blog/2019/07/03/version-60#native-modules-are-now-autolinked) is available)
 
-(Note: For Windows, this module supports autolinking when used with `react-native-windows@0.63`
 or later. For earlier versions you need to manually link the module.)
 
 ```
@@ -192,7 +191,7 @@ With one extra step environment values can be exposed to "Info.plist" and Build 
 
 1. click on the file tree and create new file of type XCConfig
    ![img](./media/1.png)
-   ![img](./media-pics/2.png)
+   ![img](./media/2.png)
 2. save it under `ios` folder as "Config.xcconfig" with the following content:
 
 ```
