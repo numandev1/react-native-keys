@@ -201,7 +201,6 @@ With one extra step environment values can be exposed to "Info.plist" and Build 
 3. add the following to your ".gitignore":
 
 ```
-# react-native-config codegen
 ios/tmp.xcconfig
 
 ```
