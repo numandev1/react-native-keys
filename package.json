@@ -32,7 +32,16 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "config",
+    "environment",
+    "environment-variables",
+    "secure",
+    "env",
+    "jni",
+    "keys",
+    "jni-android",
+    "jni-ios"
   ],
   "repository": "https://github.com/nomi9995/react-native-keys",
   "author": "Muhammad Numan <muhammadnuman70@gmail.com> (https://github.com/nomi9995)",
