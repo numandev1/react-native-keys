@@ -80,7 +80,7 @@ project.ext.react = [
 ]
 //IS_EXAMPLE flag is for contribution not for production
 project.ext.IS_EXAMPLE = true;
-project.ext.jniConfigFiles = [
+project.ext.keyFiles = [
   debug: "keys.json",
   release: "keys.staging.json",
 ]

@@ -253,7 +253,7 @@ $ cd android && KEYSFILE=keys.staging.json ./gradlew assembleRelease
 Alternatively, you can define a map in `build.gradle` associating builds with env files. Do it before the `apply from` call, and use build cases in lowercase, like:
 
 ```
-project.ext.jniConfigFiles = [
+project.ext.keyFiles = [
   debug: "keys.json",
   release: "keys.staging.json",
 ]
@@ -280,10 +280,10 @@ Then edit the newly created scheme to make it use a different env file. From the
 you can also set different file for debug and release build like this.
 
 ```sh
-export DEBUG_JNIFILE=keys,debug.json
-export RELEASE_JNIFILE=keys.staging.json
+export DEBUG_KEYSFILE=keys.debug.json
+export RELEASE_KEYSFILE=keys.staging.json
 
-#above DEBUG_JNIFILE and RELEASE_JNIFILE variable are optional
+#above DEBUG_KEYSFILE and RELEASE_KEYSFILE variable are optional
 
 "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
 ```

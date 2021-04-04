@@ -31,8 +31,8 @@ def loadKeys(){
     keysFile = System.env['KEYSFILE']
     exportCommand="export KEYSFILE="+keysFile+" && ";
   }
-  else if (project.hasProperty("jniConfigFiles")) {
-    project.ext.jniConfigFiles.any { pair ->
+  else if (project.hasProperty("keyFiles")) {
+    project.ext.keyFiles.any { pair ->
       if (flavor.startsWith(pair.key.toLowerCase())) {
         keysFile = pair.value
         exportCommand="export KEYSFILE="+keysFile+" && ";
