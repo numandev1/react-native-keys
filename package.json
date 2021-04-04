@@ -1,6 +1,6 @@
 {
   "name": "react-native-keys",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "secure keys through jni",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
