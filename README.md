@@ -290,6 +290,10 @@ export RELEASE_KEYSFILE=keys.staging.json
 
 Also ensure that "Provide build settings from", just above the script, has a value selected so that PROJECT_DIR is set.
 
+## Test Security
+
+you can decompile** APK/IPA** by this package [react-native-decompiler](https://www.npmjs.com/package/react-native-decompiler 'react-native-decompiler') and can find public and secure keys. you will not find secure keys.
+
 ## Meta
 
 Created by [Numan.dev](https://numan.dev/).

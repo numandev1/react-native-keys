@@ -22,7 +22,7 @@ const makeIosJnuFiles = () => {
   const publicKeys = allKeys.public;
   const stringifyKeys = JSON.stringify(secureKeys);
   const cppFileContent = makeCppFileTemplateIOS(
-    stringifyKeys.replace(/(\")/g, '\\"')
+    stringifyKeys.replace(/(")/g, '\\"')
   );
   const isDoneCreatedIosCppFile = makeFileInIosDir(
     cppFileContent,
