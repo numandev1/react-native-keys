@@ -54,7 +54,7 @@ await Keys.secureFor('GOOGLE_API_KEY '); // 'ABCSE#$DDSD
 await Keys.secureFor('SECRET_KEY'); // 'ABCSE#$DDSD
 ```
 
-Keep in mind It's [basically impossible to prevent users from reverse engineering mobile app secrets](https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/) but this librrary iis more secure.
+Keep in mind It's [basically impossible to prevent users from reverse engineering mobile app secrets](https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/) but this library is more secure.
 
 ## Setup
 
