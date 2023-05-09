@@ -10,6 +10,8 @@
     "android",
     "ios",
     "cpp",
+    "keysAndroid.js",
+    "keysIOS.js",
     "react-native-keys.podspec",
     "!lib/typescript/example",
     "!android/build",
