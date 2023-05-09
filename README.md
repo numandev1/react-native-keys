@@ -1,4 +1,13 @@
-# react-native-keys
+<div align="center">
+<img src="./media/key.png" height="200" />
+</div>
+The fastest Securing **Keys/Envs** library for React Native.
+
+- 🏎️ Up to 200x faster than all other solutions
+- ⚡️ Lightning fast implementation with pure C++ and JSI
+- 🧪 Well tested in JS and C++
+- 🔐 Made for securing keys on react native apps
+- 🗄️ Manage different enviroments (**dev**, **staging**, **production**)
 
 we are using [JSI](https://reactnative.dev/architecture/glossary#javascript-interfaces-jsi) for fast performance and [JNI](https://reactnative.dev/architecture/glossary#java-native-interface-jni) + encryption keys in c++ compiled file
 
@@ -6,6 +15,19 @@ Manage local **secure** and **unsecure** enviroment through react-native-keys su
 
 **secure:** Secure enviroment use JNI to secure keys which we cannot easily decompile or hack
 **public:** Public enviroment use native bridging which can be decomile or hack
+
+### Would you like to support me?
+
+<div align="center">
+<a href="https://github.com/numandev1?tab=followers">
+    <img src="https://img.shields.io/github/followers/numandev1?label=Follow%20%40numandev1&style=social" height="36" />
+</a>
+<a href="https://www.youtube.com/channel/UCYCUspfN7ZevgCj3W5GlFAw"><img src="https://img.shields.io/youtube/channel/subscribers/UCYCUspfN7ZevgCj3W5GlFAw?style=social" height="36" /><a/>
+</br>
+<a href="https://www.buymeacoffee.com/numan.dev" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+</div>
+
+---
 
 ## Installation
 
