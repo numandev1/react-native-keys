@@ -1,2 +1,9 @@
 hello world
-test true true true true true true
+react-native-keys {
+  isDoneCrypoCppFile: true,
+  isDoneCreatedHFile: true,
+  isDoneCreatedIosEncryptionFile: true,
+  isGeneratedPrivateKeyFile: true,
+  isDoneCreatedIosxcConfigFile: true,
+  isGeneratedDotEnvFile: true
+}

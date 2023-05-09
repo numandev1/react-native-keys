@@ -1,0 +1,13 @@
+{
+  "secure": {
+    "secure1": "production secure1 value 11 1200 11",
+    "secure2": "production secure2 value",
+    "secure3": "production secure3 value"
+  },
+  "public": {
+    "APP_NAME": "production RNKEYS 111 2200",
+    "public1": "production numan",
+    "public2": "production usman",
+    "APP_ID": "com.example.rnkeys.production"
+  }
+}

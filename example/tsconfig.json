@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "react-native-keys": [
+        "../src/index.ts"
+      ]
+    },
+  },
+  "include": [
+    "src",
+    "index.js",
+    "index.ts",
+    "App.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

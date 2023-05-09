@@ -1,0 +1,13 @@
+{
+  "secure": {
+    "secure1": "dev secure1 value 11 1200 11",
+    "secure2": "dev secure2 value",
+    "secure3": "dev secure3 value"
+  },
+  "public": {
+    "APP_NAME": "dev RNKEYS 111 2200",
+    "public1": "dev numan",
+    "public2": "dev usman",
+    "APP_ID": "com.example.rnkeys.dev"
+  }
+}

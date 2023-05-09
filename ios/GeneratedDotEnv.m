@@ -1,1 +1,1 @@
-#define DOT_ENV @{ @"APP_NAME":@"RNKEYS",@"public1":@"numan",@"public2":@"usman",@"APP_ID":@"com.example.rnkeys" };
+#define DOT_ENV @{ @"APP_NAME":@"staging RNKEYS 111 2200",@"public1":@"staging numan",@"public2":@"staging usman",@"APP_ID":@"com.example.rnkeys.staging" };

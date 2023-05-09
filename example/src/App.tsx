@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import Keys from 'react-native-keys';
+import RNKeys from 'react-native-keys';
 
 export default function App() {
   const [jniValue, setJniValue] = useState('');
   const [publicValue, setPublicValue] = useState('');
   useEffect(() => {
-    (async () => {
-      const value1 = await Keys.secureFor('secure2');
-      setJniValue(value1);
-      const value2 = Keys.APP_ID;
-      setPublicValue(value2);
-    })();
+    const value1 = RNKeys.secureFor('secure1');
+    console.log(value1, 'value1');
+    setJniValue(value1);
+    const value2 = RNKeys.APP_NAME;
+    setPublicValue(value2);
   }, []);
   return (
     <View style={styles.container}>

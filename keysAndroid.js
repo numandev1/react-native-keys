@@ -2,13 +2,13 @@
 const SHA256 = require('crypto-js/sha256');
 const {
   getKeys,
-  makeFileInAndroidDir,
-  makeFileInAndroidForBridgeJniDir,
+  makeFileInCppAndroidDirectory,
+  makeFileInAndroidMainAssetsFolder,
   getAndroidEnviromentFile,
 } = require('./src/util/common');
 const {
   makeCppFileTemplateAndroid,
-  makeHppFileTemplateAndroid,
+  makeHFileTemplateAndroid,
   makeCryptographicModuleTemplateAndroid,
 } = require('./src/util/keysFilesTemplateAndroid');
 
@@ -20,32 +20,30 @@ const makeAndroidJnuFiles = () => {
   const cppFileContent = makeCppFileTemplateAndroid(
     stringifyKeys.replace(/(")/g, '\\"')
   );
-  const isDoneCreatedAndroidCppFile = makeFileInAndroidDir(
+  const isDoneCrypoCppFile = makeFileInCppAndroidDirectory(
     cppFileContent,
     'crypto.cpp'
   );
 
-  const hppFileContent = makeHppFileTemplateAndroid();
-  const isDoneCreatedAndroidHppFile = makeFileInAndroidDir(
-    hppFileContent,
-    'crypto.hpp'
+  const hFileContent = makeHFileTemplateAndroid();
+  const isDoneCreatedHFile = makeFileInCppAndroidDirectory(
+    hFileContent,
+    'crypto.h'
   );
 
   const privateKey = SHA256(stringifyKeys).toString();
   const halfKey = privateKey.substr(privateKey.length / 2);
-  const cryptographicModuleFileContent = makeCryptographicModuleTemplateAndroid(
-    halfKey
-  );
-  const isDoneCreatedAndroidCryptographicModuleFile = makeFileInAndroidForBridgeJniDir(
+  const cryptographicModuleFileContent =
+    makeCryptographicModuleTemplateAndroid(halfKey);
+  const isDoneAddedPrivateKey = makeFileInAndroidMainAssetsFolder(
     cryptographicModuleFileContent,
-    'KeysModule.java'
+    'PrivateKey.java'
   );
 
-  console.log(
-    'test',
-    isDoneCreatedAndroidCppFile,
-    isDoneCreatedAndroidHppFile,
-    isDoneCreatedAndroidCryptographicModuleFile
-  );
+  console.log('react-native-keys', {
+    isDoneCrypoCppFile,
+    isDoneCreatedHFile,
+    isDoneAddedPrivateKey,
+  });
 };
 makeAndroidJnuFiles();

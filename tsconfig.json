@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "react-native-keys": [
-        "./src/index"
+        "./src/index.ts"
       ]
     },
     "allowUnreachableCode": false,

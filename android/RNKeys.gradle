@@ -25,7 +25,7 @@ def getCurrentFlavor() {
 
 def loadKeys(){
   def flavor = getCurrentFlavor()
-  def keysFile = "keys.json"
+  def keysFile = "keys.development.json"
   def exportCommand="";
   if (System.env['KEYSFILE']) {
     keysFile = System.env['KEYSFILE']
@@ -51,7 +51,7 @@ def loadKeys(){
   def proc =["/bin/sh", "-c", exportCommand].execute()
   proc.consumeProcessOutput(System.out, System.err)
 
-  ////
+  println(keysFile)
   def keys = [:]
   File f = new File("$project.rootDir/../$keysFile");
   if (!f.exists()) {
@@ -63,7 +63,7 @@ def loadKeys(){
 
   if (f.exists()) {
     def parsedJson = new groovy.json.JsonSlurper().parseText(f.text)
-    println(parsedJson.public)
+//     println(parsedJson.public)
     parsedJson.public.each { key, value ->
       keys.put(key, value.replace('"', '\\"'))
     }
