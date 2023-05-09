@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
-const DEFAULT_FILE_NAME = 'keys.json';
+const DEFAULT_FILE_NAME = 'keys.development.json';
 const PROJECT_ROOT_DIR_PATH = path.join(
   __dirname,
   isExample ? '../../example/' : '../../../../'
@@ -22,12 +22,7 @@ const IOS_DIR_PATH = path.join(
 const ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? KEYS_ANDROID_EXAMPLE_PATH : KEYS_ANDROID_PATH,
-  'src',
-  'main',
-  'java',
-  'com',
-  'rnkeys',
-  'c'
+  'cpp'
 );
 const ANDROID_KEYS_DIR_PATH = path.join(
   PACKAGE_ROOT_DIR_PATH,
@@ -36,7 +31,7 @@ const ANDROID_KEYS_DIR_PATH = path.join(
   'main',
   'java',
   'com',
-  'rnkeys'
+  'reactnativekeysjsi'
 );
 
 const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
@@ -68,7 +63,7 @@ module.exports.makeFileInProjectDirectoryIos = (fileContent, fileName) => {
   }
 };
 
-module.exports.makeFileInAndroidDir = (fileContent, fileName) => {
+module.exports.makeFileInCppAndroidDirectory = (fileContent, fileName) => {
   try {
     const filePath = path.join(ANDROID_DIR_PATH, fileName);
     fs.outputFileSync(filePath, fileContent);
@@ -108,7 +103,7 @@ module.exports.getAndroidEnviromentFile = () => {
   }
 };
 
-module.exports.makeFileInAndroidForBridgeJniDir = (fileContent, fileName) => {
+module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
   try {
     const filePath = path.join(ANDROID_KEYS_DIR_PATH, fileName);
     fs.outputFileSync(filePath, fileContent);

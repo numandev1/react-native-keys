@@ -10,7 +10,7 @@ const {
 const {
   makeCppFileTemplateIOS,
   makeHppFileTemplateIOS,
-  makeKeysPackageMMTemplateIOS,
+  makePrivateKeyTemplateIOS,
   makeXcConfigFIlle,
   makeGeneratedDotEnvTemplateIOS,
 } = require('./src/util/keysFilesTemplateIos');
@@ -24,16 +24,10 @@ const makeIosJnuFiles = () => {
   const cppFileContent = makeCppFileTemplateIOS(
     stringifyKeys.replace(/(")/g, '\\"')
   );
-  const isDoneCreatedIosCppFile = makeFileInIosDir(
-    cppFileContent,
-    'crypto.cpp'
-  );
+  const isDoneCrypoCppFile = makeFileInIosDir(cppFileContent, 'crypto.cpp');
 
-  const hppFileContent = makeHppFileTemplateIOS();
-  const isDoneCreatedIosHppFile = makeFileInIosDir(
-    hppFileContent,
-    'crypto.hpp'
-  );
+  const hFileContent = makeHppFileTemplateIOS();
+  const isDoneCreatedHFile = makeFileInIosDir(hFileContent, 'crypto.h');
 
   const encryptionFileContent = makeEncryptionFile();
   const isDoneCreatedIosEncryptionFile = makeFileInIosDir(
@@ -43,10 +37,12 @@ const makeIosJnuFiles = () => {
 
   const privateKey = SHA256(stringifyKeys).toString();
   const halfKey = privateKey.substr(privateKey.length / 2);
-  const jniKeysPackageMMFile = makeKeysPackageMMTemplateIOS(halfKey);
-  const isDoneCreatedNniKeysPackageFile = makeFileInIosDir(
-    jniKeysPackageMMFile,
-    'Keys.mm'
+  const generatedPrivateKeyContent = makePrivateKeyTemplateIOS({
+    privateKey: halfKey,
+  });
+  const isGeneratedPrivateKeyFile = makeFileInIosDir(
+    generatedPrivateKeyContent,
+    'privateKey.m'
   );
 
   const xcConfigFileContent = makeXcConfigFIlle(publicKeys);
@@ -61,14 +57,13 @@ const makeIosJnuFiles = () => {
     'GeneratedDotEnv.m'
   );
 
-  console.log(
-    'test',
-    isDoneCreatedIosCppFile,
-    isDoneCreatedIosHppFile,
+  console.log('react-native-keys', {
+    isDoneCrypoCppFile,
+    isDoneCreatedHFile,
     isDoneCreatedIosEncryptionFile,
-    isDoneCreatedNniKeysPackageFile,
+    isGeneratedPrivateKeyFile,
     isDoneCreatedIosxcConfigFile,
-    isGeneratedDotEnvFile
-  );
+    isGeneratedDotEnvFile,
+  });
 };
 makeIosJnuFiles();

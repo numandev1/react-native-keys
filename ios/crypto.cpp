@@ -1,5 +1,5 @@
 
-  #include "crypto.hpp"
+  #include "crypto.h"
   #include <string>
   #include "encrypt.h"
 
@@ -11,7 +11,7 @@
 
 
     std::string Crypto::getJniJsonStringyfyData(string key) {
-      std::string jsonStringyfyData= "{\"secure1\":\"secure1 value\",\"secure2\":\"secure2 value\",\"secure3\":\"secure3 value\"}";
+      std::string jsonStringyfyData= "{\"secure1\":\"staging secure1 value 11 1200 11\",\"secure2\":\"staging secure2 value\",\"secure3\":\"staging secure3 value\"}";
         string hash;
         int len=jsonStringyfyData.length();
         char cahrtot[len+1];

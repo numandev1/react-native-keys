@@ -1,6 +1,6 @@
 module.exports.makeCppFileTemplateIOS = (data) => {
   return `
-  #include "crypto.hpp"
+  #include "crypto.h"
   #include <string>
   #include "encrypt.h"
 
@@ -34,18 +34,21 @@ module.exports.makeCppFileTemplateIOS = (data) => {
 
 module.exports.makeHppFileTemplateIOS = () => {
   return `
-  #ifndef crypto_hpp
-  #define crypto_hpp
+#ifndef CRYPTO_H
+#define CRYPTO_H
 
-  #include <stdio.h>
-  #include <string>
-  using namespace std;
+#include <stdio.h>
+#include <string>
+using namespace std;
 
-  class Crypto {
-  public:Crypto();
-    string getJniJsonStringyfyData(string key);
-  };
-  #endif
+class Crypto
+{
+public:
+  Crypto();
+  string getJniJsonStringyfyData(string key);
+};
+#endif
+
   
   `;
 };
@@ -64,61 +67,6 @@ module.exports.makeKeysPackageHTemplateIOS = () => {
 
   NS_ASSUME_NONNULL_END
 
-  `;
-};
-
-module.exports.makeKeysPackageMMTemplateIOS = (key) => {
-  return `
-  #import "Keys.h"
-  #import "./crypto.cpp"
-  #import "./crypto.hpp"
-  #import "GeneratedDotEnv.m"
-  @implementation Keys
-
-  RCT_EXPORT_MODULE();
-  string privateKey="${key}";
-  + (NSString *)secureFor: (NSString *)key {
-      @try {
-          NSString* stringfyData = [NSString stringWithCString:Crypto().getJniJsonStringyfyData(privateKey).c_str() encoding:[NSString defaultCStringEncoding]];
-          NSLog(@"%@", stringfyData);
-          NSData *data = [stringfyData dataUsingEncoding:NSUTF8StringEncoding];
-          NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-          NSString *value =[s objectForKey:key];
-          return value;
-      }
-      @catch (NSException *exception) {
-          return @"";
-      }
-  }
-
-  + (NSDictionary *)public_keys {
-    return (NSDictionary *)DOT_ENV;
-  }
-
-  + (NSString *)publicFor: (NSString *)key {
-      NSString *value = (NSString *)[self.public_keys objectForKey:key];
-      return value;
-  }
-
-  - (NSDictionary *)constantsToExport {
-    return (NSDictionary *)DOT_ENV;
-  }
-
-  RCT_EXPORT_METHOD(secureFor:(NSString *) key
-                  getBasicWithResolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
-  {
-      @try {
-          NSString* value = [Keys secureFor:key];
-          resolve(value);
-      }
-      @catch (NSException *exception) {
-          resolve(@"");
-      }
-      
-  }
-
-  @end
   `;
 };
 
@@ -144,5 +92,18 @@ module.exports.makeGeneratedDotEnvTemplateIOS = (keys) => {
     return `#define DOT_ENV @{ ${dotEnv} };`;
   } catch (error) {
     return `#define DOT_ENV @{};`;
+  }
+};
+
+module.exports.makePrivateKeyTemplateIOS = (keys) => {
+  try {
+    let env_keys = [];
+    for (let [key, value] of Object.entries(keys)) {
+      env_keys.push(`@"${key}":@"${value}"`);
+    }
+    const dotEnv = env_keys.join();
+    return `#define PRIVATE_KEY @{ ${dotEnv} };`;
+  } catch (error) {
+    return `#define PRIVATE_KEY @{};`;
   }
 };

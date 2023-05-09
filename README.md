@@ -1,5 +1,7 @@
 # react-native-keys
 
+we are using [JSI](https://reactnative.dev/architecture/glossary#javascript-interfaces-jsi) for fast performance and [JNI](https://reactnative.dev/architecture/glossary#java-native-interface-jni) + encryption keys in c++ compiled file
+
 Manage local **secure** and **unsecure** enviroment through react-native-keys supporting iOS and Android
 
 **secure:** Secure enviroment use JNI to secure keys which we cannot easily decompile or hack
@@ -13,7 +15,7 @@ yarn add react-native-keys
 
 ## Basic Usage
 
-Create a new file `keys.json` in the root of your React Native app and add keys in `secure` object for JNI and add keys in public for without jni usage like this:
+Create a new file `keys.development.json` in the root of your React Native app and add keys in `secure` object for JNI and add keys in public for without jni usage like this:
 
 ```
 {
@@ -44,14 +46,14 @@ Keys.API_URL; // https://example.com'
 Keys.URI_SCHEME; // fb://
 ```
 
-### Secure Keys (JNI)
+### Secure Keys
 
 ```js
 import Keys from 'react-native-keys';
 
-await Keys.secureFor('API_TOKEN '); // 'ABCSE#$DDSD
-await Keys.secureFor('GOOGLE_API_KEY '); // 'ABCSE#$DDSD
-await Keys.secureFor('SECRET_KEY'); // 'ABCSE#$DDSD
+Keys.secureFor('API_TOKEN '); // 'ABCSE#$DDSD
+Keys.secureFor('GOOGLE_API_KEY '); // 'ABCSE#$DDSD
+Keys.secureFor('SECRET_KEY'); // 'ABCSE#$DDSD
 ```
 
 Keep in mind It's [basically impossible to prevent users from reverse engineering mobile app secrets](https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/) but this librrary iis more secure.
@@ -110,7 +112,7 @@ if cocoapods are used in the project then pod has to be installed as well:
   **MainApplication.java**
 
   ```diff
-  + import com.rnkeys.KeysPackage;
+  + import com.reactnativekeysjsi.KeysPackage;
 
   @Override
   protected List<ReactPackage> getPackages() {
@@ -158,7 +160,7 @@ versionCode project.env.get("VERSION_CODE").toInteger()
 #### Secure Keys (JNI)
 
 ```java
-import static com.rnkeys.KeysModule.getSecureFor;
+import static com.reactnativekeysjsi.KeysModule.getSecureFor;
 
 String secureValue=getSecureFor("BRANCH_KEY");   // key_test_omQ7YYKiq57vOqEJsdcsdfeEsiWkwxE
 ```
@@ -167,7 +169,7 @@ String secureValue=getSecureFor("BRANCH_KEY");   // key_test_omQ7YYKiq57vOqEJsdc
 
 #### Public Keys
 
-Read variables declared in `keys.json` from your Obj-C classes like:
+Read variables declared in `keys.development.json` from your Obj-C classes like:
 
 ```objective-c
 // import header
@@ -175,9 +177,12 @@ Read variables declared in `keys.json` from your Obj-C classes like:
 
 // then read individual keys like:
 NSString *value = [Keys publicFor:@"API_URL"];   // https://example.com
+
+// or just fetch all keys
+NSDictionary *allKeys = [Keys public_keys];
 ```
 
-#### Secure Keys (JNI)
+#### Secure Keys
 
 ```objective-c
 // import header
@@ -228,7 +233,7 @@ ios/tmp.xcconfig
 
 Save config for different environments in different files: `keys.staging.json`, `keys.production.json`, etc.
 
-By default react-native-keys will read from `keys.json`, but you can change it when building or releasing your app.
+By default react-native-keys will read from `keys.development.json`, but you can change it when building or releasing your app.
 
 The simplest approach is to tell it what file to read with an environment variable, like:
 
@@ -252,11 +257,23 @@ Alternatively, you can define a map in `build.gradle` associating builds with en
 
 ```
 project.ext.keyFiles = [
-  debug: "keys.json",
+  debug: "keys.development.json",
   release: "keys.staging.json",
 ]
 
 apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle"
+```
+
+#### Advanced Android Setup
+
+In `android/app/build.gradle`, if you use `applicationIdSuffix` or `applicationId` that is different from the package name indicated in `AndroidManifest.xml` in `<manifest package="...">` tag, for example, to support different build variants:
+Add this in `android/app/build.gradle`
+
+```
+defaultConfig {
+    ...
+    resValue "string", "build_config_package", "YOUR_PACKAGE_NAME_IN_ANDROIDMANIFEST_XML"
+}
 ```
 
 #### iOS
@@ -278,8 +295,12 @@ Then edit the newly created scheme to make it use a different env file. From the
 you can also set different file for debug and release build like this.
 
 ```sh
-export DEBUG_KEYSFILE=keys.debug.json
-export RELEASE_KEYSFILE=keys.staging.json
+// DEBUG_KEYSFILE will choose env file
+export KEYSFILE=keys.production.json
+
+// if you wannna use different keys for same scheme
+export DEBUG_KEYSFILE=keys.debug.json  //in running metro
+export RELEASE_KEYSFILE=keys.staging.json  // in IPA
 
 #above DEBUG_KEYSFILE and RELEASE_KEYSFILE variable are optional
 
