@@ -1,6 +1,10 @@
 <div align="center">
-<img src="./media/key.png" height="200" />
+<img src="./media/key.png" height="100" />
 </div>
+
+<br />
+<br />
+
 The fastest Securing **Keys/Envs** library for React Native.
 
 - 🏎️ Up to 200x faster than all other solutions
@@ -22,7 +26,7 @@ Manage local **secure** and **unsecure** enviroment through react-native-keys su
 <a href="https://github.com/numandev1?tab=followers">
     <img src="https://img.shields.io/github/followers/numandev1?label=Follow%20%40numandev1&style=social" height="36" />
 </a>
-<a href="https://www.youtube.com/channel/UCYCUspfN7ZevgCj3W5GlFAw"><img src="https://img.shields.io/youtube/channel/subscribers/UCYCUspfN7ZevgCj3W5GlFAw?style=social" height="36" /><a/>
+<a href="https://www.youtube.com/@numandev?sub_confirmation=1"><img src="https://img.shields.io/youtube/channel/subscribers/UCYCUspfN7ZevgCj3W5GlFAw?style=social" height="36" /><a/>
 </br>
 <a href="https://www.buymeacoffee.com/numan.dev" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 </div>
