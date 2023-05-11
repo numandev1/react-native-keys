@@ -17,6 +17,44 @@ buildscript {
 
 apply plugin: 'com.android.library'
 
+def safeExtGet(prop, fallback) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+def resolveReactNativeDirectory() {
+  def reactNativeLocation = safeExtGet("REACT_NATIVE_NODE_MODULES_DIR", null)
+  if (reactNativeLocation != null) {
+    return file(reactNativeLocation)
+  }
+
+  // monorepo workaround
+  // react-native can be hoisted or in project's own node_modules
+  def reactNativeFromProjectNodeModules = file("${rootProject.projectDir}/../node_modules/react-native")
+  if (reactNativeFromProjectNodeModules.exists()) {
+    return reactNativeFromProjectNodeModules
+  }
+
+  def reactNativeFromNodeModulesWithReanimated = file("${projectDir}/../../react-native")
+  if (reactNativeFromNodeModulesWithReanimated.exists()) {
+    return reactNativeFromNodeModulesWithReanimated
+  }
+
+  throw new Exception(
+    "[react-native-keys] Unable to resolve react-native location in " +
+      "node_modules. You should add project extension property (in app/build.gradle) " +
+      "`REACT_NATIVE_NODE_MODULES_DIR` with path to react-native."
+  )
+}
+
+def REACT_NATIVE_DIR = resolveReactNativeDirectory()
+
+def reactProperties = new Properties()
+file("$REACT_NATIVE_DIR/ReactAndroid/gradle.properties").withInputStream { reactProperties.load(it) }
+
+def REACT_NATIVE_VERSION = reactProperties.getProperty("VERSION_NAME")
+def REACT_NATIVE_MINOR_VERSION = REACT_NATIVE_VERSION.startsWith("0.0.0-") ? 1000 : REACT_NATIVE_VERSION.split("\\.")[1].toInteger()
+
+
 def getExtOrDefault(name, defaultValue) {
   return rootProject.ext.has(name) ? rootProject.ext.get(name) : defaultValue
 }
@@ -46,9 +84,9 @@ if(!found){
 }
 
 if(!found) {
-    throw new GradleException(
-            "${project.name}: unable to locate React Native android sources. " +
-                    "Ensure you have you installed React Native as a dependency in your project and try again.")
+  throw new GradleException(
+    "${project.name}: unable to locate React Native android sources. " +
+      "Ensure you have you installed React Native as a dependency in your project and try again.")
 }
 
 def nodeModulesPath = nodeModulesDir.toString().replace("\\", "/")
@@ -70,7 +108,9 @@ android {
       cmake {
         cppFlags "-fexceptions", "-frtti", "-std=c++1y", "-DONANDROID"
         abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
-        arguments '-DANDROID_STL=c++_shared', "-DNODE_MODULES_DIR=${nodeModulesPath}"
+        arguments '-DANDROID_STL=c++_shared',
+          "-DNODE_MODULES_DIR=${nodeModulesPath}",
+          "-DREACT_NATIVE_MINOR_VERSION=${REACT_NATIVE_MINOR_VERSION}"
       }
     }
   }
@@ -86,9 +126,9 @@ android {
   }
 
   externalNativeBuild {
-     cmake {
-          path "./CMakeLists.txt"
-      }
+    cmake {
+      path "./CMakeLists.txt"
+    }
   }
 
   packagingOptions {
@@ -116,8 +156,12 @@ repositories {
 
 dependencies {
   //noinspection GradleDynamicVersion
-  implementation "com.facebook.react:react-android:"
-  implementation "com.facebook.react:hermes-android:"
-
+  if (REACT_NATIVE_MINOR_VERSION >= 71) {
+    implementation "com.facebook.react:react-android:"
+    implementation "com.facebook.react:hermes-android:"
+  }
+  else
+  {
+    implementation 'com.facebook.react:react-native:+'
+  }
 }
-
