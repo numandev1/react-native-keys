@@ -1,6 +1,6 @@
 {
   "name": "react-native-keys",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "secure keys / ENVs through jni+encryption using JSI",
   "main": "./src/index.ts",
   "source": "src/index",
