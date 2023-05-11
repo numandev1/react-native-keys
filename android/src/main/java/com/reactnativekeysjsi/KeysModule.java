@@ -37,7 +37,7 @@ public class KeysModule extends ReactContextBaseJavaModule {
   @ReactMethod(isBlockingSynchronousMethod = true)
   public boolean install() {
     try {
-      System.loadLibrary("cpp");
+      System.loadLibrary("react-native-keys");
 
       ReactApplicationContext context = getReactApplicationContext();
       nativeInstall(
@@ -50,26 +50,11 @@ public class KeysModule extends ReactContextBaseJavaModule {
   }
 
   static{
-    System.loadLibrary("cpp");
+    System.loadLibrary("react-native-keys");
   }
 
   public static native String getJniJsonStringyfyData(String key);
 
-//  public static String getSecureForFromJni(String key) {
-//    JSONObject jniData = null;
-//    try {
-//      if (jniData == null) {
-//        String privateKey=PrivateKey.privatekey;
-//        jniData = new JSONObject(getJniJsonStringyfyData(privateKey));
-//      }
-//      if (jniData.has(key)) {
-//        return jniData.getString(key);
-//      }
-//    } catch (Exception ignore) {
-//      return "";
-//    }
-//    return "";
-//  }
 
   public static String getSecureFor(String key) {
     JSONObject jniData = null;

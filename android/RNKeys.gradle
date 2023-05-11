@@ -23,6 +23,10 @@ def getCurrentFlavor() {
   return flavor
 }
 
+def safeExtGet(prop, fallback) {
+    project.ext.has(prop) ? project.ext.get(prop) : fallback
+}
+
 def loadKeys(){
   def flavor = getCurrentFlavor()
   def keysFile = "keys.development.json"
@@ -40,7 +44,10 @@ def loadKeys(){
       }
     }
   }
-  if(project.ext.IS_EXAMPLE)
+
+  def IS_EXAMPLE=safeExtGet("IS_EXAMPLE",false);
+
+  if(IS_EXAMPLE)
   {
     exportCommand=exportCommand+"export IS_EXAMPLE='TRUE' && ../../keysAndroid.js"
   }
