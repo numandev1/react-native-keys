@@ -43,7 +43,12 @@
     "jni",
     "keys",
     "jni-android",
-    "jni-ios"
+    "jni-ios",
+    "react-native-dotenv",
+    "react-native-config",
+    "dotenv",
+    "config-var",
+    "12factor"
   ],
   "repository": "https://github.com/numandev1/react-native-keys",
   "author": "numandev1 <muhammadnuman70@gmail.com> (https://github.com/numandev1)",

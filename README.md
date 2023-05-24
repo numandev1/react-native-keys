@@ -15,10 +15,10 @@ The fastest Securing **Keys/Envs** library for React Native.
 
 we are using [JSI](https://reactnative.dev/architecture/glossary#javascript-interfaces-jsi) for fast performance and [JNI](https://reactnative.dev/architecture/glossary#java-native-interface-jni) + encryption keys in c++ compiled file
 
-Manage local **secure** and **unsecure** enviroment through react-native-keys supporting iOS and Android
+Manage local **secure** and **public** enviroment through react-native-keys supporting iOS and Android
 
-**secure:** Secure enviroment use JNI to secure keys which we cannot easily decompile or hack
-**public:** Public enviroment use native bridging which can be decomile or hack
+**secure:** Secure enviroment use JNI with encryption to secure keys which we cannot easily decompile or hack
+**public:** Public enviroment use JSI to access keys from native side like Java and ObjectiveC which can be decomile or hack
 
 ### Would you like to support me?
 
@@ -41,7 +41,7 @@ yarn add react-native-keys
 
 ## Basic Usage
 
-Create a new file `keys.development.json` in the root of your React Native app and add keys in `secure` object for JNI and add keys in public for without jni usage like this:
+Create a new file `keys.development.json` in the root of your React Native app and add keys in `secure` object for `cpp+Encryptio`n and add keys in public for public usage this:
 
 ```
 {
@@ -59,7 +59,9 @@ Create a new file `keys.development.json` in the root of your React Native app a
 }
 ```
 
-Then access variables defined there from your app:
+**Note: Dont forgot to follow other steps for **Android** and **IOS** to use these keys**
+
+later on you can define other enviroment files like `keys.staging.json` and `keys.production.json`
 
 ## Javascript
 
@@ -338,6 +340,12 @@ Also ensure that "Provide build settings from", just above the script, has a val
 ## Test Security
 
 you can decompile **APK/IPA** by this package [react-native-decompiler](https://www.npmjs.com/package/react-native-decompiler 'react-native-decompiler') and can find public and secure keys. you will not find secure keys.
+
+# Alternative Package
+
+This package full alternative of [react-native-config](https://github.com/luggit/react-native-config) and [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+
+The above-mentioned packages do not provide any **security** for **environment variables** as well as these packages are not as fast as the **react-native-keys** package because it does not use JSI (JavaScript Interface).
 
 ## Meta
 
