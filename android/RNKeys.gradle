@@ -23,6 +23,11 @@ def getCurrentFlavor() {
   return flavor
 }
 
+def getNodeModulesDir() {
+  def gradleSettingsDir = new File(project.rootDir,"..").canonicalPath
+  return gradleSettingsDir
+}
+
 def safeExtGet(prop, fallback) {
     project.ext.has(prop) ? project.ext.get(prop) : fallback
 }
@@ -53,7 +58,8 @@ def loadKeys(){
   }
   else
   {
-    exportCommand=exportCommand+" ../node_modules/react-native-keys/keysAndroid.js"
+    def nodeModulesDir = getNodeModulesDir()
+    exportCommand=exportCommand+nodeModulesDir+"/node_modules/react-native-keys/keysAndroid.js"
   }
   def proc =["/bin/sh", "-c", exportCommand].execute()
   proc.consumeProcessOutput(System.out, System.err)
