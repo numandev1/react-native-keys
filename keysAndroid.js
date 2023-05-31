@@ -1,5 +1,17 @@
 #! /usr/bin/env node
-const SHA256 = require('crypto-js/sha256');
+const CryptoJS = require('crypto-js');
+
+const pass = 'asdf@1234';
+const encrypt = (message, password, _iv) => {
+  const encrypted = CryptoJS.AES.encrypt(message, password, {
+    iv: _iv,
+  });
+
+  const base64Secret = encrypted.toString();
+
+  return base64Secret;
+};
+
 const {
   getKeys,
   makeFileInCppAndroidDirectory,
@@ -17,9 +29,8 @@ const makeAndroidJnuFiles = () => {
   const allKeys = getKeys(KEYS_FILE_NAME);
   const secureKeys = allKeys.secure;
   const stringifyKeys = JSON.stringify(secureKeys);
-  const cppFileContent = makeCppFileTemplateAndroid(
-    stringifyKeys.replace(/(")/g, '\\"')
-  );
+  const privateKey = encrypt(stringifyKeys, pass);
+  const cppFileContent = makeCppFileTemplateAndroid(privateKey);
   const isDoneCrypoCppFile = makeFileInCppAndroidDirectory(
     cppFileContent,
     'crypto.cpp'
@@ -31,7 +42,6 @@ const makeAndroidJnuFiles = () => {
     'crypto.h'
   );
 
-  const privateKey = SHA256(stringifyKeys).toString();
   const halfKey = privateKey.substr(privateKey.length / 2);
   const cryptographicModuleFileContent =
     makeCryptographicModuleTemplateAndroid(halfKey);

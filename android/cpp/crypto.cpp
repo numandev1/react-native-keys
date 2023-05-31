@@ -1,7 +1,7 @@
 
-  #include "crypto.h"
+   #include "crypto.h"
   #include <string>
-  #include "encrypt.h"
+  #include "decryptor.h"
 
   using namespace std;
 
@@ -9,23 +9,21 @@
 
   }
 
+  string Crypto::getJniJsonStringyfyData(string key) {
+      std::string base64Secret = "U2FsdGVkX1+uvOTVCval0JYJjna6el2v8OeJ5vxwRgB7YF3NnYJkIRK5NvygXy1y7LDt08z9Ub5oX/TmMr36VsWRjbaXf6cpgGNQq1eZ2Yq2yZAo/IQUWu0yCkDIri0hAesHSWaYALnma8qqbDeRfJlyoVXO73M37HdRsr85vo4=";
+      std::string password = "asdf@1234";
+      bool binary = false;
+      std::string plaintext = decryptor::dec(base64Secret, password,binary);
 
-  std::string Crypto::getJniJsonStringyfyData(string key) {
-    std::string jsonStringyfyData= "{\"secure1\":\"dev secure1 value 11 1200 11\",\"secure2\":\"dev secure2 value\",\"secure3\":\"dev secure3 value\"}";
       string hash;
-      int len=jsonStringyfyData.length();
-      char cahrtot[len+1];
-      strcpy(cahrtot,jsonStringyfyData.c_str());
-      hash=SHA256(cahrtot);
-      string halfString=hash.substr(hash.length()/2);
+      string halfString=base64Secret.substr(base64Secret.length()/2);
       if(key==halfString)
       {
-        return jsonStringyfyData;
+          return plaintext;
       }
       else
       {
           return "";
       }
-    
   }
   

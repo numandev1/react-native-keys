@@ -1,5 +1,17 @@
 #! /usr/bin/env node
-const SHA256 = require('crypto-js/sha256');
+const CryptoJS = require('crypto-js');
+
+const pass = 'asdf@1234';
+const encrypt = (message, password, _iv) => {
+  const encrypted = CryptoJS.AES.encrypt(message, password, {
+    iv: _iv,
+  });
+
+  const base64Secret = encrypted.toString();
+
+  return base64Secret;
+};
+
 const {
   getKeys,
   makeFileInIosDir,
@@ -21,9 +33,8 @@ const makeIosJnuFiles = () => {
   const secureKeys = allKeys.secure;
   const publicKeys = allKeys.public;
   const stringifyKeys = JSON.stringify(secureKeys);
-  const cppFileContent = makeCppFileTemplateIOS(
-    stringifyKeys.replace(/(")/g, '\\"')
-  );
+  const privateKey = encrypt(stringifyKeys, pass);
+  const cppFileContent = makeCppFileTemplateIOS(privateKey);
   const isDoneCrypoCppFile = makeFileInIosDir(cppFileContent, 'crypto.cpp');
 
   const hFileContent = makeHppFileTemplateIOS();
@@ -35,7 +46,6 @@ const makeIosJnuFiles = () => {
     'encrypt.h'
   );
 
-  const privateKey = SHA256(stringifyKeys).toString();
   const halfKey = privateKey.substr(privateKey.length / 2);
   const generatedPrivateKeyContent = makePrivateKeyTemplateIOS({
     privateKey: halfKey,

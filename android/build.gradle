@@ -164,4 +164,5 @@ dependencies {
   {
     implementation 'com.facebook.react:react-native:+'
   }
+  implementation 'com.android.ndk.thirdparty:openssl:1.1.1l-beta-1'
 }
