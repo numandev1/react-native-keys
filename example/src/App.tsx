@@ -6,7 +6,7 @@ export default function App() {
   const [jniValue, setJniValue] = useState('');
   const [publicValue, setPublicValue] = useState('');
   useEffect(() => {
-    const value1 = RNKeys.secureFor('secure1');
+    const value1 = RNKeys.secureFor('secure3');
     console.log(value1, 'value1');
     setJniValue(value1);
     const value2 = RNKeys.APP_NAME;

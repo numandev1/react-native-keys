@@ -30,6 +30,7 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
                 SHARED
                 ./cpp/mediator.cpp
                 ./cpp/crypto.cpp
+                ./cpp/decryptor.cpp
                 ./cpp-adapter.cpp
         )
 
@@ -52,6 +53,8 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
                 POSITION_INDEPENDENT_CODE ON
         )
 
+        find_package(openssl REQUIRED CONFIG)
+
         target_link_libraries(
                 ${PACKAGE_NAME}
                 ReactAndroid::turbomodulejsijni
@@ -61,6 +64,7 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
                 ReactAndroid::reactnativejni
                 ReactAndroid::react_nativemodule_core
                 android
+                openssl::crypto
         )
 else()
         add_library(
@@ -69,6 +73,7 @@ else()
                 ../../react-native/ReactCommon/jsi/jsi/jsi.cpp
                 ./cpp/mediator.cpp
                 ./cpp/crypto.cpp
+                ./cpp/decryptor.cpp
                 ./cpp-adapter.cpp
         )
 
@@ -86,8 +91,11 @@ else()
                 POSITION_INDEPENDENT_CODE ON
         )
 
+        find_package(openssl REQUIRED CONFIG)
+
         target_link_libraries(
                 ${PACKAGE_NAME}
                 android
+                openssl::crypto
         )
 endif()

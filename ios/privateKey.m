@@ -1,1 +1,1 @@
-#define PRIVATE_KEY @{ @"privateKey":@"ae9ed4f21947b93b2e9792bf85d131ed" };
+#define PRIVATE_KEY @{ @"privateKey":@"311+PrBdKydxlIFoTY8OOGVvDKlKkxTuFzMvCOs9OHlrnvlhY9+Z6XbA4P9gLGOfalgZon3XQRwi7B5LlmtZA=" };
