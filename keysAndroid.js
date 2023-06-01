@@ -1,7 +1,16 @@
 #! /usr/bin/env node
 const CryptoJS = require('crypto-js');
 
-const pass = 'asdf@1234';
+const generatePassword = () => {
+  var length = 12,
+    charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+    retVal = '';
+  for (var i = 0, n = charset.length; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  return retVal;
+};
+
 const encrypt = (message, password, _iv) => {
   const encrypted = CryptoJS.AES.encrypt(message, password, {
     iv: _iv,
@@ -29,8 +38,9 @@ const makeAndroidJnuFiles = () => {
   const allKeys = getKeys(KEYS_FILE_NAME);
   const secureKeys = allKeys.secure;
   const stringifyKeys = JSON.stringify(secureKeys);
-  const privateKey = encrypt(stringifyKeys, pass);
-  const cppFileContent = makeCppFileTemplateAndroid(privateKey);
+  const password = generatePassword();
+  const privateKey = encrypt(stringifyKeys, password);
+  const cppFileContent = makeCppFileTemplateAndroid(privateKey, password);
   const isDoneCrypoCppFile = makeFileInCppAndroidDirectory(
     cppFileContent,
     'crypto.cpp'
