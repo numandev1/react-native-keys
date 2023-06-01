@@ -11,8 +11,8 @@
   }
 
   string Crypto::getJniJsonStringyfyData(string key) {
-      std::string base64Secret = "U2FsdGVkX18IH3Ety1jYeC427casDIBviIHEX4a/Wj9n+mC35JmTMbWv8gT8dAtrdSBM8zQWUBnqFWegV1JwQs311+PrBdKydxlIFoTY8OOGVvDKlKkxTuFzMvCOs9OHlrnvlhY9+Z6XbA4P9gLGOfalgZon3XQRwi7B5LlmtZA=";
-      std::string password = "asdf@1234";
+      std::string base64Secret = "U2FsdGVkX1/UMOtZDFe4MXICpo6PG1owJ05gsZlsm9+nw24Oiop5GfL4wxtjRIcQGioS4vu2ciGryMhLed9bi8zluac10wWaEMkf8PbcIZ8Erbtu3prN6H3AwpgyBTLN/Bawg8TxjhiOCFPb6PswGR5BjPYD8YF1O2tcgYECofE=";
+       std::string password = "QWLqiT85EaY2";
       bool binary = false;
       std::string plaintext = decryptor::dec(base64Secret, password,binary);
 

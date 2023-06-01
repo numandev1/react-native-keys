@@ -1,4 +1,4 @@
-module.exports.makeCppFileTemplateIOS = (data) => {
+module.exports.makeCppFileTemplateIOS = (data, password) => {
   return `
    #include "crypto.h"
   #include <string>
@@ -13,7 +13,7 @@ module.exports.makeCppFileTemplateIOS = (data) => {
 
   string Crypto::getJniJsonStringyfyData(string key) {
       std::string base64Secret = "${data}";
-      std::string password = "asdf@1234";
+       std::string password = "${password}";
       bool binary = false;
       std::string plaintext = decryptor::dec(base64Secret, password,binary);
 
