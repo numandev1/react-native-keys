@@ -110,6 +110,16 @@ if cocoapods are used in the project then pod has to be installed as well:
 (cd ios; pod install)
 ```
 
+> **Note: If you get Undefined symbols \_BIO_f_base64 error during Xcode build then follow the below steps**
+>
+> after pod install
+>
+> - Under "Link Binary With Libraries", click on the plus button.
+>
+> - Find the `OpenSSL.xcframework` from the list and hit Add.
+>
+> - run xcode build again
+
 - Manual Link (iOS)
 
   1.  In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
