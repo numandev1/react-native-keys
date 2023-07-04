@@ -89,7 +89,7 @@ def loadKeys(){
   project.ext.set("keys", keys)
 }
 
-task callCL(type: Exec) {
+task keysCallCL(type: Exec) {
   loadKeys();
 }
 
