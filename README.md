@@ -171,7 +171,7 @@ You can also read them from your Gradle configuration:
 
 ```groovy
 defaultConfig {
-    applicationId project.env.get("APP_ID")
+    applicationId project.keys.get("APP_ID")
 }
 ```
 
@@ -186,7 +186,7 @@ And use them to configure libraries in `AndroidManifest.xml` and others:
 All variables are strings, so you may need to cast them. For instance, in Gradle:
 
 ```
-versionCode project.env.get("VERSION_CODE").toInteger()
+versionCode project.keys.get("VERSION_CODE").toInteger()
 ```
 
 #### Secure Keys (JNI)
