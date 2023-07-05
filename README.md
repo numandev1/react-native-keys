@@ -41,7 +41,7 @@ yarn add react-native-keys
 
 ## Basic Usage
 
-Create a new file `keys.development.json` in the root of your React Native app and add keys in `secure` object for `cpp+Encryptio`n and add keys in public for public usage this:
+Create a new file `keys.development.json` in the root of your React Native app and add keys in `secure` object for `cpp+Encryption` and add keys in public for public usage this:
 
 ```
 {
