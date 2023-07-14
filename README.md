@@ -1,24 +1,29 @@
 <div align="center">
-<img src="./media/key.png" height="100" />
+  <h1 align="center">🔐 Make undecryptable .ENVs variables</h1>
 </div>
 
-<br />
-<br />
+### Why should we use react-native-keys over react-native-config?
 
-The fastest Securing **Keys/Envs** library for React Native.
+We should use **react-native-keys** instead of **react-native-config** because **react-native-keys** gives guarantee of undecryptable **envs** whereas **react-native-config** **envs** can be decompile and hack
 
-- 🏎️ Up to 200x faster than all other solutions
-- ⚡️ Lightning fast implementation with pure C++ and JSI
-- 🧪 Well tested in JS and C++
-- 🔐 Made for securing keys on react native apps
+<div align="center">
+    <img align="right" width="250" style="margin-right: 55px;" src="./media/key.png">
+</div>
+
+Making undecryptable **Envs** library for React Native.
+
+- 🔐 Made for **undecryptable** ENVs on react native apps
 - 🗄️ Manage different enviroments (**dev**, **staging**, **production**)
+- 🏎️ Up to 200x faster than all other solutions
+- ⚡️ Lightning fast implementation with pure C++ and [**JSI**](https://github.com/react-native-community/discussions-and-proposals/issues/91) instead of the "old" Bridge
+- 🧪 Well tested in JS and C++
 
-we are using [JSI](https://reactnative.dev/architecture/glossary#javascript-interfaces-jsi) for fast performance and [JNI](https://reactnative.dev/architecture/glossary#java-native-interface-jni) + encryption keys in c++ compiled file
+We can Manage **secure**(undecryptable) and **public** enviroment through **react-native-keys** supporting **iOS** and **Android**
 
-Manage local **secure** and **public** enviroment through react-native-keys supporting iOS and Android
+**secure:** Secure environment variables with the highest encryption which are undecryptable
 
-**secure:** Secure enviroment use JNI with encryption to secure keys which we cannot easily decompile or hack
-**public:** Public enviroment use JSI to access keys from native side like Java and ObjectiveC which can be decomile or hack
+**public:** Public environment variables are stored on the native side like Java and Objective-C which can decompile or hack.
+**Note**: in public, we mostly store `Bundle Id`, `Package Id`, `App Name` or any other **AndroidManifest.xml** env
 
 ### Would you like to support me?
 
@@ -41,7 +46,7 @@ yarn add react-native-keys
 
 ## Basic Usage
 
-Create a new file `keys.development.json` in the root of your React Native app and add keys in `secure` object for `cpp+Encryption` and add keys in public for public usage this:
+Create a new file `keys.development.json` in the root of your React Native app and add Envs in `secure` object for `undecryptable` envs variables and add Envs in public for public usage this:
 
 ```
 {
@@ -350,6 +355,10 @@ you can decompile **APK/IPA** by this package [react-native-decompiler](https://
 This package full alternative of [react-native-config](https://github.com/luggit/react-native-config) and [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
 
 The above-mentioned packages do not provide any **security** for **environment variables** as well as these packages are not as fast as the **react-native-keys** package because it does not use JSI (JavaScript Interface).
+
+## Consider supporting with a ⭐️ [star on GitHub](https://github.com/numandev1/react-native-keys/stargazers)
+
+If you are using the library in one of your projects, consider supporting it with a star. It takes a lot of time and effort to keep this maintained and address issues and bugs. Thank you.
 
 ## Meta
 
