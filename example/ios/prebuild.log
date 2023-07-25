@@ -1,8 +1,7 @@
 hello world
+/Users/apple/Data/Work/shobbak/reactnative/package/react-native-keys-bridge/cpp/crypto.cpp iosCppFilePath
 react-native-keys {
   isDoneCrypoCppFile: true,
-  isDoneCreatedHFile: true,
-  isDoneCreatedIosEncryptionFile: true,
   isGeneratedPrivateKeyFile: true,
   isDoneCreatedIosxcConfigFile: true,
   isGeneratedDotEnvFile: true

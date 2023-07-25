@@ -6,8 +6,8 @@
 #import "YeetJSIUtils.h"
 #import <React/RCTBridge+Private.h>
 
-#import "./crypto.cpp"
-#import "./crypto.h"
+//#import "crypto.cpp"
+#import "crypto.h"
 #import "GeneratedDotEnv.m"
 #import "privateKey.m"
 

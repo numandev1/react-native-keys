@@ -16,7 +16,8 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
                 "${NODE_MODULES_DIR}/react-native/React"
                 "${NODE_MODULES_DIR}/react-native/React/Base"
                 "${NODE_MODULES_DIR}/react-native/ReactCommon/jsi"
-                "./cpp"
+                "./androidcpp"
+                "../cpp"
                 ${FOLLY_INCLUDE_DIR}
                 "."
                 "${NODE_MODULES_DIR}/react-native/ReactAndroid/src/main/jni/react/turbomodule"
@@ -28,10 +29,10 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
         add_library(
                 ${PACKAGE_NAME}
                 SHARED
-                ./cpp/mediator.cpp
-                ./cpp/crypto.cpp
-                ./cpp/decryptor.cpp
+                ./androidcpp/mediator.cpp
                 ./cpp-adapter.cpp
+                ../cpp/crypto.cpp
+                ../cpp/decryptor.cpp
         )
 
         find_library(
@@ -71,10 +72,10 @@ else()
                 ${PACKAGE_NAME}
                 SHARED
                 ../../react-native/ReactCommon/jsi/jsi/jsi.cpp
-                ./cpp/mediator.cpp
-                ./cpp/crypto.cpp
-                ./cpp/decryptor.cpp
+                ./androidcpp/mediator.cpp
                 ./cpp-adapter.cpp
+                ../cpp/crypto.cpp
+                ../cpp/decryptor.cpp
         )
 
         include_directories(
@@ -82,6 +83,7 @@ else()
                 ../../react-native/React/Base
                 ../../react-native/ReactCommon/jsi
                 ./cpp
+                ../cpp
         )
 
         set_target_properties(

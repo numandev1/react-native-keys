@@ -48,18 +48,17 @@ yarn add react-native-keys
 
 Create a new file `keys.development.json` in the root of your React Native app and add Envs in `secure` object for `undecryptable` envs variables and add Envs in public for public usage this:
 
-```
+```json
 {
   "secure": {
-    "secure1": "secure1 value",
-    "secure2": "secure2 value",
-    "secure3": "secure3 value"
+    "GOOGLE_API": "ABCD",
+    "BRANCH_API": "ABCDEF"
   },
   "public": {
-    "APP_NAME": "RNKEYS",
-    "public1": "numan",
-    "public2": "usman",
-    "APP_ID": "com.example.rnkeys"
+    "APP_NAME": "Keys Example",
+    "BUNDLE_ID": "com.example.rnkeys.dev",
+    "ANDROID_CODE": "50",
+    "PACKGE_ID": "com.example.rnkeys.dev"
   }
 }
 ```
@@ -84,8 +83,8 @@ Keys.URI_SCHEME; // fb://
 ```js
 import Keys from 'react-native-keys';
 
-Keys.secureFor('API_TOKEN '); // 'ABCSE#$DDSD
-Keys.secureFor('GOOGLE_API_KEY '); // 'ABCSE#$DDSD
+Keys.secureFor('API_TOKEN'); // 'ABCSE#$DDSD
+Keys.secureFor('GOOGLE_API_KEY'); // 'ABCSE#$DDSD
 Keys.secureFor('SECRET_KEY'); // 'ABCSE#$DDSD
 ```
 

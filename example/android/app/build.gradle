@@ -128,6 +128,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file("keyExample.keystore")
+            storePassword 'example123'
+            keyAlias 'example'
+            keyPassword 'example123'
+        }
     }
     flavorDimensions "default"
     productFlavors {
