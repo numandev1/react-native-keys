@@ -36,7 +36,7 @@ We can Manage **secure**(undecryptable) and **public** enviroment through **reac
 <a href="https://www.buymeacoffee.com/numan.dev" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 </div>
 
----
+## See the [How we are protecting ENVs on the app side?](docs/workflow.md).
 
 ## Installation
 
