@@ -10,7 +10,7 @@
     "APP_NAME": "staging RNKEYS",
     "BUNDLE_ID": "com.example.rnkeys.staging",
     "ANDROID_CODE": "50",
-    "PACKGE_ID": "com.example.rnkeys.staging",
+    "PACKAGE_ID": "com.example.rnkeys.staging",
     "public1": "staging numan",
     "public2": "staging usman"
   }
