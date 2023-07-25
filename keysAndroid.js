@@ -1,35 +1,15 @@
 #! /usr/bin/env node
-const CryptoJS = require('crypto-js');
-
-const generatePassword = () => {
-  var length = 12,
-    charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-    retVal = '';
-  for (var i = 0, n = charset.length; i < length; ++i) {
-    retVal += charset.charAt(Math.floor(Math.random() * n));
-  }
-  return retVal;
-};
-
-const encrypt = (message, password, _iv) => {
-  const encrypted = CryptoJS.AES.encrypt(message, password, {
-    iv: _iv,
-  });
-
-  const base64Secret = encrypted.toString();
-
-  return base64Secret;
-};
-
 const {
   getKeys,
-  makeFileInCppAndroidDirectory,
   makeFileInAndroidMainAssetsFolder,
   getAndroidEnviromentFile,
+  generatePassword,
+  encrypt,
+  makeCppFileTemplate,
+  splitPrivateKeyInto3ChunksOfArray,
+  makeFileInCPPDir,
 } = require('./src/util/common');
 const {
-  makeCppFileTemplateAndroid,
-  makeHFileTemplateAndroid,
   makeCryptographicModuleTemplateAndroid,
 } = require('./src/util/keysFilesTemplateAndroid');
 
@@ -40,17 +20,9 @@ const makeAndroidJnuFiles = () => {
   const stringifyKeys = JSON.stringify(secureKeys);
   const password = generatePassword();
   const privateKey = encrypt(stringifyKeys, password);
-  const cppFileContent = makeCppFileTemplateAndroid(privateKey, password);
-  const isDoneCrypoCppFile = makeFileInCppAndroidDirectory(
-    cppFileContent,
-    'crypto.cpp'
-  );
-
-  const hFileContent = makeHFileTemplateAndroid();
-  const isDoneCreatedHFile = makeFileInCppAndroidDirectory(
-    hFileContent,
-    'crypto.h'
-  );
+  const privateKeyIn3Chunks = splitPrivateKeyInto3ChunksOfArray(privateKey);
+  const cppFileContent = makeCppFileTemplate(privateKeyIn3Chunks, password);
+  const isDoneCrypoCppFile = makeFileInCPPDir(cppFileContent, 'crypto.cpp');
 
   const halfKey = privateKey.substr(privateKey.length / 2);
   const cryptographicModuleFileContent =
@@ -62,7 +34,6 @@ const makeAndroidJnuFiles = () => {
 
   console.log('react-native-keys', {
     isDoneCrypoCppFile,
-    isDoneCreatedHFile,
     isDoneAddedPrivateKey,
   });
 };

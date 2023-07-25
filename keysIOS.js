@@ -1,35 +1,16 @@
 #! /usr/bin/env node
-const CryptoJS = require('crypto-js');
-
-const generatePassword = () => {
-  var length = 12,
-    charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-    retVal = '';
-  for (var i = 0, n = charset.length; i < length; ++i) {
-    retVal += charset.charAt(Math.floor(Math.random() * n));
-  }
-  return retVal;
-};
-const encrypt = (message, password, _iv) => {
-  const encrypted = CryptoJS.AES.encrypt(message, password, {
-    iv: _iv,
-  });
-
-  const base64Secret = encrypted.toString();
-
-  return base64Secret;
-};
-
 const {
   getKeys,
   makeFileInIosDir,
-  makeEncryptionFile,
+  makeFileInCPPDir,
   getIosEnviromentFile,
   makeFileInProjectDirectoryIos,
+  splitPrivateKeyInto3ChunksOfArray,
+  makeCppFileTemplate,
+  generatePassword,
+  encrypt,
 } = require('./src/util/common');
 const {
-  makeCppFileTemplateIOS,
-  makeHppFileTemplateIOS,
   makePrivateKeyTemplateIOS,
   makeXcConfigFIlle,
   makeGeneratedDotEnvTemplateIOS,
@@ -43,17 +24,9 @@ const makeIosJnuFiles = () => {
   const stringifyKeys = JSON.stringify(secureKeys);
   const password = generatePassword();
   const privateKey = encrypt(stringifyKeys, password);
-  const cppFileContent = makeCppFileTemplateIOS(privateKey, password);
-  const isDoneCrypoCppFile = makeFileInIosDir(cppFileContent, 'crypto.cpp');
-
-  const hFileContent = makeHppFileTemplateIOS();
-  const isDoneCreatedHFile = makeFileInIosDir(hFileContent, 'crypto.h');
-
-  const encryptionFileContent = makeEncryptionFile();
-  const isDoneCreatedIosEncryptionFile = makeFileInIosDir(
-    encryptionFileContent,
-    'encrypt.h'
-  );
+  const privateKeyIn3Chunks = splitPrivateKeyInto3ChunksOfArray(privateKey);
+  const cppFileContent = makeCppFileTemplate(privateKeyIn3Chunks, password);
+  const isDoneCrypoCppFile = makeFileInCPPDir(cppFileContent, 'crypto.cpp');
 
   const halfKey = privateKey.substr(privateKey.length / 2);
   const generatedPrivateKeyContent = makePrivateKeyTemplateIOS({
@@ -78,8 +51,6 @@ const makeIosJnuFiles = () => {
 
   console.log('react-native-keys', {
     isDoneCrypoCppFile,
-    isDoneCreatedHFile,
-    isDoneCreatedIosEncryptionFile,
     isGeneratedPrivateKeyFile,
     isDoneCreatedIosxcConfigFile,
     isGeneratedDotEnvFile,

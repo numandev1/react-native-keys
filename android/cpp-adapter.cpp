@@ -9,7 +9,7 @@
 #include <sstream>
 #include <iomanip>
 
-#include "json.hpp"
+#include "androidcpp/json.hpp"
 using json = nlohmann::json;
 
 using namespace facebook::jsi;
