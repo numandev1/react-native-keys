@@ -312,6 +312,8 @@ defaultConfig {
 }
 ```
 
+if you are using `Proguard` then you should read [Problems with Proguard](#problems-with-proguard)
+
 #### iOS
 
 The basic idea in iOS is to have one scheme per environment file, so you can easily alternate between them.
@@ -348,6 +350,22 @@ Also ensure that "Provide build settings from", just above the script, has a val
 ## Test Security
 
 you can decompile **APK/IPA** by this package [react-native-decompiler](https://www.npmjs.com/package/react-native-decompiler 'react-native-decompiler') and can find public and secure keys. you will not find secure keys.
+
+Troubleshooting
+
+### Problems with Proguard
+
+When Proguard is enabled (which it is by default for Android release builds), it can rename the `BuildConfig` Java class in the minification process and prevent React Native Keys from referencing it. To avoid this, add an exception to `android/app/proguard-rules.pro`:
+
+    -keep class com.mypackage.BuildConfig { *; }
+
+`com.mypackage` should match the `package` value in your `app/src/main/AndroidManifest.xml` file.
+
+we can find BuildConfig file at `android/app/build/generated/source/buildConfig/debug/com.mypackage/BuildConfig.java`
+
+If using Dexguard, the shrinking phase will remove resources it thinks are unused. It is necessary to add an exception to preserve the build config package name.
+
+    -keepresources string/build_config_package
 
 # Alternative Package
 
