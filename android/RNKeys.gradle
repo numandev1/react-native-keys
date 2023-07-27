@@ -34,71 +34,93 @@ def safeExtGet(prop, fallback) {
 
 def loadKeys(){
   def flavor = getCurrentFlavor()
-  def keysFile = "keys.development.json"
-  def exportCommand="";
-  if (System.env['KEYSFILE']) {
-    keysFile = System.env['KEYSFILE']
-    exportCommand="export KEYSFILE="+keysFile+" && ";
-  }
-  else if (project.hasProperty("keyFiles")) {
-    project.ext.keyFiles.any { pair ->
-      if (flavor.startsWith(pair.key.toLowerCase())) {
-        keysFile = pair.value
+  if(!flavor.isEmpty())
+  {
+    def keysFile = ""
+    def exportCommand="";
+    if (System.env['KEYSFILE']) {
+      keysFile = System.env['KEYSFILE']
+      exportCommand="export KEYSFILE="+keysFile+" && ";
+    }
+    else if (project.hasProperty("keyFiles")) {
+      project.ext.keyFiles.any { pair ->
+        if (flavor.startsWith(pair.key.toLowerCase())) {
+          keysFile = pair.value
+          exportCommand="export KEYSFILE="+keysFile+" && ";
+          return true
+        }
+      }
+    }
+
+    if(keysFile.isEmpty()) {
+      println("\n\n")
+      println("*********************************************************************************************************************")
+      println("***                             If you are running build flavour then                                            ****")
+      println("*** from app/build.gralde file, project.ext.keyFiles is missing key for " + flavor + " flavour, please define it.    ")
+      println("*********************************************************************************************************************")
+      println("\n\n")
+      if (project.ext.has('keyFiles') && project.ext.keyFiles.size() > 0) {
+        keysFile = project.ext.keyFiles[project.ext.keyFiles.keySet().iterator().next()];
         exportCommand="export KEYSFILE="+keysFile+" && ";
-        return true
+        println "Choose "+keysFile+" file for react-native-keys to avoid stop any build process\n\n"
+      } else {
+        // Print an error message
+        println "Please define project.ext.keyFiles as you are using react-native-keys\n\n"
+        return;
+      }
+    }
+
+    def IS_EXAMPLE=safeExtGet("IS_EXAMPLE",false);
+
+    if(IS_EXAMPLE)
+    {
+      exportCommand=exportCommand+"export IS_EXAMPLE='TRUE' && ../../keysAndroid.js"
+    }
+    else
+    {
+      def nodeModulesDir = getNodeModulesDir()
+      exportCommand=exportCommand+nodeModulesDir+"/node_modules/react-native-keys/keysAndroid.js"
+    }
+    def proc =["/bin/sh", "-c", exportCommand].execute()
+    proc.consumeProcessOutput(System.out, System.err)
+
+    println(keysFile)
+    def keys = [:]
+    File f = new File("$project.rootDir/../$keysFile");
+    if (!f.exists()) {
+      println("**************************")
+      println("*** Missing KEYs file ****")
+      println("**************************")
+      return;
+    }
+
+    if (f.exists()) {
+      def parsedJson = new groovy.json.JsonSlurper().parseText(f.text)
+//     println(parsedJson.public)
+      parsedJson.public.each { key, value ->
+        keys.put(key, value.replace('"', '\\"'))
+      }
+    } else {
+      println("**************************")
+      println("*** Missing KEYs file ****")
+      println("**************************")
+    }
+
+    project.ext.set("keys", keys)
+
+    android {
+      defaultConfig {
+        keys.each { k, v ->
+          def escaped = v.replaceAll("%","\\\\u0025")
+          buildConfigField "String", k, "\"$v\""
+          resValue "string", k, "\"$escaped\""
+        }
       }
     }
   }
 
-  def IS_EXAMPLE=safeExtGet("IS_EXAMPLE",false);
-
-  if(IS_EXAMPLE)
-  {
-    exportCommand=exportCommand+"export IS_EXAMPLE='TRUE' && ../../keysAndroid.js"
-  }
-  else
-  {
-    def nodeModulesDir = getNodeModulesDir()
-    exportCommand=exportCommand+nodeModulesDir+"/node_modules/react-native-keys/keysAndroid.js"
-  }
-  def proc =["/bin/sh", "-c", exportCommand].execute()
-  proc.consumeProcessOutput(System.out, System.err)
-
-  println(keysFile)
-  def keys = [:]
-  File f = new File("$project.rootDir/../$keysFile");
-  if (!f.exists()) {
-    println("**************************")
-    println("*** Missing KEYs file ****")
-    println("**************************")
-    return;
-  }
-
-  if (f.exists()) {
-    def parsedJson = new groovy.json.JsonSlurper().parseText(f.text)
-//     println(parsedJson.public)
-    parsedJson.public.each { key, value ->
-      keys.put(key, value.replace('"', '\\"'))
-    }
-  } else {
-    println("**************************")
-    println("*** Missing KEYs file ****")
-    println("**************************")
-  }
-
-  project.ext.set("keys", keys)
 }
 
 task keysCallCL(type: Exec) {
   loadKeys();
-}
-
-android {
-  defaultConfig {
-    project.keys.each { k, v ->
-      def escaped = v.replaceAll("%","\\\\u0025")
-      buildConfigField "String", k, "\"$v\""
-      resValue "string", k, "\"$escaped\""
-    }
-  }
 }
