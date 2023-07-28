@@ -29,7 +29,7 @@ def getNodeModulesDir() {
 }
 
 def safeExtGet(prop, fallback) {
-    project.ext.has(prop) ? project.ext.get(prop) : fallback
+  project.ext.has(prop) ? project.ext.get(prop) : fallback
 }
 
 def loadKeys(){
@@ -87,16 +87,9 @@ def loadKeys(){
     println(keysFile)
     def keys = [:]
     File f = new File("$project.rootDir/../$keysFile");
-    if (!f.exists()) {
-      println("**************************")
-      println("*** Missing KEYs file ****")
-      println("**************************")
-      return;
-    }
 
     if (f.exists()) {
       def parsedJson = new groovy.json.JsonSlurper().parseText(f.text)
-//     println(parsedJson.public)
       parsedJson.public.each { key, value ->
         keys.put(key, value.replace('"', '\\"'))
       }
@@ -104,6 +97,7 @@ def loadKeys(){
       println("**************************")
       println("*** Missing KEYs file ****")
       println("**************************")
+      return ;
     }
 
     project.ext.set("keys", keys)
@@ -118,7 +112,9 @@ def loadKeys(){
       }
     }
   }
-
+  else {
+    project.ext.set("keys", [:])
+  }
 }
 
 task keysCallCL(type: Exec) {
