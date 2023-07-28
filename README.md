@@ -5,6 +5,7 @@
 ### Why should we use react-native-keys over react-native-config?
 
 We should use **react-native-keys** instead of **react-native-config** because **react-native-keys** gives guarantee of undecryptable **envs** whereas **react-native-config** **envs** can be decompile and hack
+#### See the [ Migration from react-native-config](docs/react-native-config-migration-guide.md)
 
 <div align="center">
     <img align="right" width="250" style="margin-right: 55px;" src="./media/key.png">
@@ -36,7 +37,7 @@ We can Manage **secure**(undecryptable) and **public** enviroment through **reac
 <a href="https://www.buymeacoffee.com/numan.dev" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 </div>
 
-## See the [How we are protecting ENVs on the app side?](docs/workflow.md)
+#### See the [How we are protecting ENVs on the app side?](docs/workflow.md)
 
 ## Installation
 
@@ -58,7 +59,7 @@ Create a new file `keys.development.json` in the root of your React Native app a
     "APP_NAME": "Keys Example",
     "BUNDLE_ID": "com.example.rnkeys.dev",
     "ANDROID_CODE": "50",
-    "PACKGE_ID": "com.example.rnkeys.dev"
+    "PACKAGE_ID": "com.example.rnkeys.dev"
   }
 }
 ```

@@ -10,7 +10,7 @@
     "APP_NAME": "dev RNKEYS",
     "BUNDLE_ID": "com.example.rnkeys.dev",
     "ANDROID_CODE": "50",
-    "PACKGE_ID": "com.example.rnkeys.dev",
+    "PACKAGE_ID": "com.example.rnkeys.dev",
     "public1": "dev numan",
     "public2": "dev usman"
   }
