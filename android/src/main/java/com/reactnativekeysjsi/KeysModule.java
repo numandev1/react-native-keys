@@ -53,7 +53,7 @@ public class KeysModule extends ReactContextBaseJavaModule {
     System.loadLibrary("react-native-keys");
   }
 
-  public static native String getJniJsonStringyfyData(String key);
+  public static native String getJniJsonStringifyData(String key);
 
 
   public static String getSecureFor(String key) {
@@ -61,7 +61,7 @@ public class KeysModule extends ReactContextBaseJavaModule {
     try {
       if (jniData == null) {
         String privateKey=PrivateKey.privatekey;
-        String jsonString = getJniJsonStringyfyData(privateKey);
+        String jsonString = getJniJsonStringifyData(privateKey);
         jniData = new JSONObject(jsonString);
       }
       if (jniData.has(key)) {

@@ -86,7 +86,7 @@ static void install(jsi::Runtime &jsiRuntime, Keys *_Keys) {
       @try {
           NSDictionary *privatesKeyEnv = PRIVATE_KEY;
           NSString *privateKey = [privatesKeyEnv objectForKey:@"privateKey"];
-           NSString* stringfyData = [NSString stringWithCString:Crypto().getJniJsonStringyfyData([privateKey cStringUsingEncoding:NSUTF8StringEncoding]).c_str() encoding:[NSString defaultCStringEncoding]];
+           NSString* stringfyData = [NSString stringWithCString:Crypto().getJniJsonStringifyData([privateKey cStringUsingEncoding:NSUTF8StringEncoding]).c_str() encoding:[NSString defaultCStringEncoding]];
            NSData *data = [stringfyData dataUsingEncoding:NSUTF8StringEncoding];
            NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
            NSString *value =[s objectForKey:key];

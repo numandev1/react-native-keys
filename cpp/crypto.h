@@ -11,7 +11,7 @@ class Crypto
 {
 public:
   Crypto();
-  string getJniJsonStringyfyData(string key);
+  string getJniJsonStringifyData(string key);
 };
 #endif
 

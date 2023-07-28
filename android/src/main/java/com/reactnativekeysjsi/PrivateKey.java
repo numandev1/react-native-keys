@@ -3,5 +3,5 @@
 package com.reactnativekeysjsi;
 
 public class PrivateKey {
- public static String privatekey="++r99tSrk2+LWomyHaBfUvfegAH2BOY6IcpWkfk4M+oc/0xFbf5dl8zHWLJgjIDhjI/3svF1Vm+O71+l1UTNg=";
+ public static String privatekey="8sQrHyxSbdJCiVhdrAPceBR0ekPaQfmz8gXuUbJ7cEdqxmiunIb6Va/Nr8Jj8XCdTMZfrr/+iTNVr6/BqWOIdwsMHbpdQgUMMsWtkOM9qg==";
 }

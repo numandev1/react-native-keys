@@ -1,7 +1,6 @@
 
    #include "crypto.h"
   #include <string>
-  // #include "decryptor.cpp"
   #include "decryptor.h"
 
   using namespace std;
@@ -10,12 +9,12 @@
 
   }
 
-  string Crypto::getJniJsonStringyfyData(string key) {
-      std::string base64Secret1 = "U2FsdGVkX19YWrzXkbERDFR2kWtYzJPkq3LnVFpcSnbv1CEwjwWMGCIKWa";
-      std::string base64Secret2 = "BGS3nmYHhHF9IdAb50fTAawjCPpsYDXdS+SRZx3BHLN79sQz0qUY394HTL";
-      std::string base64Secret3 = "3gc/bMtxhJtl5EcEXRxrczqhHjCidBEH7vmT6inTKoxr92glFl9yU+0=";
+  string Crypto::getJniJsonStringifyData(string key) {
+      std::string base64Secret1 = "U2FsdGVkX18WCoAQlB0qyhBdFJQMwtn2lUeiF3GD1uT1sY6M4m+qzDRxl45EOrUexbEcuYdO";
+      std::string base64Secret2 = "v3eNgZZ/kDEPMJNDLu8OAu1dzNo/gLSZWkzl8sQrHyxSbdJCiVhdrAPceBR0ekPaQfmz8gXu";
+      std::string base64Secret3 = "UbJ7cEdqxmiunIb6Va/Nr8Jj8XCdTMZfrr/+iTNVr6/BqWOIdwsMHbpdQgUMMsWtkOM9qg==";
       std::string base64Secret = base64Secret1 + base64Secret2 + base64Secret3;
-       std::string password = "LFsqCW2QRPlu";
+       std::string password = "nH4QVBty9DRr";
       bool binary = false;
       std::string plaintext = decryptor::dec(base64Secret, password,binary);
 

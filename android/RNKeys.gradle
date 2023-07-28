@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
+
 import java.util.regex.Matcher
 import java.util.regex.Pattern
-
 
 def getCurrentFlavor() {
   Gradle gradle = getGradle()
@@ -24,7 +24,7 @@ def getCurrentFlavor() {
 }
 
 def getNodeModulesDir() {
-  def gradleSettingsDir = new File(project.rootDir,"..").canonicalPath
+  def gradleSettingsDir = new File(project.rootDir, "..").canonicalPath
   return gradleSettingsDir
 }
 
@@ -32,27 +32,25 @@ def safeExtGet(prop, fallback) {
   project.ext.has(prop) ? project.ext.get(prop) : fallback
 }
 
-def loadKeys(){
+def loadKeys() {
   def flavor = getCurrentFlavor()
-  if(!flavor.isEmpty())
-  {
+  if (!flavor.isEmpty()) {
     def keysFile = ""
-    def exportCommand="";
+    def exportCommand = "";
     if (System.env['KEYSFILE']) {
       keysFile = System.env['KEYSFILE']
-      exportCommand="export KEYSFILE="+keysFile+" && ";
-    }
-    else if (project.hasProperty("keyFiles")) {
+      exportCommand = "export KEYSFILE=" + keysFile + " && ";
+    } else if (project.hasProperty("keyFiles")) {
       project.ext.keyFiles.any { pair ->
-        if (flavor.startsWith(pair.key.toLowerCase())) {
-          keysFile = pair.value
-          exportCommand="export KEYSFILE="+keysFile+" && ";
-          return true
-        }
+          if (flavor.startsWith(pair.key.toLowerCase())) {
+            keysFile = pair.value
+            exportCommand = "export KEYSFILE=" + keysFile + " && ";
+            return true
+          }
       }
     }
 
-    if(keysFile.isEmpty()) {
+    if (keysFile.isEmpty()) {
       println("\n\n")
       println("*********************************************************************************************************************")
       println("***                             If you are running build flavour then                                            ****")
@@ -61,8 +59,8 @@ def loadKeys(){
       println("\n\n")
       if (project.ext.has('keyFiles') && project.ext.keyFiles.size() > 0) {
         keysFile = project.ext.keyFiles[project.ext.keyFiles.keySet().iterator().next()];
-        exportCommand="export KEYSFILE="+keysFile+" && ";
-        println "Choose "+keysFile+" file for react-native-keys to avoid stop any build process\n\n"
+        exportCommand = "export KEYSFILE=" + keysFile + " && ";
+        println "Choose " + keysFile + " file for react-native-keys to avoid stop any build process\n\n"
       } else {
         // Print an error message
         println "Please define project.ext.keyFiles as you are using react-native-keys\n\n"
@@ -70,22 +68,19 @@ def loadKeys(){
       }
     }
 
-    def IS_EXAMPLE=safeExtGet("IS_EXAMPLE",false);
+    def IS_EXAMPLE = safeExtGet("IS_EXAMPLE", false);
 
-    if(IS_EXAMPLE)
-    {
-      exportCommand=exportCommand+"export IS_EXAMPLE='TRUE' && ../../keysAndroid.js"
-    }
-    else
-    {
+    if (IS_EXAMPLE) {
+      exportCommand = exportCommand + "export IS_EXAMPLE='TRUE' && ../../keysAndroid.js"
+    } else {
       def nodeModulesDir = getNodeModulesDir()
-      exportCommand=exportCommand+nodeModulesDir+"/node_modules/react-native-keys/keysAndroid.js"
+      exportCommand = exportCommand + nodeModulesDir + "/node_modules/react-native-keys/keysAndroid.js"
     }
-    def proc =["/bin/sh", "-c", exportCommand].execute()
+    def proc = ["/bin/sh", "-c", exportCommand].execute()
     proc.consumeProcessOutput(System.out, System.err)
 
     println(keysFile)
-    def keys = [:]
+    def keys = [: ]
     File f = new File("$project.rootDir/../$keysFile");
 
     if (f.exists()) {
@@ -97,7 +92,7 @@ def loadKeys(){
       println("**************************")
       println("*** Missing KEYs file ****")
       println("**************************")
-      return ;
+      return;
     }
 
     project.ext.set("keys", keys)
@@ -111,9 +106,8 @@ def loadKeys(){
         }
       }
     }
-  }
-  else {
-    project.ext.set("keys", [:])
+  } else {
+    project.ext.set("keys", [: ])
   }
 }
 
