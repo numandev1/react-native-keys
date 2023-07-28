@@ -134,7 +134,7 @@ module.exports.makeCppFileTemplate = (privateKeyIn3Chunks, password) => {
 
   }
 
-  string Crypto::getJniJsonStringyfyData(string key) {
+  string Crypto::getJniJsonStringifyData(string key) {
       std::string base64Secret1 = "${privateKeyIn3Chunks[0]}";
       std::string base64Secret2 = "${privateKeyIn3Chunks[1]}";
       std::string base64Secret3 = "${privateKeyIn3Chunks[2]}";

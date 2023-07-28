@@ -25,8 +25,8 @@ std::string jstring2string(JNIEnv *env, jstring jStr)
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_reactnativekeysjsi_KeysModule_getJniJsonStringyfyData(JNIEnv * env, jobject thiz,jstring key) {
+Java_com_reactnativekeysjsi_KeysModule_getJniJsonStringifyData(JNIEnv * env, jobject thiz,jstring key) {
     auto *crypto = new Crypto();
     std::string _key{jstring2string(env,key)};
-    return env->NewStringUTF(crypto->getJniJsonStringyfyData(_key).c_str());
+    return env->NewStringUTF(crypto->getJniJsonStringifyData(_key).c_str());
 }
