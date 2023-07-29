@@ -1,7 +1,7 @@
 {
   "name": "react-native-keys",
   "version": "0.6.0",
-  "description": "secure keys / ENVs through jni+encryption using JSI",
+  "description": "🔐 Make undecryptable .ENVs variables",
   "main": "./src/index.ts",
   "source": "src/index",
   "files": [
@@ -10,6 +10,7 @@
     "android",
     "ios",
     "cpp",
+    "app.plugin.js",
     "keysAndroid.js",
     "keysIOS.js",
     "react-native-keys.podspec",
@@ -28,8 +29,11 @@
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
+    "exampleExpo": "yarn --cwd exampleExpo",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn exampleExpo && yarn && yarn pluginTsc && yarn pods",
+    "pluginTsc": "cd plugin && tsc",
+    "pluginTsc-watch": "cd plugin && tsc --watch"
   },
   "keywords": [
     "react-native",
@@ -64,6 +68,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
+    "@expo/config-plugins": "^7.2.5",
+    "@types/normalize-path": "^3.0.0",
+    "@types/xml2js": "^0.4.12",
+    "normalize-path": "^3.0.0",
+    "walk-sync": "^3.0.0",
+    "xml2js": "^0.6.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",

@@ -2,15 +2,19 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-keys": ["./src/index.ts"]
+      "react-native-keys": [
+        "./src/index.ts"
+      ]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -22,6 +26,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": true
   }
 }

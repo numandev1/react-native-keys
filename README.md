@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">🔐 Undecryptable .ENVs variables</h1>
+  <img width="500" src="./media/keys.png">
 </div>
 
 <div align="center">
@@ -19,11 +19,8 @@
 We should use **react-native-keys** instead of **react-native-config** because **react-native-keys** gives guarantee of undecryptable **envs** whereas **react-native-config** **envs** can be decompile and hack
 
 **Note:** We highly recommend utilizing `third-party client-side API KEYS`, such as `Google Map` or `Branch.io`, in the secure section of this package.
-#### See the [ Migration from react-native-config](docs/react-native-config-migration-guide.md)
 
-<div align="center">
-    <img align="right" width="250" style="margin-right: 55px;" src="./media/key.png">
-</div>
+#### See the [ Migration from react-native-config](docs/react-native-config-migration-guide.md)
 
 Making undecryptable **Envs** library for React Native.
 
@@ -62,6 +59,8 @@ We can Manage **secure**(undecryptable) and **public** enviroment through **reac
 <summary>Open Table of Contents</summary>
 
 - [Installation](#installation)
+  - [For React Native](#installation)
+  - [Managed Expo](#managed-expo)
 - [Basic Usage](#basic-usage)
   - [Javascript](#javascript)
     - [Public Keys](#public-keys)
@@ -93,7 +92,99 @@ yarn add react-native-keys
 ```
 
 ##### [New Architecture (Turbo Module) Supported](https://reactnative.dev/docs/new-architecture-intro)
+
 You can give feedback on [Discord channel](https://discord.gg/fgPHnZpH9d)
+
+<h3>Managed Expo</h3>
+<details>
+<summary><b>Click here to Expand Managed Expo plugin Config</b></summary>
+
+```
+expo install react-native-keys
+```
+
+Add `keys.development.json`, `keys.staging.json` and `keys.production.json` at project root directory
+
+Add the Keys plugin to your Expo config (`app.json`, `app.config.json` or `app.config.js`):
+
+```json
+{
+  "name": "my app",
+  "plugins": [
+    [
+      "react-native-keys",
+      {
+        "android": {
+          "defaultKeyFile": "keys.staging.json" //default: keys.development.json
+        },
+        "ios": {
+          "defaultKeyFile": "keys.staging.json" //default: keys.development.json
+        }
+      }
+    ]
+  ]
+}
+```
+
+Finally, compile the mods:
+
+```
+expo prebuild
+```
+
+**Optional** If you wanna use different [Variants](https://docs.expo.dev/build-reference/variants/) then the you should write `eas.json` like this
+
+```
+{
+  "build": {
+    "development": {
+      "env": {
+        "APP_VARIANT": "development",
+        "KEYSFILE": "keys.development.json"
+      }
+    },
+    "staging": {
+      "env": {
+        "APP_VARIANT": "staging",
+        "KEYSFILE": "keys.staging.json"
+      }
+    },
+    "production": {
+      "env": {
+        "APP_VARIANT": "production",
+        "KEYSFILE": "keys.production.json"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+```
+
+To apply the changes, build a new binary with EAS:
+
+```
+eas build
+```
+
+use different [Variants](https://docs.expo.dev/build-reference/variants/) script into `package.json` like this
+
+```
+{
+  "scripts": {
+    "dev:android": "KEYSFILE=keys.development.json npx expo run:android",
+    "staging:android": "KEYSFILE=keys.staging.json npx expo run:android",
+    "prod:android": "KEYSFILE=keys.production.json npx expo run:android",
+    "dev:ios": "KEYSFILE=keys.development.json npx expo run:ios",
+    "staging:ios": "KEYSFILE=keys.staging.json npx expo run:ios",
+    "prod:ios": "KEYSFILE=keys.production.json npx expo run:ios"
+  }
+}
+
+```
+
+</details>
 
 ## Basic Usage
 
@@ -228,7 +319,6 @@ Alternatively, you can define a map in `Pre-actions` associating builds with env
    "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
 ```
 
-
 ### Android
 
 - **Manual Link (Android)**
@@ -359,7 +449,7 @@ NSDictionary *allKeys = [Keys public_keys];
 NSString *value = [Keys secureFor:@"BRANCH_KEY"];   //key_test_omQ7YYKiq57vOqEJsdcsdfeEsiWkwxE
 ```
 
- call, and use build cases in lowercase, like:
+call, and use build cases in lowercase, like:
 
 ### Different environments
 
@@ -453,10 +543,12 @@ If using Dexguard, the shrinking phase will remove resources it thinks are unuse
     -keepresources string/build_config_package
 
 ### Using node with nvm, fnm or notion
+
 Build failure in Xcode looks something like:
+
 > env: node: No such file or directory
 
-Change the **Pre-actions script** scripts in Xcode to: 
+Change the **Pre-actions script** scripts in Xcode to:
 
 ```
 # Setup nvm and set node
