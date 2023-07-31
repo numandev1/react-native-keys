@@ -1,1 +1,1 @@
-#define DOT_ENV @{ @"APP_NAME":@"dev RNKEYS 111 2200",@"public1":@"dev numan",@"public2":@"dev usman",@"APP_ID":@"com.example.rnkeys.dev" };
+#define DOT_ENV @{ @"APP_NAME":@"prod RNKEYS",@"BUNDLE_ID":@"com.example.rnkeys.prod",@"ANDROID_CODE":@"50",@"PACKAGE_ID":@"com.example.rnkeys.prod",@"public1":@"prod numan",@"public2":@"prod usman" };

@@ -113,7 +113,7 @@ Keep in mind It's [basically impossible to prevent users from reverse engineerin
 Install the package:
 
 ```
-$ yarn add react-native-keys
+yarn add react-native-keys
 ```
 
 Link the library:
@@ -123,7 +123,7 @@ Link the library:
 or later. For earlier versions you need to manually link the module.)
 
 ```
-$ react-native link react-native-keys
+react-native link react-native-keys
 ```
 
 if cocoapods are used in the project then pod has to be installed as well:
@@ -138,12 +138,12 @@ if cocoapods are used in the project then pod has to be installed as well:
 
 - Manual Link (iOS)
 
-  1.  In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-  2.  Go to `node_modules` ➜ `react-native-keys` and add `Keys.xcodeproj`
-  3.  Expand the `Keys.xcodeproj` ➜ `Products` folder
-  4.  In the project navigator, select your project. Add `Keys.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-  5.  And go the Build Settings tab. Make sure All is toggled on (instead of Basic)
-  6.  Look for Header Search Paths and add `$(SRCROOT)/../node_modules/react-native-keys/ios/**` as `non-recursive`
+  1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
+  2. Go to `node_modules` ➜ `react-native-keys` and add `Keys.xcodeproj`
+  3. Expand the `Keys.xcodeproj` ➜ `Products` folder
+  4. In the project navigator, select your project. Add `Keys.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+  5. And go the Build Settings tab. Make sure All is toggled on (instead of Basic)
+  6. Look for Header Search Paths and add `$(SRCROOT)/../node_modules/react-native-keys/ios/**` as `non-recursive`
 
 - Manual Link (Android)
 
@@ -158,8 +158,8 @@ if cocoapods are used in the project then pod has to be installed as well:
 
   ```diff
   dependencies {
-  	implementation "com.facebook.react:react-native:+"  // From node_modules
-  +	implementation project(':react-native-keys')
+   implementation "com.facebook.react:react-native:+"  // From node_modules
+  + implementation project(':react-native-keys')
   }
   ```
 
@@ -170,9 +170,9 @@ if cocoapods are used in the project then pod has to be installed as well:
 
   @Override
   protected List<ReactPackage> getPackages() {
-  	   return Arrays.asList(
-          		new MainReactPackage()
-  +      		new KeysPackage()
+      return Arrays.asList(
+            new MainReactPackage()
+  +        new KeysPackage()
       );
   }
   ```
@@ -189,7 +189,7 @@ you can only read jni key into java file.like this
 URL url = new URL(BuildConfig.API_URL);  // https://example.com
 ```
 
-You can also read them from your Gradle configuration:
+You can also read them from your Gradle configuration(only public keys):
 
 ```groovy
 defaultConfig {
@@ -211,12 +211,24 @@ All variables are strings, so you may need to cast them. For instance, in Gradle
 versionCode project.keys.get("VERSION_CODE").toInteger()
 ```
 
+#### Advanced Android Setup
+
+In `android/app/build.gradle`, if you use `applicationIdSuffix` or `applicationId` that is different from the package name indicated in `AndroidManifest.xml` in `<manifest package="...">` tag, for example, to support different build variants:
+Add this in `android/app/build.gradle`
+
+```
+defaultConfig {
+    ...
+    resValue "string", "build_config_package", "YOUR_PACKAGE_NAME_IN_ANDROIDMANIFEST_XML_OR_YOUR_NAME_SPACE"
+}
+```
+
 #### Secure Keys (JNI)
 
 ```java
 import static com.reactnativekeysjsi.KeysModule.getSecureFor;
 
-String secureValue=getSecureFor("BRANCH_KEY");   // key_test_omQ7YYKiq57vOqEJsdcsdfeEsiWkwxE
+String secureValue = getSecureFor("BRANCH_KEY");   // key_test_omQ7YYKiq57vOqEJsdcsdfeEsiWkwxE
 ```
 
 ### iOS
@@ -279,9 +291,18 @@ ios/tmp.xcconfig
 
 - Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate KEYS keys on native ios side (into node*modules) Make sure to select your target under \_Provide build settings from*, so `$SRCROOT` environment variables is available to the script.
 
-```
+```sh
 "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
 ```
+
+Alternatively, you can define a map in `Pre-actions` associating builds with env files:
+
+```sh
+    export KEYSFILE = "path_to_env"
+   "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
+```
+
+ call, and use build cases in lowercase, like:
 
 ### Different environments
 
@@ -292,9 +313,9 @@ By default react-native-keys will read from `keys.development.json`, but you can
 The simplest approach is to tell it what file to read with an environment variable, like:
 
 ```
-$ KEYSFILE=keys.staging.json react-native run-ios           # bash
-$ SET KEYSFILE=keys.staging.json && react-native run-ios    # windows
-$ env:KEYSFILE="keys.staging.json"; react-native run-ios    # powershell
+KEYSFILE=keys.staging.json react-native run-ios           # bash
+SET KEYSFILE=keys.staging.json && react-native run-ios    # windows
+env:KEYSFILE="keys.staging.json"; react-native run-ios    # powershell
 ```
 
 This also works for `run-android`. Alternatively, there are platform-specific options below.
@@ -303,13 +324,13 @@ This also works for `run-android`. Alternatively, there are platform-specific op
 
 The same environment variable can be used to assemble releases with a different config:
 
-```
-$ cd android && KEYSFILE=keys.staging.json ./gradlew assembleRelease
+```sh
+cd android && KEYSFILE=keys.staging.json ./gradlew assembleRelease
 ```
 
 Alternatively, you can define a map in `build.gradle` associating builds with env files. Do it before the `apply from` call, and use build cases in lowercase, like:
 
-```
+```groovy
 project.ext.keyFiles = [
   debug: "keys.development.json",
   release: "keys.staging.json",
@@ -323,7 +344,7 @@ apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle
 In `android/app/build.gradle`, if you use `applicationIdSuffix` or `applicationId` that is different from the package name indicated in `AndroidManifest.xml` in `<manifest package="...">` tag, for example, to support different build variants:
 Add this in `android/app/build.gradle`
 
-```
+```groovy
 defaultConfig {
     ...
     resValue "string", "build_config_package", "YOUR_PACKAGE_NAME_IN_ANDROIDMANIFEST_XML"

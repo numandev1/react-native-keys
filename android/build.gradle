@@ -1,24 +1,39 @@
 import java.nio.file.Paths
 
 buildscript {
-
   repositories {
     google()
     mavenCentral()
-
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
   }
+
   dependencies {
-    classpath 'com.android.tools.build:gradle:4.2.1'
+    classpath "com.android.tools.build:gradle:7.2.1"
   }
 }
 
-apply plugin: 'com.android.library'
+def isNewArchitectureEnabled() {
+  return rootProject.hasProperty("newArchEnabled") && rootProject.getProperty("newArchEnabled") == "true"
+}
+
+apply plugin: "com.android.library"
+
+
+def appProject = rootProject.allprojects.find { it.plugins.hasPlugin('com.android.application') }
+
+if (isNewArchitectureEnabled()) {
+  apply plugin: "com.facebook.react"
+}
 
 def safeExtGet(prop, fallback) {
   rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+def getExtOrDefault(name) {
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties["Keys_" + name]
+}
+
+def getExtOrIntegerDefault(name) {
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["Keys_" + name]).toInteger()
 }
 
 def resolveReactNativeDirectory() {
@@ -55,10 +70,6 @@ def REACT_NATIVE_VERSION = reactProperties.getProperty("VERSION_NAME")
 def REACT_NATIVE_MINOR_VERSION = REACT_NATIVE_VERSION.startsWith("0.0.0-") ? 1000 : REACT_NATIVE_VERSION.split("\\.")[1].toInteger()
 
 
-def getExtOrDefault(name, defaultValue) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : defaultValue
-}
-
 def found = false
 def basePath = projectDir.toPath().normalize()
 
@@ -93,17 +104,37 @@ def nodeModulesPath = nodeModulesDir.toString().replace("\\", "/")
 def reactNativePath = reactNativeDir.toString().replace("\\", "/")
 
 
-android {
-  compileSdkVersion getExtOrDefault('compileSdkVersion', 28)
+def supportsNamespace() {
+  def parsed = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')
+  def major = parsed[0].toInteger()
+  def minor = parsed[1].toInteger()
 
-  buildFeatures {
-    prefab true
+  // Namespace support was added in 7.3.0
+  if (major == 7 && minor >= 3) {
+    return true
   }
 
-  defaultConfig {
-    minSdkVersion getExtOrDefault('minSdkVersion', 16)
-    targetSdkVersion getExtOrDefault('targetSdkVersion', 28)
+  return major >= 8
+}
 
+android {
+  if (supportsNamespace()) {
+    namespace "com.reactnativekeysjsi"
+  } else {
+    sourceSets {
+      main {
+        manifest.srcFile "src/main/AndroidManifestDeprecated.xml"
+      }
+    }
+  }
+
+  ndkVersion getExtOrDefault("ndkVersion")
+  compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
+
+  defaultConfig {
+    minSdkVersion getExtOrIntegerDefault("minSdkVersion")
+    targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
+    buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
     externalNativeBuild {
       cmake {
         cppFlags "-fexceptions", "-frtti", "-std=c++1y", "-DONANDROID"
@@ -114,55 +145,71 @@ android {
       }
     }
   }
+  externalNativeBuild {
+    cmake {
+      path "CMakeLists.txt"
+    }
+  }
+    packagingOptions {
+    excludes = ['**/libc++_shared.so',
+                '**/libfbjni.so',
+                '**/libreactnativejni.so',
+                '**/libjsi.so',
+                '**/libreact_nativemodule_core.so',
+                '**/libturbomodulejsijni.so',
+                '**/libcrypto.so'
+    ]
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+    }
+  }
+  buildFeatures {
+    prefab true
+  }
+  lintOptions {
+    disable "GradleCompatible"
+  }
 
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
 
-  lintOptions{
-    abortOnError false
-    disable 'GradleCompatible'
-  }
-
-  externalNativeBuild {
-    cmake {
-      path "./CMakeLists.txt"
+  sourceSets {
+    main {
+      if (isNewArchitectureEnabled()) {
+        java.srcDirs += [
+          "src/newarch",
+          // This is needed to build Kotlin project with NewArch enabled
+          "${project.buildDir}/generated/source/codegen/java"
+        ]
+      } else {
+        java.srcDirs += ["src/oldarch"]
+      }
     }
   }
-
-  packagingOptions {
-    excludes = ['**/libc++_shared.so',
-                '**/libfbjni.so',
-                '**/libreactnativejni.so',
-                '**/libjsi.so',
-                '**/libreact_nativemodule_core.so',
-                '**/libturbomodulejsijni.so'
-    ]
-  }
-
 }
 
 repositories {
   mavenCentral()
-  mavenLocal()
   google()
-
-  maven {
-    url reactNativePath
-    name 'React Native sources'
-  }
 }
 
+
 dependencies {
+  // For < 0.71, this will be from the local maven repo
+  // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
-  if (REACT_NATIVE_MINOR_VERSION >= 71) {
-    implementation "com.facebook.react:react-android:"
-    implementation "com.facebook.react:hermes-android:"
-  }
-  else
-  {
-    implementation 'com.facebook.react:react-native:+'
-  }
+  implementation "com.facebook.react:react-native:+"
   implementation 'com.android.ndk.thirdparty:openssl:1.1.1l-beta-1'
+}
+
+if (isNewArchitectureEnabled()) {
+  react {
+    jsRootDir = file("../src/")
+    libraryName = "Keys"
+    codegenJavaPackageName = "com.reactnativekeysjsi"
+  }
 }

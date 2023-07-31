@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E46D8CD2428F78900513E24 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E46D8CB2428F78900513E24 /* example.cpp */; };
+		12B29C732A77B4F300E932C3 /* decryptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C712A77B4F300E932C3 /* decryptor.cpp */; };
+		12B29C772A77B52800E932C3 /* privateKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C742A77B52800E932C3 /* privateKey.m */; };
+		12B29C782A77B52800E932C3 /* YeetJSIUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C752A77B52800E932C3 /* YeetJSIUtils.mm */; };
+		12B29C792A77B52800E932C3 /* GeneratedDotEnv.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B29C762A77B52800E932C3 /* GeneratedDotEnv.m */; };
+		5E46D8CD2428F78900513E24 /* crypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E46D8CB2428F78900513E24 /* crypto.cpp */; };
 		5E555C0D2413F4C50049A1A2 /* Keys.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* Keys.mm */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,12 +28,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12B29C712A77B4F300E932C3 /* decryptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = decryptor.cpp; path = ../cpp/decryptor.cpp; sourceTree = "<group>"; };
+		12B29C722A77B4F300E932C3 /* decryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = decryptor.h; path = ../cpp/decryptor.h; sourceTree = "<group>"; };
+		12B29C742A77B52800E932C3 /* privateKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = privateKey.m; sourceTree = "<group>"; };
+		12B29C752A77B52800E932C3 /* YeetJSIUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YeetJSIUtils.mm; sourceTree = "<group>"; };
+		12B29C762A77B52800E932C3 /* GeneratedDotEnv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedDotEnv.m; sourceTree = "<group>"; };
+		12B29C7A2A77B54600E932C3 /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
+		12B29C7B2A77B54600E932C3 /* YeetJSIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YeetJSIUtils.h; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libKeys.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKeys.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
-		5E46D8CB2428F78900513E24 /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = example.cpp; path = ../cpp/example.cpp; sourceTree = "<group>"; };
-		5E46D8CC2428F78900513E24 /* example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = example.h; path = ../cpp/example.h; sourceTree = "<group>"; };
+		5E46D8CB2428F78900513E24 /* crypto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = crypto.cpp; path = ../cpp/crypto.cpp; sourceTree = "<group>"; };
+		5E46D8CC2428F78900513E24 /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypto.h; path = ../cpp/crypto.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* Keys.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Keys.mm; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +63,16 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
-				5E46D8CB2428F78900513E24 /* example.cpp */,
-				5E46D8CC2428F78900513E24 /* example.h */,
+				12B29C7A2A77B54600E932C3 /* Keys.h */,
+				12B29C7B2A77B54600E932C3 /* YeetJSIUtils.h */,
+				12B29C762A77B52800E932C3 /* GeneratedDotEnv.m */,
+				12B29C742A77B52800E932C3 /* privateKey.m */,
+				12B29C752A77B52800E932C3 /* YeetJSIUtils.mm */,
+				5E46D8CB2428F78900513E24 /* crypto.cpp */,
+				12B29C712A77B4F300E932C3 /* decryptor.cpp */,
+				12B29C722A77B4F300E932C3 /* decryptor.h */,
+				5E46D8CC2428F78900513E24 /* crypto.h */,
 				B3E7B5891CC2AC0600A0062D /* Keys.mm */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,10 +134,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				5E46D8CD2428F78900513E24 /* example.cpp in Sources */,
+				5E46D8CD2428F78900513E24 /* crypto.cpp in Sources */,
+				12B29C732A77B4F300E932C3 /* decryptor.cpp in Sources */,
+				12B29C782A77B52800E932C3 /* YeetJSIUtils.mm in Sources */,
 				5E555C0D2413F4C50049A1A2 /* Keys.mm in Sources */,
-
+				12B29C772A77B52800E932C3 /* privateKey.m in Sources */,
+				12B29C792A77B52800E932C3 /* GeneratedDotEnv.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +252,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Keys;
 				SKIP_INSTALL = YES;
-
 			};
 			name = Debug;
 		};
@@ -255,7 +268,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Keys;
 				SKIP_INSTALL = YES;
-
 			};
 			name = Release;
 		};
