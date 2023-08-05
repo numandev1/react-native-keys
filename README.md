@@ -12,11 +12,13 @@
 
 </div>
 
-**REACT-NATIVE-KEYS** is a react-native package, which helps us to protect our `ENVs`
+**REACT-NATIVE-KEYS** is a react-native package, which helps us to protect our `ENVs` and manage different environments like `dev`, `staging`, `production`
 
 ### Why should we use react-native-keys over react-native-config?
 
 We should use **react-native-keys** instead of **react-native-config** because **react-native-keys** gives guarantee of undecryptable **envs** whereas **react-native-config** **envs** can be decompile and hack
+
+**Note:** We highly recommend utilizing `third-party client-side API KEYS`, such as `Google Map` or `Branch.io`, in the secure section of this package.
 #### See the [ Migration from react-native-config](docs/react-native-config-migration-guide.md)
 
 <div align="center">
