@@ -1,4 +1,8 @@
 <div align="center">
+  <h1 align="center">🔐 Undecryptable .ENVs variables</h1>
+</div>
+
+<div align="center">
 
 [![GitHub Repo stars](https://img.shields.io/static/v1?style=for-the-badge&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=)](https://discord.gg/dtYzk8sp)
 [![GitHub Repo stars](https://img.shields.io/github/stars/numandev1/react-native-keys?style=for-the-badge&logo=github)](https://github.com/numandev1/react-native-keys/stargazers)
@@ -6,10 +10,6 @@
 ![npm](https://img.shields.io/static/v1?style=for-the-badge&message=TypeScript&color=3178C6&logo=TypeScript&logoColor=FFFFFF&label=)
 ![npm](https://img.shields.io/npm/dt/react-native-keys?style=for-the-badge)
 
-</div>
-
-<div align="center">
-  <h1 align="center">🔐 Undecryptable .ENVs variables</h1>
 </div>
 
 **REACT-NATIVE-KEYS** is a react-native package, which helps us to protect our `ENVs`
