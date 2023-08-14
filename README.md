@@ -63,7 +63,7 @@ yarn add react-native-keys
 ```
 
 ### OR if you wanna test [New Architecture (Turbo Module)](https://reactnative.dev/docs/new-architecture-intro)
-then install alpha version like this
+then install alpha version like this and give feedback on [Discord channel](https://discord.gg/dtYzk8sp)
 
 ```sh
 yarn add react-native-keys@alpha
