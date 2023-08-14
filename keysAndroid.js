@@ -2,19 +2,20 @@
 const {
   getKeys,
   makeFileInAndroidMainAssetsFolder,
-  getAndroidEnviromentFile,
+  getAndroidEnvironmentFile,
   generatePassword,
   encrypt,
   makeCppFileTemplate,
   splitPrivateKeyInto3ChunksOfArray,
   makeFileInCPPDir,
+  genTSType,
 } = require('./src/util/common');
 const {
   makeCryptographicModuleTemplateAndroid,
 } = require('./src/util/keysFilesTemplateAndroid');
 
 const makeAndroidJnuFiles = () => {
-  const KEYS_FILE_NAME = getAndroidEnviromentFile();
+  const KEYS_FILE_NAME = getAndroidEnvironmentFile();
   const allKeys = getKeys(KEYS_FILE_NAME);
   const secureKeys = allKeys.secure;
   const stringifyKeys = JSON.stringify(secureKeys);
@@ -22,7 +23,7 @@ const makeAndroidJnuFiles = () => {
   const privateKey = encrypt(stringifyKeys, password);
   const privateKeyIn3Chunks = splitPrivateKeyInto3ChunksOfArray(privateKey);
   const cppFileContent = makeCppFileTemplate(privateKeyIn3Chunks, password);
-  const isDoneCrypoCppFile = makeFileInCPPDir(cppFileContent, 'crypto.cpp');
+  const isDoneCryptoCppFile = makeFileInCPPDir(cppFileContent, 'crypto.cpp');
 
   const halfKey = privateKey.substr(privateKey.length / 2);
   const cryptographicModuleFileContent =
@@ -31,9 +32,9 @@ const makeAndroidJnuFiles = () => {
     cryptographicModuleFileContent,
     'PrivateKey.java'
   );
-
-  console.log('react-native-keys', {
-    isDoneCrypoCppFile,
+  genTSType(allKeys);
+  console.info('react-native-keys', {
+    isDoneCryptoCppFile,
     isDoneAddedPrivateKey,
   });
 };

@@ -12,21 +12,31 @@ const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const RN_KEYS_PATH = path.join('node_modules', 'react-native-keys');
 const KEYS_IOS_PATH = path.join(RN_KEYS_PATH, 'ios');
 const KEYS_ANDROID_PATH = path.join(RN_KEYS_PATH, 'android');
+const KEYS_SRC_PATH = path.join(RN_KEYS_PATH, 'src');
+const KEYS_SRC_EXAMPLE_PATH = path.join('../', 'src');
 const KEYS_IOS_EXAMPLE_PATH = path.join('../', 'ios');
 const KEYS_ANDROID_EXAMPLE_PATH = path.join('../', 'android');
+
 const IOS_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? KEYS_IOS_EXAMPLE_PATH : KEYS_IOS_PATH
 );
+
 const CPP_DIRECTORY_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? '../' : RN_KEYS_PATH,
   'cpp'
 );
+
 const ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? KEYS_ANDROID_EXAMPLE_PATH : KEYS_ANDROID_PATH,
   'cpp'
+);
+
+const SRC_PATH = path.join(
+  PROJECT_ROOT_DIR_PATH,
+  isExample ? KEYS_SRC_EXAMPLE_PATH : KEYS_SRC_PATH
 );
 const ANDROID_KEYS_DIR_PATH = path.join(
   PACKAGE_ROOT_DIR_PATH,
@@ -45,6 +55,21 @@ module.exports.getKeys = (KEYS_FILE_NAME) => {
   const keysJson = fs.readJSONSync(jniJsonFilePath);
   const secureKeys = keysJson;
   return secureKeys;
+};
+
+module.exports.genTSType = (allKeys) => {
+  let result =
+    '// this file is auto generate, please do not modify\nexport type KeyTurboType = {';
+  Object.keys(allKeys?.public ?? {}).forEach((key) => {
+    result += `\n  ${key}: string;`;
+  });
+  result += '\n};\n\n';
+  result += 'export type KeyTurboSecuredType = {';
+  Object.keys(allKeys?.secure ?? {}).forEach((key) => {
+    result += `\n  ${key}: string;`;
+  });
+  result += '\n};\n';
+  fs.outputFileSync(path.join(SRC_PATH, 'type.ts'), result);
 };
 
 module.exports.makeFileInCPPDir = (fileContent, fileName) => {
@@ -77,7 +102,7 @@ module.exports.makeFileInProjectDirectoryIos = (fileContent, fileName) => {
   }
 };
 
-module.exports.getIosEnviromentFile = () => {
+module.exports.getIosEnvironmentFile = () => {
   try {
     let KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
@@ -95,7 +120,7 @@ module.exports.getIosEnviromentFile = () => {
   }
 };
 
-module.exports.getAndroidEnviromentFile = () => {
+module.exports.getAndroidEnvironmentFile = () => {
   try {
     let KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
