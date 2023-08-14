@@ -62,6 +62,13 @@ We can Manage **secure**(undecryptable) and **public** enviroment through **reac
 yarn add react-native-keys
 ```
 
+### OR if you wanna test [New Architecture (Turbo Module)](https://reactnative.dev/docs/new-architecture-intro)
+then install alpha version like this
+
+```sh
+yarn add react-native-keys@alpha
+```
+
 ## Basic Usage
 
 Create a new file `keys.development.json` in the root of your React Native app and add Envs in `secure` object for `undecryptable` envs variables and add Envs in public for public usage this:
