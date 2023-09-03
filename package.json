@@ -50,7 +50,8 @@
     "dotenv",
     "config-var",
     "12factor",
-    "undecryptable"
+    "undecryptable",
+    "envs"
   ],
   "repository": "https://github.com/numandev1/react-native-keys",
   "author": "numandev1 <muhammadnuman70@gmail.com> (https://github.com/numandev1)",
