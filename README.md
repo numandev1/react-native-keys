@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![GitHub Repo stars](https://img.shields.io/static/v1?style=for-the-badge&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=)](https://discord.gg/dtYzk8sp)
+[![GitHub Repo stars](https://img.shields.io/static/v1?style=for-the-badge&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=)](https://discord.gg/fgPHnZpH9d)
 [![GitHub Repo stars](https://img.shields.io/github/stars/numandev1/react-native-keys?style=for-the-badge&logo=github)](https://github.com/numandev1/react-native-keys/stargazers)
 [![GitHub Repo stars](https://img.shields.io/npm/v/react-native-keys?style=for-the-badge&message=npm&&color=CB3837&logo=npm&logoColor=FFFFFF&label=)](https://www.npmjs.com/package/react-native-keys)
 ![npm](https://img.shields.io/static/v1?style=for-the-badge&message=TypeScript&color=3178C6&logo=TypeScript&logoColor=FFFFFF&label=)
@@ -56,18 +56,44 @@ We can Manage **secure**(undecryptable) and **public** enviroment through **reac
 
 #### See the [How we are protecting ENVs on the app side?](docs/workflow.md)
 
+# Table of Contents
+
+<details>
+<summary>Open Table of Contents</summary>
+
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+  - [Javascript](#javascript)
+    - [Public Keys](#public-keys)
+    - [Secure Keys](#secure-keys)
+- [Setup](#video)
+  - [IOS](#ios)
+  - [Android](#android)
+- [Native Usage](#native-usage)
+  - [Android](#android-1)
+    - [Public Keys](#public-keys-1)
+    - [Secure Keys](#secure-keys-jni)
+  - [IOS](#ios-1)
+    - [Public Keys](#public-keys-2)
+    - [Secure Keys](#secure-keys-1)
+- [Different environments](#different-environments)
+- [Advanced Android Setup](#advanced-android-setup-1)
+- [Advanced IOS Setup](#ios-2)
+- [Test Security](#test-security)
+- [Problems with Proguard](#problems-with-proguard)
+- [Using node with nvm, fnm or notion](#using-node-with-nvm-fnm-or-notion)
+- [Star on GitHub](#consider-supporting-with-a-%EF%B8%8F-star-on-github)
+- [How we are protecting ENVs on the app side?](#see-the-how-we-are-protecting-envs-on-the-app-side)
+  </details>
+
 ## Installation
 
 ```sh
 yarn add react-native-keys
 ```
 
-### OR if you wanna test [New Architecture (Turbo Module)](https://reactnative.dev/docs/new-architecture-intro)
-then install alpha version like this and give feedback on [Discord channel](https://discord.gg/dtYzk8sp)
-
-```sh
-yarn add react-native-keys@alpha
-```
+##### [New Architecture (Turbo Module) Supported](https://reactnative.dev/docs/new-architecture-intro)
+You can give feedback on [Discord channel](https://discord.gg/fgPHnZpH9d)
 
 ## Basic Usage
 
@@ -133,6 +159,8 @@ or later. For earlier versions you need to manually link the module.)
 react-native link react-native-keys
 ```
 
+### IOS
+
 if cocoapods are used in the project then pod has to be installed as well:
 
 ```
@@ -143,7 +171,7 @@ if cocoapods are used in the project then pod has to be installed as well:
 >
 > Solution: [StackOverFlow](https://stackoverflow.com/a/76455587/8079868)
 
-- Manual Link (iOS)
+- **Manual Link (iOS)**
 
   1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
   2. Go to `node_modules` ➜ `react-native-keys` and add `Keys.xcodeproj`
@@ -152,7 +180,58 @@ if cocoapods are used in the project then pod has to be installed as well:
   5. And go the Build Settings tab. Make sure All is toggled on (instead of Basic)
   6. Look for Header Search Paths and add `$(SRCROOT)/../node_modules/react-native-keys/ios/**` as `non-recursive`
 
-- Manual Link (Android)
+- **Mandatory Step**
+
+With one extra step environment values can be exposed to "Info.plist" and Build settings in the native project.
+
+1. click on the file tree and create new file of type XCConfig
+   ![img](./media/1.png)
+   ![img](./media/2.png)
+2. save it under `ios` folder as "Config.xcconfig" with the following content:
+
+```
+#include? "tmp.xcconfig"
+```
+
+3. add the following to your ".gitignore":
+
+```
+ios/tmp.xcconfig
+
+```
+
+4. go to project settings
+5. apply config to your configurations
+   ![img](./media/3.png)
+6. Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate "tmp.xcconfig" before each build exposing values to Build Settings and Info.plist. Make sure to select your target under _Provide build settings from_, so `$SRCROOT` environment variables is available to the script..
+
+   ```
+   "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
+   ```
+
+   ![img](./media/4.png)
+
+7. You can now access your env variables in the Info.plist, for example `$(MY_ENV_VARIABLE)`. If you face issues accessing variables, please open a new issue and provide as much details as possible so above steps can be improved.
+
+- Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate KEYS keys on native ios side (into node*modules) Make sure to select your target under \_Provide build settings from*, so `$SRCROOT` environment variables is available to the script.
+
+```sh
+export KEYSFILE=keys.development.json
+
+"${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
+```
+
+Alternatively, you can define a map in `Pre-actions` associating builds with env files:
+
+```sh
+    export KEYSFILE = "path_to_env"
+   "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
+```
+
+
+### Android
+
+- **Manual Link (Android)**
 
   **android/settings.gradle**
 
@@ -183,6 +262,21 @@ if cocoapods are used in the project then pod has to be installed as well:
       );
   }
   ```
+
+- **Mandatory Step**
+
+**app/build.gradle**
+
+you can define a map in `build.gradle` associating builds with env files. Do it before the `apply from` call, and use build cases in lowercase, like:
+
+```groovy
+project.ext.keyFiles = [
+  debug: "keys.development.json",
+  release: "keys.staging.json",
+]
+
+apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle"
+```
 
 ## Native Usage
 
@@ -265,50 +359,6 @@ NSDictionary *allKeys = [Keys public_keys];
 NSString *value = [Keys secureFor:@"BRANCH_KEY"];   //key_test_omQ7YYKiq57vOqEJsdcsdfeEsiWkwxE
 ```
 
-With one extra step environment values can be exposed to "Info.plist" and Build settings in the native project.
-
-1. click on the file tree and create new file of type XCConfig
-   ![img](./media/1.png)
-   ![img](./media/2.png)
-2. save it under `ios` folder as "Config.xcconfig" with the following content:
-
-```
-#include? "tmp.xcconfig"
-```
-
-3. add the following to your ".gitignore":
-
-```
-ios/tmp.xcconfig
-
-```
-
-4. go to project settings
-5. apply config to your configurations
-   ![img](./media/3.png)
-6. Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate "tmp.xcconfig" before each build exposing values to Build Settings and Info.plist. Make sure to select your target under _Provide build settings from_, so `$SRCROOT` environment variables is available to the script..
-
-   ```
-   "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
-   ```
-
-   ![img](./media/4.png)
-
-7. You can now access your env variables in the Info.plist, for example `$(MY_ENV_VARIABLE)`. If you face issues accessing variables, please open a new issue and provide as much details as possible so above steps can be improved.
-
-- Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate KEYS keys on native ios side (into node*modules) Make sure to select your target under \_Provide build settings from*, so `$SRCROOT` environment variables is available to the script.
-
-```sh
-"${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
-```
-
-Alternatively, you can define a map in `Pre-actions` associating builds with env files:
-
-```sh
-    export KEYSFILE = "path_to_env"
-   "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
-```
-
  call, and use build cases in lowercase, like:
 
 ### Different environments
@@ -333,17 +383,6 @@ The same environment variable can be used to assemble releases with a different 
 
 ```sh
 cd android && KEYSFILE=keys.staging.json ./gradlew assembleRelease
-```
-
-Alternatively, you can define a map in `build.gradle` associating builds with env files. Do it before the `apply from` call, and use build cases in lowercase, like:
-
-```groovy
-project.ext.keyFiles = [
-  debug: "keys.development.json",
-  release: "keys.staging.json",
-]
-
-apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle"
 ```
 
 #### Advanced Android Setup
