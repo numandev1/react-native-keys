@@ -83,7 +83,15 @@ def loadKeys() {
       def nodeModulesDir = getNodeModulesDir()
       exportCommand = exportCommand + nodeModulesDir + "/node_modules/react-native-keys/keysAndroid.js"
     }
-    def proc = ["/bin/sh", "-c", exportCommand].execute()
+
+    def proc;
+
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        proc = ["cmd", "/c", exportCommand].execute()
+    } else {
+        proc = ["/bin/sh", "-c", exportCommand].execute()
+    }
+
     proc.consumeProcessOutput(System.out, System.err)
 
     println(keysFile)
