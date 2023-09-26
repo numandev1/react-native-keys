@@ -11,6 +11,7 @@
     "ios",
     "cpp",
     "app.plugin.js",
+    "plugin/build",
     "keysAndroid.js",
     "keysIOS.js",
     "react-native-keys.podspec",

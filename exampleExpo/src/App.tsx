@@ -8,7 +8,7 @@ export default function App() {
     const value1 = RNKeys.secureFor('secure3');
     console.log(value1, 'value1');
     setJniValue(value1);
-    const value2 = RNKeys.sdads;
+    const value2 = RNKeys.APP_NAME;
     setPublicValue(value2);
   }, []);
   return (
