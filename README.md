@@ -12,7 +12,7 @@
 
 </div>
 
-**REACT-NATIVE-KEYS** is a react-native package, which helps us to protect our `ENVs` and manage different environments like `dev`, `staging`, `production`
+<p align="center"><b>REACT-NATIVE-KEYS</b> is a react-native package, which helps us to protect our <code>ENVs</code> and manage different environments like <code>dev</code>, <code>staging</code>, <code>production</code></p>
 
 ### Why should we use react-native-keys over react-native-config?
 
