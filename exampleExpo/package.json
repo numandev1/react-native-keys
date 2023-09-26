@@ -1,0 +1,38 @@
+{
+  "name": "exampleexpo",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "androidProd": "npx expo run:android --variant production",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "dev:android": "KEYSFILE=keys.development.json npx expo run:android",
+    "staging:android": "KEYSFILE=keys.staging.json npx expo run:android",
+    "prod:android": "KEYSFILE=keys.production.json npx expo run:android",
+    "dev:ios": "KEYSFILE=keys.development.json npx expo run:ios",
+    "staging:ios": "KEYSFILE=keys.staging.json npx expo run:ios",
+    "prod:ios": "KEYSFILE=keys.production.json npx expo run:ios"
+  },
+  "dependencies": {
+    "expo": "~49.0.5",
+    "expo-splash-screen": "~0.20.4",
+    "expo-status-bar": "~1.6.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.72.3",
+    "react-native-web": "~0.19.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@expo/config-plugins": "^7.2.5",
+    "@expo/webpack-config": "^18.0.1",
+    "@types/react": "^18.2.17",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-native": "^0.72.2",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^5.0.0"
+  },
+  "private": true
+}

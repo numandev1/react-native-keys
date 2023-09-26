@@ -47,6 +47,12 @@ def loadKeys() {
     if (System.env['KEYSFILE']) {
       keysFile = System.env['KEYSFILE']
       exportCommand = "export KEYSFILE=" + keysFile + " && ";
+    } else if (System.env['DEFAULT_FILE_NAME']) {
+      keysFile = System.env['DEFAULT_FILE_NAME']
+      exportCommand = "export KEYSFILE=" + keysFile + " && ";
+    } else if (project.hasProperty("DEFAULT_FILE_NAME")) {
+      keysFile = project.ext.DEFAULT_FILE_NAME
+      exportCommand = "export KEYSFILE=" + keysFile + " && ";
     } else if (project.hasProperty("keyFiles")) {
       project.ext.keyFiles.any { pair ->
           if (flavor.startsWith(pair.key.toLowerCase())) {

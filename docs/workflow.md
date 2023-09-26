@@ -16,7 +16,7 @@ we are using dynamic [Ciper](https://en.wikipedia.org/wiki/Cipher) for encoding 
 > It’s important to understand that no system is completely secure from attacks, even every wifi device or laptop password is also hackable, I made this for making a good security measurement for preventing 3rd party API key abuse, Good security measure is better than nothing to do
 > Before using this package our 3rd party API key had a 99% hackable probability but after using this package hack probability will be 0.5%
 
-as far as I know, we can abuse all types of 3rd parties unless that 3rd party uses
+as far as I know, we can abuse all types of 3rd parties unless these 3rd party uses
 
 - DeviceCheck or App Attest for IOS
 - Play Integrity or SafetyNet for Android

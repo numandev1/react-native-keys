@@ -1,12 +1,19 @@
 const fs = require('fs-extra');
 const path = require('path');
 const CryptoJS = require('crypto-js');
-
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
 const DEFAULT_FILE_NAME = 'keys.development.json';
+
+const expoExampleDirName = 'exampleExpo';
+const exampleDirName =
+  process.cwd().includes(expoExampleDirName) ||
+  process.env?.SRCROOT?.includes(expoExampleDirName)
+    ? expoExampleDirName
+    : 'example';
+
 const PROJECT_ROOT_DIR_PATH = path.join(
   __dirname,
-  isExample ? '../../example/' : '../../../../'
+  isExample ? `../../${exampleDirName}/` : '../../../../'
 );
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const RN_KEYS_PATH = path.join('node_modules', 'react-native-keys');
@@ -63,12 +70,12 @@ module.exports.genTSType = (allKeys) => {
   Object.keys(allKeys?.public ?? {}).forEach((key) => {
     result += `\n  ${key}: string;`;
   });
-  result += '\n};\n\n';
+  result += '\n [key: string]: string;\n};\n\n';
   result += 'export type KeyTurboSecuredType = {';
   Object.keys(allKeys?.secure ?? {}).forEach((key) => {
     result += `\n  ${key}: string;`;
   });
-  result += '\n};\n';
+  result += '\n[key: string]: string;\n};\n';
   fs.outputFileSync(path.join(SRC_PATH, 'type.ts'), result);
 };
 
@@ -107,11 +114,19 @@ module.exports.getIosEnvironmentFile = () => {
     let KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
       return KEYS_FILE_NAME;
-    } else if (process.env.CONFIGURATION === 'Debug') {
-      const debugFile = process.env.DEBUG_KEYSFILE || DEFAULT_FILE_NAME;
+    } else if (process.env.DEFAULT_FILE_NAME) {
+      return process.env.DEFAULT_FILE_NAME;
+    } else if (
+      process.env.DEBUG_KEYSFILE &&
+      process.env.CONFIGURATION === 'Debug'
+    ) {
+      const debugFile = process.env.DEBUG_KEYSFILE;
       return debugFile;
-    } else if (process.env.CONFIGURATION === 'Release') {
-      const debugFile = process.env.RELEASE_KEYSFILE || DEFAULT_FILE_NAME;
+    } else if (
+      process.env.RELEASE_KEYSFILE &&
+      process.env.CONFIGURATION === 'Release'
+    ) {
+      const debugFile = process.env.RELEASE_KEYSFILE;
       return debugFile;
     }
     return DEFAULT_FILE_NAME;
@@ -125,6 +140,8 @@ module.exports.getAndroidEnvironmentFile = () => {
     let KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
       return KEYS_FILE_NAME;
+    } else if (process.env.DEFAULT_FILE_NAME) {
+      return process.env.DEFAULT_FILE_NAME;
     }
     return DEFAULT_FILE_NAME;
   } catch (error) {

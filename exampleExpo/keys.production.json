@@ -1,0 +1,17 @@
+{
+  "secure": {
+    "secure1": "prod secure1 value",
+    "secure2": "prod secure2 value",
+    "secure3": "prod secure3 value",
+    "GOOGLE_API": "ABCD",
+    "BRANCH_API": "ABCDEF"
+  },
+  "public": {
+    "APP_NAME": "prod RNKEYS",
+    "BUNDLE_ID": "com.example.rnkeys.prod",
+    "ANDROID_CODE": "50",
+    "PACKAGE_ID": "com.example.rnkeys.prod",
+    "public1": "prod numan",
+    "public2": "prod usman"
+  }
+}
