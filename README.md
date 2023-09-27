@@ -300,7 +300,9 @@ ios/tmp.xcconfig
    "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
    ```
 
-   ![img](./media/4.png)
+   if you face `env: node: No such file or directory` issue due to Nvm, Fnm or notion please follow this [guide](#using-node-with-nvm-fnm-or-notion)
+
+![img](./media/4.png)
 
 7. You can now access your env variables in the Info.plist, for example `$(MY_ENV_VARIABLE)`. If you face issues accessing variables, please open a new issue and provide as much details as possible so above steps can be improved.
 
