@@ -1,7 +1,7 @@
 {
   "name": "react-native-keys",
   "version": "0.7.1",
-  "description": "🔐 Make undecryptable .ENVs variables",
+  "description": "🔐 Make protected .ENVs variables",
   "main": "./src/index.ts",
   "source": "src/index",
   "files": [
@@ -28,7 +28,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
-    "release": "yarn pluginTsc-watch && release-it",
+    "release": "cd plugin && tsc && cd .. && release-it",
     "example": "yarn --cwd example",
     "exampleExpo": "yarn --cwd exampleExpo",
     "pods": "cd example && pod-install --quiet",
@@ -55,6 +55,7 @@
     "dotenv",
     "config-var",
     "12factor",
+    "protected",
     "undecryptable",
     "envs"
   ],

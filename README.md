@@ -16,23 +16,23 @@
 
 ### Why should we use react-native-keys over react-native-config?
 
-We should use **react-native-keys** instead of **react-native-config** because **react-native-keys** gives guarantee of undecryptable **envs** whereas **react-native-config** **envs** can be decompile and hack
+We should use **react-native-keys** instead of **react-native-config** because **react-native-keys** gives guarantee of protected **envs** whereas **react-native-config** **envs** can be decompile and hack
 
 **Note:** We highly recommend utilizing `third-party client-side API KEYS`, such as `Google Map` or `Branch.io`, in the secure section of this package.
 
 #### See the [ Migration from react-native-config](docs/react-native-config-migration-guide.md)
 
-Making undecryptable **Envs** library for React Native.
+Making protected **Envs** library for React Native.
 
-- 🔐 Made for **undecryptable** ENVs on react native apps
+- 🔐 Made for **protected** ENVs on react native apps
 - 🗄️ Manage different enviroments (**dev**, **staging**, **production**)
 - 🏎️ Up to 200x faster than all other solutions
 - ⚡️ Lightning fast implementation with pure C++ and [**JSI**](https://github.com/react-native-community/discussions-and-proposals/issues/91) instead of the "old" Bridge
 - 🧪 Well tested in JS and C++
 
-We can Manage **secure**(undecryptable) and **public** enviroment through **react-native-keys** supporting **iOS** and **Android**
+We can Manage **secure**(protected) and **public** enviroment through **react-native-keys** supporting **iOS** and **Android**
 
-**secure:** Secure environment variables with the highest encryption which are undecryptable
+**secure:** Secure environment variables with the highest encryption which are protected
 
 **public:** Public environment variables are stored on the native side like Java and Objective-C which can decompile or hack.
 **Note**: in public, we mostly store `Bundle Id`, `Package Id`, `App Name` or any other **AndroidManifest.xml** env
@@ -188,7 +188,7 @@ use different [Variants](https://docs.expo.dev/build-reference/variants/) script
 
 ## Basic Usage
 
-Create a new file `keys.development.json` in the root of your React Native app and add Envs in `secure` object for `undecryptable` envs variables and add Envs in public for public usage this:
+Create a new file `keys.development.json` in the root of your React Native app and add Envs in `secure` object for `protected` envs variables and add Envs in public for public usage this:
 
 ```json
 {
