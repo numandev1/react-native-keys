@@ -508,12 +508,12 @@ Then edit the newly created scheme to make it use a different env file. From the
 you can also set different file for debug and release build like this.
 
 ```sh
-// DEBUG_KEYSFILE will choose env file
+#DEBUG_KEYSFILE will choose env file
 export KEYSFILE=keys.production.json
 
-// if you wannna use different keys for same scheme
-export DEBUG_KEYSFILE=keys.debug.json  //in running metro
-export RELEASE_KEYSFILE=keys.staging.json  // in IPA
+#if you wannna use different keys for same scheme
+export DEBUG_KEYSFILE=keys.debug.json  #in running metro
+export RELEASE_KEYSFILE=keys.staging.json  # in IPA
 
 #above DEBUG_KEYSFILE and RELEASE_KEYSFILE variable are optional
 
