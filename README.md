@@ -294,7 +294,7 @@ ios/tmp.xcconfig
 4. go to project settings
 5. apply config to your configurations
    ![img](./media/3.png)
-6. Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate "tmp.xcconfig" before each build exposing values to Build Settings and Info.plist. Make sure to select your target under _Provide build settings from_, so `$SRCROOT` environment variables is available to the script..
+6. Go to _Edit scheme..._ -> _Build_ -> _Pre-actions_, click _+_ and select _New Run Script Action_. Paste below code which will generate "tmp.xcconfig" before each build exposing values to Build Settings and Info.plist. Make sure to select your target under _Provide build settings from_ and Shared checkbox is ticked/enabled, so `$SRCROOT` environment variables is available to the script..
 
    ```
    "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
