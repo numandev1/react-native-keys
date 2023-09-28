@@ -41,7 +41,6 @@ def safeExtGet(prop, fallback) {
 
 def loadKeys() {
   def flavor = getCurrentFlavor()
-  if (!flavor.isEmpty()) {
     def keysFile = ""
     def exportCommand = "";
     if (System.env['KEYSFILE']) {
@@ -76,10 +75,10 @@ def loadKeys() {
         println "Choose " + keysFile + " file for react-native-keys to avoid stop any build process\n\n"
       } else {
         // Print an error message
-        println "Please define project.ext.keyFiles as you are using react-native-keys\n\n"
-        return;
+        println "\n\nPlease define project.ext.keyFiles or export KEYSFILE=..json ./gradlew .. as you are using react-native-keys\n\n\n\n"
       }
     }
+    if (!keysFile.isEmpty()) {
 
     def IS_EXAMPLE = safeExtGet("IS_EXAMPLE", false);
 
