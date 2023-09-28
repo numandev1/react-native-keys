@@ -16,20 +16,20 @@
     "prod:ios": "KEYSFILE=keys.production.json npx expo run:ios"
   },
   "dependencies": {
-    "expo": "~49.0.5",
+    "expo": "49.0.13",
     "expo-splash-screen": "~0.20.4",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.72.3",
+    "react-native": "0.72.5",
     "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@expo/config-plugins": "^7.2.5",
-    "@expo/webpack-config": "^18.0.1",
+    "@expo/webpack-config": "^19.0.0",
     "@types/react": "^18.2.17",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "~18.0.10",
     "@types/react-native": "^0.72.2",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^5.0.0"
