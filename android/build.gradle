@@ -150,17 +150,31 @@ android {
       path "CMakeLists.txt"
     }
   }
-    packagingOptions {
-    excludes = ['**/libc++_shared.so',
-                '**/libfbjni.so',
-                '**/libreactnativejni.so',
-                '**/libjsi.so',
-                '**/libreact_nativemodule_core.so',
-                '**/libturbomodulejsijni.so',
-                '**/libcrypto.so'
+
+  packagingOptions {
+    excludes = [
+      "**/libc++_shared.so",
+      "**/libfbjni.so",
+      "**/libreactnativejni.so",
+      "**/libjsi.so",
+      "**/libreact_nativemodule_core.so",
+      "**/libturbomodulejsijni.so",
+      "**/MANIFEST.MF",
+      ""
     ]
+    doNotStrip '**/*.so'
   }
+
   buildTypes {
+    debug {
+      packagingOptions {
+        doNotStrip '**/*.so'
+      }
+      minifyEnabled false
+      debuggable true
+      jniDebuggable true
+      renderscriptDebuggable true
+    }
     release {
       minifyEnabled false
     }

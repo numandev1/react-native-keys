@@ -424,6 +424,14 @@ import static com.reactnativekeysjsi.KeysModule.getSecureFor;
 String secureValue = getSecureFor("BRANCH_KEY");   // key_test_omQ7YYKiq57vOqEJsdcsdfeEsiWkwxE
 ```
 
+#### Android troubleshoot
+
+- [Problems with Proguard](#problems-with-proguard)
+- [2 files found with path '\*\*/libcrypto.so](#2-files-found-with-path-libcryptoso)
+- [Advanced Android Setup for applicationIdSuffix](#advanced-android-setup-1)
+
+````
+
 ### iOS
 
 #### Public Keys
@@ -439,7 +447,7 @@ NSString *value = [Keys publicFor:@"API_URL"];   // https://example.com
 
 // or just fetch all keys
 NSDictionary *allKeys = [Keys public_keys];
-```
+````
 
 #### Secure Keys
 
@@ -544,6 +552,22 @@ If using Dexguard, the shrinking phase will remove resources it thinks are unuse
 
     -keepresources string/build_config_package
 
+### 2 files found with path '\*\*/libcrypto.so
+
+if you face `2 files found with path '**/libcrypto.so'` then
+inside android/app/build.gradle just add this:
+
+```
+android {
+...
+packagingOptions {
+        pickFirst 'lib/x86/libcrypto.so'
+        pickFirst 'lib/x86_64/libcrypto.so'
+        pickFirst 'lib/armeabi-v7a/libcrypto.so'
+        pickFirst 'lib/arm64-v8a/libcrypto.so'
+    }
+}
+
 ### Using node with nvm, fnm or notion
 
 Build failure in Xcode looks something like:
@@ -553,28 +577,33 @@ Build failure in Xcode looks something like:
 Change the **Pre-actions script** scripts in Xcode to:
 
 ```
+
 # Setup nvm and set node
+
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
 
-if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
+if [[-s "$HOME/.nvm/nvm.sh"]]; then
 . "$HOME/.nvm/nvm.sh"
 elif [[ -x "$(command -v brew)" && -s "$(brew --prefix nvm)/nvm.sh" ]]; then
 . "$(brew --prefix nvm)/nvm.sh"
 fi
 
 # Set up the nodenv node version manager if present
-if [[ -x "$HOME/.nodenv/bin/nodenv" ]]; then
+
+if [[-x "$HOME/.nodenv/bin/nodenv"]]; then
 eval "$("$HOME/.nodenv/bin/nodenv" init -)"
 fi
 
 # Set up the fnm node version manager if present
-if [[ -s "$HOME/.fnm/fnm" ]]; then
-  eval "`$HOME/.fnm/fnm env --multi`"
+
+if [[-s "$HOME/.fnm/fnm"]]; then
+eval "`$HOME/.fnm/fnm env --multi`"
 fi
 
 # Trying notion
+
 if [ -z "$NODE_BINARY" ]; then
-if [[ -s "$HOME/.notion/bin/node" ]]; then
+if [[-s "$HOME/.notion/bin/node"]]; then
 export NODE_BINARY="$HOME/.notion/bin/node"
 fi
 fi
@@ -582,6 +611,7 @@ fi
 [ -z "$NODE_BINARY" ] && export NODE_BINARY="node"
 
 $NODE_BINARY "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
+
 ```
 
 # Alternative Package
@@ -597,3 +627,4 @@ If you are using the library in one of your projects, consider supporting it wit
 ## Meta
 
 Created by [Numan.dev](https://numan.dev/).
+```
