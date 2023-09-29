@@ -567,6 +567,7 @@ packagingOptions {
         pickFirst 'lib/arm64-v8a/libcrypto.so'
     }
 }
+```
 
 ### Using node with nvm, fnm or notion
 
@@ -611,7 +612,6 @@ fi
 [ -z "$NODE_BINARY" ] && export NODE_BINARY="node"
 
 $NODE_BINARY "${SRCROOT}/../node_modules/react-native-keys/keysIOS.js"
-
 ```
 
 # Alternative Package
@@ -623,8 +623,3 @@ The above-mentioned packages do not provide any **security** for **environment v
 ## Consider supporting with a ⭐️ [star on GitHub](https://github.com/numandev1/react-native-keys/stargazers)
 
 If you are using the library in one of your projects, consider supporting it with a star. It takes a lot of time and effort to keep this maintained and address issues and bugs. Thank you.
-
-## Meta
-
-Created by [Numan.dev](https://numan.dev/).
-```
