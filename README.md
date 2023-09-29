@@ -280,9 +280,9 @@ With one extra step environment values can be exposed to "Info.plist" and Build 
    ![img](./media/2.png)
 2. save it under `ios` folder as "Config.xcconfig" with the following content:
 
-```
-#include? "tmp.xcconfig"
-```
+    ```
+    #include? "tmp.xcconfig"
+    ```
 
 3. add the following to your ".gitignore":
 
@@ -430,7 +430,6 @@ String secureValue = getSecureFor("BRANCH_KEY");   // key_test_omQ7YYKiq57vOqEJs
 - [2 files found with path '\*\*/libcrypto.so](#2-files-found-with-path-libcryptoso)
 - [Advanced Android Setup for applicationIdSuffix](#advanced-android-setup-1)
 
-````
 
 ### iOS
 
@@ -447,7 +446,7 @@ NSString *value = [Keys publicFor:@"API_URL"];   // https://example.com
 
 // or just fetch all keys
 NSDictionary *allKeys = [Keys public_keys];
-````
+```
 
 #### Secure Keys
 
@@ -469,7 +468,7 @@ By default react-native-keys will read from `keys.development.json`, but you can
 
 The simplest approach is to tell it what file to read with an environment variable, like:
 
-```
+```sh
 KEYSFILE=keys.staging.json react-native run-ios           # bash
 SET KEYSFILE=keys.staging.json && react-native run-ios    # windows
 env:KEYSFILE="keys.staging.json"; react-native run-ios    # powershell
@@ -517,12 +516,12 @@ Then edit the newly created scheme to make it use a different env file. From the
 
 you can also set different file for debug and release build like this.
 
-```sh
+```bash
 #DEBUG_KEYSFILE will choose env file
 export KEYSFILE=keys.production.json
 
 #if you wannna use different keys for same scheme
-export DEBUG_KEYSFILE=keys.debug.json  #in running metro
+export DEBUG_KEYSFILE=keys.debug.json  # in running metro
 export RELEASE_KEYSFILE=keys.staging.json  # in IPA
 
 #above DEBUG_KEYSFILE and RELEASE_KEYSFILE variable are optional
@@ -567,6 +566,7 @@ packagingOptions {
         pickFirst 'lib/arm64-v8a/libcrypto.so'
     }
 }
+```
 
 ### Using node with nvm, fnm or notion
 
@@ -576,8 +576,7 @@ Build failure in Xcode looks something like:
 
 Change the **Pre-actions script** scripts in Xcode to:
 
-```
-
+```bash
 # Setup nvm and set node
 
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
