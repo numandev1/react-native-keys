@@ -288,7 +288,6 @@ With one extra step environment values can be exposed to "Info.plist" and Build 
 
 ```
 ios/tmp.xcconfig
-
 ```
 
 4. go to project settings
