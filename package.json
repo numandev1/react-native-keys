@@ -181,7 +181,7 @@
     ]
   },
   "dependencies": {
-    "crypto-js": "^4.1.1",
+    "crypto-js": "^4.2.0",
     "fs-extra": "^11.1.1",
     "normalize-path": "^3.0.0",
     "walk-sync": "^3.0.0",
