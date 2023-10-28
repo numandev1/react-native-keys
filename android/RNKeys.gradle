@@ -45,18 +45,34 @@ def loadKeys() {
     def exportCommand = "";
     if (System.env['KEYSFILE']) {
       keysFile = System.env['KEYSFILE']
-      exportCommand = "export KEYSFILE=" + keysFile + " && ";
+      if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        exportCommand = "set KEYSFILE=" + keysFile + " && node ";
+      } else {
+        exportCommand = "export KEYSFILE=" + keysFile + " && ";
+      }
     } else if (System.env['DEFAULT_FILE_NAME']) {
       keysFile = System.env['DEFAULT_FILE_NAME']
-      exportCommand = "export KEYSFILE=" + keysFile + " && ";
+      if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        exportCommand = "set KEYSFILE=" + keysFile + " && node ";
+      } else {
+        exportCommand = "export KEYSFILE=" + keysFile + " && ";
+      }
     } else if (project.hasProperty("DEFAULT_FILE_NAME")) {
       keysFile = project.ext.DEFAULT_FILE_NAME
-      exportCommand = "export KEYSFILE=" + keysFile + " && ";
+      if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        exportCommand = "set KEYSFILE=" + keysFile + " && node ";
+      } else {
+        exportCommand = "export KEYSFILE=" + keysFile + " && ";
+      }
     } else if (project.hasProperty("keyFiles")) {
       project.ext.keyFiles.any { pair ->
           if (flavor.startsWith(pair.key.toLowerCase())) {
             keysFile = pair.value
-            exportCommand = "export KEYSFILE=" + keysFile + " && ";
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+              exportCommand = "set KEYSFILE=" + keysFile + " && node ";
+            } else {
+              exportCommand = "export KEYSFILE=" + keysFile + " && ";
+            }
             return true
           }
       }
@@ -71,7 +87,11 @@ def loadKeys() {
       println("\n\n")
       if (project.ext.has('keyFiles') && project.ext.keyFiles.size() > 0) {
         keysFile = project.ext.keyFiles[project.ext.keyFiles.keySet().iterator().next()];
-        exportCommand = "export KEYSFILE=" + keysFile + " && ";
+        if (System.properties['os.name'].toLowerCase().contains('windows')) {
+          exportCommand = "set KEYSFILE=" + keysFile + " && node ";
+        } else {
+          exportCommand = "export KEYSFILE=" + keysFile + " && ";
+        }
         println "Choose " + keysFile + " file for react-native-keys to avoid stop any build process\n\n"
       } else {
         // Print an error message
@@ -88,7 +108,13 @@ def loadKeys() {
       def nodeModulesDir = getNodeModulesDir()
       exportCommand = exportCommand + nodeModulesDir + "/node_modules/react-native-keys/keysAndroid.js"
     }
-    def proc = ["/bin/sh", "-c", exportCommand].execute()
+    def proc;
+
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+      proc = ["cmd", "/c", exportCommand].execute()
+    } else {
+      proc = ["/bin/sh", "-c", exportCommand].execute()
+    }
     proc.consumeProcessOutput(System.out, System.err)
 
     println(keysFile)
