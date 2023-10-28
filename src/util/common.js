@@ -152,6 +152,7 @@ module.exports.getAndroidEnvironmentFile = () => {
 module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
   try {
     const filePath = path.join(ANDROID_KEYS_DIR_PATH, fileName);
+    fs.removeSync(filePath)
     fs.outputFileSync(filePath, fileContent);
     return true;
   } catch (error) {
