@@ -375,7 +375,7 @@ PODS:
   - React-jsinspector (0.72.3)
   - React-logger (0.72.3):
     - glog
-  - react-native-keys (0.7.6):
+  - react-native-keys (0.7.7):
     - OpenSSL-Universal
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -694,7 +694,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 59d1eb03af7d30b7d66589c410f13151271e8006
   React-jsinspector: b511447170f561157547bc0bef3f169663860be7
   React-logger: c5b527272d5f22eaa09bb3c3a690fee8f237ae95
-  react-native-keys: 0379812282e0e0ab1cac29de1145eee97b93ae47
+  react-native-keys: e2f18660483b5b890caa1d913d8986c3fb4a8f4c
   React-NativeModulesApple: c57f3efe0df288a6532b726ad2d0322a9bf38472
   React-perflogger: 6bd153e776e6beed54c56b0847e1220a3ff92ba5
   React-RCTActionSheet: c0b62af44e610e69d9a2049a682f5dba4e9dff17
