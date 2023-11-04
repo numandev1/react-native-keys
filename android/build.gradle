@@ -156,6 +156,7 @@ android {
       "**/libc++_shared.so",
       "**/libfbjni.so",
       "**/libreactnativejni.so",
+      "**/libcrypto.so",
       "**/libjsi.so",
       "**/libreact_nativemodule_core.so",
       "**/libturbomodulejsijni.so",
