@@ -58,7 +58,7 @@ const ANDROID_KEYS_DIR_PATH = path.join(
 const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
 
 module.exports.getKeys = (KEYS_FILE_NAME) => {
-  const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${KEYS_FILE_NAME}`;
+  const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${KEYS_FILE_NAME}`.trim();
   const keysJson = fs.readJSONSync(jniJsonFilePath);
   const secureKeys = keysJson;
   return secureKeys;
@@ -163,6 +163,7 @@ module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
     fs.outputFileSync(filePath, fileContent);
     return true;
   } catch (error) {
+    console.error(error)
     return false;
   }
 };
