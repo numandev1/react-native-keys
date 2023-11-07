@@ -1,6 +1,6 @@
 {
   "name": "react-native-keys",
-  "version": "0.7.9",
+  "version": "0.7.10",
   "description": "🔐 Make protected .ENVs variables",
   "main": "./src/index.ts",
   "source": "src/index",
