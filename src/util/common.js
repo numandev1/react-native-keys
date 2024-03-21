@@ -6,8 +6,7 @@ const DEFAULT_FILE_NAME = 'keys.development.json';
 
 const expoExampleDirName = 'exampleExpo';
 const exampleDirName =
-  process.cwd().includes(expoExampleDirName) ||
-  process.env?.SRCROOT?.includes(expoExampleDirName)
+  (process.env.SRCROOT ?? process.cwd()).includes(expoExampleDirName)
     ? expoExampleDirName
     : 'example';
 
