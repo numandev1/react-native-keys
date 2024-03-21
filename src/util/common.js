@@ -70,20 +70,12 @@ module.exports.genTSType = (allKeys) => {
   Object.keys(allKeys?.public ?? {}).forEach((key) => {
     result += `\n  ${key}: string;`;
   });
-  if(!allKeys?.public) {
-    result += '\n [key: string]: string;\n};\n\n';
-  } else {
-    result += '\n};\n\n';
-  }
+  result += '\n [key: string]: string;\n};\n\n';
   result += 'export type KeyTurboSecuredType = {';
   Object.keys(allKeys?.secure ?? {}).forEach((key) => {
     result += `\n  ${key}: string;`;
   });
-  if(!allKeys?.secure) {
-    result += '\n [key: string]: string;\n};\n\n';
-  } else {
-    result += '\n};\n\n';
-  }
+  result += '\n [key: string]: string;\n};\n\n';
   fs.outputFileSync(path.join(SRC_PATH, 'type.ts'), result);
 };
 
