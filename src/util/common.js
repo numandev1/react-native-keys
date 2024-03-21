@@ -10,10 +10,10 @@ const exampleDirName =
     ? expoExampleDirName
     : 'example';
 
-const PROJECT_ROOT_DIR_PATH = path.join(
-  __dirname,
-  isExample ? `../../${exampleDirName}/` : '../../../../'
-);
+const PROJECT_ROOT_DIR_PATH = !isExample ?
+  path.join(process.env.SRCROOT ?? process.cwd(), "../") :
+  path.join(__dirname, `../../${exampleDirName}/`);
+
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const RN_KEYS_PATH = path.join('node_modules', 'react-native-keys');
 const KEYS_IOS_PATH = path.join(RN_KEYS_PATH, 'ios');
