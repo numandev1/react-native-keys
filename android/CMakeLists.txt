@@ -49,7 +49,18 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
 
     find_package(openssl REQUIRED CONFIG)
 
-    target_link_libraries(
+    if (REACTNATIVE_MERGED_SO)
+     target_link_libraries(
+        ${PACKAGE_NAME}
+        ${LOG_LIB}
+        fbjni
+        jsi
+        reactnative
+        android
+        openssl::crypto
+      )
+    else()
+      target_link_libraries(
         ${PACKAGE_NAME}
         ${LOG_LIB}
         ReactAndroid::jsi
@@ -57,7 +68,7 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
         ReactAndroid::react_nativemodule_core
         android
         openssl::crypto
-    )
+     )
 else()
     add_library(
         ${PACKAGE_NAME}
