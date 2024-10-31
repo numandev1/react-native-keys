@@ -9,6 +9,7 @@ set(BUILD_DIR ${CMAKE_SOURCE_DIR}/build)
 if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
     # Consume shared libraries and headers from prefabs
     find_package(ReactAndroid REQUIRED CONFIG)
+    find_package(fbjni REQUIRED CONFIG)
 
     include_directories(
         ${PACKAGE_NAME}
@@ -49,14 +50,13 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
 
     find_package(openssl REQUIRED CONFIG)
 
-    if (REACTNATIVE_MERGED_SO)
+    if (REACTNATIVE_MERGED_SO OR ${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 76)
      target_link_libraries(
         ${PACKAGE_NAME}
         ${LOG_LIB}
-        fbjni
-        jsi
-        reactnative
-        android
+        ReactAndroid::reactnative
+        ReactAndroid::jsi
+        fbjni::fbjni
         openssl::crypto
       )
     else()
@@ -69,6 +69,7 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
         android
         openssl::crypto
      )
+    endif()
 else()
     add_library(
         ${PACKAGE_NAME}
