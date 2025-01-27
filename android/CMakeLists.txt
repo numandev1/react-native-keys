@@ -53,11 +53,21 @@ if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 71)
         ${PACKAGE_NAME}
         ${LOG_LIB}
         ReactAndroid::jsi
-        ReactAndroid::reactnativejni
-        ReactAndroid::react_nativemodule_core
         android
         openssl::crypto
     )
+    if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 76)
+        target_link_libraries(
+            ${PACKAGE_NAME}
+            ReactAndroid::reactnative
+        )
+    else()
+        target_link_libraries(
+            ${PACKAGE_NAME}
+            ReactAndroid::reactnativejni
+            ReactAndroid::react_nativemodule_core
+        )
+    endif()
 else()
     add_library(
         ${PACKAGE_NAME}
