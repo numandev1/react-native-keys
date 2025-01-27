@@ -6,7 +6,6 @@
 #import "YeetJSIUtils.h"
 #import <React/RCTBridge+Private.h>
 
-//#import "crypto.cpp"
 #import "crypto.h"
 #import "GeneratedDotEnv.m"
 #import "privateKey.m"
@@ -38,20 +37,14 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(install)
     if (jsiRuntime == nil) {
         return @false;
     }
+    
+    auto& runtime = *jsiRuntime;
 
-//    example::install(*(facebook::jsi::Runtime *)jsiRuntime);
-    install(*(facebook::jsi::Runtime *)jsiRuntime, self);
-  
-   
-    return @true;
-}
-
-static void install(jsi::Runtime &jsiRuntime, Keys *_Keys) {
-    auto secureFor = Function::createFromHostFunction(jsiRuntime,
-                                                    PropNameID::forAscii(jsiRuntime,
+    auto secureFor = Function::createFromHostFunction(runtime,
+                                                    PropNameID::forAscii(runtime,
                                                                          "secureFor"),
-                                                    0,
-                                                      [_Keys](Runtime &runtime,
+                                                    1,
+                                                      [](Runtime &runtime,
                                                              const Value &thisValue,
                                                              const Value *arguments,
                                                              size_t count) -> Value {
@@ -60,14 +53,14 @@ static void install(jsi::Runtime &jsiRuntime, Keys *_Keys) {
         return Value(runtime, convertNSStringToJSIString(runtime, value));
     });
     
-    jsiRuntime.global().setProperty(jsiRuntime, "secureFor", move(secureFor));
+    runtime.global().setProperty(runtime, "secureFor", std::move(secureFor));
     
     
-    auto publicKeys = Function::createFromHostFunction(jsiRuntime,
-                                                    PropNameID::forAscii(jsiRuntime,
+    auto publicKeys = Function::createFromHostFunction(runtime,
+                                                    PropNameID::forAscii(runtime,
                                                                          "publicKeys"),
                                                     0,
-                                                      [_Keys](Runtime &runtime,
+                                                      [](Runtime &runtime,
                                                              const Value &thisValue,
                                                              const Value *arguments,
                                                              size_t count) -> Value {
@@ -76,11 +69,14 @@ static void install(jsi::Runtime &jsiRuntime, Keys *_Keys) {
         
     });
     
-    jsiRuntime.global().setProperty(jsiRuntime, "publicKeys", move(publicKeys));
+    runtime.global().setProperty(runtime, "publicKeys", std::move(publicKeys));
     
     
-    
+  
+   
+    return @true;
 }
+
 
 + (NSString *)secureFor: (NSString *)key {
       @try {
