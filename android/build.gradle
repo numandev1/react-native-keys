@@ -76,6 +76,9 @@ def basePath = projectDir.toPath().normalize()
 // Find node_modules inside the example project
 def nodeModulesDir = Paths.get(basePath.getParent().toString(), "example/node_modules")
 def reactNativeDir = Paths.get(nodeModulesDir.toString(), "react-native/android")
+if (!reactNativeDir.toFile().exists()) {
+  reactNativeDir = Paths.get(nodeModulesDir.toString(), "react-native/ReactAndroid")
+}
 if (nodeModulesDir.toFile().exists() && reactNativeDir.toFile().exists()) {
   found = true
 }
