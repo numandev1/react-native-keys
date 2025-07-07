@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const CryptoJS = require('crypto-js');
+const crypto = require('crypto')
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
 const DEFAULT_FILE_NAME = 'keys.development.json';
 
