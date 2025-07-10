@@ -141,7 +141,8 @@ android {
         abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
         arguments '-DANDROID_STL=c++_shared',
           "-DNODE_MODULES_DIR=${nodeModulesPath}",
-          "-DREACT_NATIVE_MINOR_VERSION=${REACT_NATIVE_MINOR_VERSION}"
+          "-DREACT_NATIVE_MINOR_VERSION=${REACT_NATIVE_MINOR_VERSION}",
+          "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
       }
     }
   }
