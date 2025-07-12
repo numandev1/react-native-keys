@@ -83,9 +83,13 @@ if (nodeModulesDir.toFile().exists() && reactNativeDir.toFile().exists()) {
 if(!found){
   // Node's module resolution algorithm searches up to the root directory,
   // after which the base path will be null
+
+  //Hey folks, just a heads-up — starting from React Native 0.71, the /android folder is no longer included in the NPM package due to size limitations. This was further removed completely in 0.80.1, which is now causing issues with resolving paths that depended on it.
+  //As a workaround, we're now checking for the react-native/gradle folder instead. That should keep things working across newer versions.
+
   while (basePath) {
     nodeModulesDir = Paths.get(basePath.toString(), "node_modules")
-    reactNativeDir = Paths.get(nodeModulesDir.toString(), "react-native/android")
+    reactNativeDir = Paths.get(nodeModulesDir.toString(), "react-native/gradle")
     if (nodeModulesDir.toFile().exists() && reactNativeDir.toFile().exists()) {
       found = true
       break;
