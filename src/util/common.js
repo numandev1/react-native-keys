@@ -1,7 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
-const CryptoJS = require('crypto-js');
-const crypto = require('crypto')
+const QuickCrypto = require('react-native-quick-crypto');
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
 const DEFAULT_FILE_NAME = 'keys.development.json';
 
@@ -213,18 +212,17 @@ module.exports.generatePassword = () => {
   var length = 12,
     charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
     retVal = '';
-  const bytes = crypto.randomBytes(length);
+  const bytes = QuickCrypto.randomBytes(length);
   for (var i = 0; i < length; ++i) {
     retVal += charset.charAt(bytes[i] % charset.length);
   }
   return retVal;
 };
+
 module.exports.encrypt = (message, password, _iv) => {
-  const encrypted = CryptoJS.AES.encrypt(message, password, {
-    iv: _iv,
-  });
-
-  const base64Secret = encrypted.toString();
-
-  return base64Secret;
+   const algorithm = 'aes-256-ctr';
+    const key = Buffer.concat([Buffer.from(password), Buffer.alloc(32)], 32);
+    const cipher = QuickCrypto.createCipheriv(algorithm, key, _iv);
+    const encrypted = Buffer.concat([cipher.update(message), cipher.final()]);
+    return encrypted.toString('base64');
 };
