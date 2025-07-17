@@ -95,7 +95,7 @@
     "react-native-builder-bob": "^0.21.3",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
-    "typescript": "^5.0.2"
+    "typescript": "^5.8.3"
   },
   "resolutions": {
     "@types/react": "17.0.21"
@@ -181,9 +181,10 @@
     ]
   },
   "dependencies": {
-    "crypto-js": "^4.2.0",
     "fs-extra": "^11.1.1",
     "normalize-path": "^3.0.0",
+    "react-native-nitro-modules": "^0.26.3",
+    "react-native-quick-crypto": "^0.7.15",
     "walk-sync": "^3.0.0",
     "xml2js": "^0.6.2"
   },
