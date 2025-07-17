@@ -220,9 +220,8 @@ module.exports.generatePassword = () => {
 };
 
 module.exports.encrypt = (message, password, _iv) => {
-   const algorithm = 'aes-256-ctr';
-    const key = Buffer.concat([Buffer.from(password), Buffer.alloc(32)], 32);
-    const cipher = QuickCrypto.createCipheriv(algorithm, key, _iv);
-    const encrypted = Buffer.concat([cipher.update(message), cipher.final()]);
-    return encrypted.toString('base64');
+    const cipher = QuickCrypto.createCipheriv('aes-256-ctr', password, _iv);
+    let encrypted = cipher.update(message, 'utf8', 'base64');
+    encrypted += cipher.final('base64');
+    return encrypted;
 };
