@@ -74,7 +74,6 @@
     "@commitlint/config-conventional": "19.8.1",
     "@evilmartians/lefthook": "1.12.2",
     "@expo/config-plugins": "10.1.2",
-    "@react-native-community/cli-platform-android": "14",
     "@react-native-community/eslint-config": "^3.2.0",
     "@release-it/conventional-changelog": "10.0.1",
     "@types/jest": "30.0.0",

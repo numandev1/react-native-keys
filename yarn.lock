@@ -4365,20 +4365,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli-platform-android@npm:14":
-  version: 14.1.2
-  resolution: "@react-native-community/cli-platform-android@npm:14.1.2"
-  dependencies:
-    "@react-native-community/cli-tools": "npm:14.1.2"
-    chalk: "npm:^4.1.2"
-    execa: "npm:^5.0.0"
-    fast-glob: "npm:^3.3.2"
-    fast-xml-parser: "npm:^4.4.1"
-    logkitty: "npm:^0.7.1"
-  checksum: 10c0/37a277ce2c6ef42c5185d9e89e28271a3f21feea3e8f77fb2ecd4c1d90b84a4b580008d980fc537b74b9dab3fc8aa4fb0aa2452dbb825f10416fc337a0b10f1f
-  languageName: node
-  linkType: hard
-
 "@react-native-community/cli-platform-ios@npm:11.3.5":
   version: 11.3.5
   resolution: "@react-native-community/cli-platform-ios@npm:11.3.5"
@@ -4443,24 +4429,6 @@ __metadata:
     semver: "npm:^6.3.0"
     shell-quote: "npm:^1.7.3"
   checksum: 10c0/d634265e399bd1c6c0c8d38ce637cb386bd3e8bccb5387fa0ba2a118ed4637a70e6aefe7c99e723f39aba701bea8a2ffbef3131b2d1cc0c276a67ca81cb307aa
-  languageName: node
-  linkType: hard
-
-"@react-native-community/cli-tools@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@react-native-community/cli-tools@npm:14.1.2"
-  dependencies:
-    appdirsjs: "npm:^1.2.4"
-    chalk: "npm:^4.1.2"
-    execa: "npm:^5.0.0"
-    find-up: "npm:^5.0.0"
-    mime: "npm:^2.4.1"
-    open: "npm:^6.2.0"
-    ora: "npm:^5.4.1"
-    semver: "npm:^7.5.2"
-    shell-quote: "npm:^1.7.3"
-    sudo-prompt: "npm:^9.0.0"
-  checksum: 10c0/c80c69df4c3a483a3c106961309fde3f42845bad5199420e260f9b73e8b5e0bdcda07253e45e75d3f84536d5eb9447b274458c9d36f80fc80909cb208978b90f
   languageName: node
   linkType: hard
 
@@ -7825,7 +7793,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.2, fast-glob@npm:^3.3.3":
+"fast-glob@npm:^3.3.3":
   version: 3.3.3
   resolution: "fast-glob@npm:3.3.3"
   dependencies:
@@ -7867,17 +7835,6 @@ __metadata:
   bin:
     fxparser: src/cli/cli.js
   checksum: 10c0/0681922d95713062ec6205fd41be503890c474a45831c39502e72fccf0b0bd88c49d2c2fa79c6d24d432573631d515967fd17938bcedf230cb134c291cbbbf5e
-  languageName: node
-  linkType: hard
-
-"fast-xml-parser@npm:^4.4.1":
-  version: 4.5.3
-  resolution: "fast-xml-parser@npm:4.5.3"
-  dependencies:
-    strnum: "npm:^1.1.1"
-  bin:
-    fxparser: src/cli/cli.js
-  checksum: 10c0/bf9ccadacfadc95f6e3f0e7882a380a7f219cf0a6f96575149f02cb62bf44c3b7f0daee75b8ff3847bcfd7fbcb201e402c71045936c265cf6d94b141ec4e9327
   languageName: node
   linkType: hard
 
@@ -12347,7 +12304,6 @@ __metadata:
     "@commitlint/config-conventional": "npm:19.8.1"
     "@evilmartians/lefthook": "npm:1.12.2"
     "@expo/config-plugins": "npm:10.1.2"
-    "@react-native-community/cli-platform-android": "npm:14"
     "@react-native-community/eslint-config": "npm:^3.2.0"
     "@release-it/conventional-changelog": "npm:10.0.1"
     "@types/jest": "npm:30.0.0"
@@ -13532,13 +13488,6 @@ __metadata:
   version: 1.0.5
   resolution: "strnum@npm:1.0.5"
   checksum: 10c0/64fb8cc2effbd585a6821faa73ad97d4b553c8927e49086a162ffd2cc818787643390b89d567460a8e74300148d11ac052e21c921ef2049f2987f4b1b89a7ff1
-  languageName: node
-  linkType: hard
-
-"strnum@npm:^1.1.1":
-  version: 1.1.2
-  resolution: "strnum@npm:1.1.2"
-  checksum: 10c0/a0fce2498fa3c64ce64a40dada41beb91cabe3caefa910e467dc0518ef2ebd7e4d10f8c2202a6104f1410254cae245066c0e94e2521fb4061a5cb41831952392
   languageName: node
   linkType: hard
 
