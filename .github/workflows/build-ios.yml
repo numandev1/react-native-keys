@@ -21,7 +21,6 @@ jobs:
       - name: Enable corepack and set yarn to latest stable
         shell: bash
         run: |
-          corepack enable
           yarn set version stable
 
       - name: Setup
