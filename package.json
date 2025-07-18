@@ -156,5 +156,6 @@
     "name": "RNKeysSpec",
     "type": "modules",
     "jsSrcsDir": "src/spec"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
