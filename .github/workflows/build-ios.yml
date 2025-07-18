@@ -3,11 +3,8 @@ name: Build iOS App
 on:
   pull_request:
     paths:
-      - ".github/workflows/build-ios.yml"
-      - "ios/**"
       - "*.podspec"
       - "example/**"
-      - "example/ios/**"
 
 jobs:
   build:
@@ -42,14 +39,12 @@ jobs:
 
       - name: Install Pods
         run: |
-          cd ios
           bundle install
           bundle exec pod repo update --verbose
           bundle exec pod install
 
       - name: Build App
         run: |
-          cd ios
           "xcodebuild \
           -workspace CompressorExample.xcworkspace \
           -scheme CompressorExample \
