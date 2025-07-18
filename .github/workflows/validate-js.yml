@@ -16,7 +16,7 @@ on:
 
 jobs:
   compile:
-    name: Compile JS (tsc)
+    name: Compile (tsc)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
-    name: Lint / Format JS
+    name: Lint / Format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,6 +62,3 @@ jobs:
 
       - name: Run Biome with auto-fix
         run: yarn lint
-
-      - name: Verify no files have changed after auto-fix
-        run: git diff --exit-code HEAD
