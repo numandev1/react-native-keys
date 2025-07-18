@@ -26,21 +26,24 @@ jobs:
           bundler-cache: false
           cache-version: 3
 
-      # - name: Restore Pods cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       example/ios/Pods
-      #       ~/Library/Caches/CocoaPods
-      #       ~/.cocoapods
-      #     key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pods-
+      - name: Restore Pods cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            example/ios/Pods
+            ~/Library/Caches/CocoaPods
+            ~/.cocoapods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: Install Gemfile
+        run: |
+          bundle install
 
       - name: Install Pods
         run: |
           cd ios
-          bundle install
           bundle exec pod repo update --verbose
           bundle exec pod install
 
