@@ -41,15 +41,16 @@ jobs:
             ${{ runner.os }}-pods-
 
       - name: Install Pods
-        working-directory: example/ios
         run: |
+          cd ios
           bundle install
           bundle exec pod repo update --verbose
           bundle exec pod install
 
       - name: Build App
-        working-directory: example/ios
-        run: "xcodebuild \
+        run: |
+          cd ios
+          "xcodebuild \
           -workspace CompressorExample.xcworkspace \
           -scheme CompressorExample \
           -sdk iphonesimulator \
