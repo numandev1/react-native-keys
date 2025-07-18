@@ -12,6 +12,9 @@ jobs:
   build:
     name: Build iOS Example App
     runs-on: macOS-latest
+    defaults:
+      run:
+        working-directory: example
     steps:
       - uses: actions/checkout@v4
 
