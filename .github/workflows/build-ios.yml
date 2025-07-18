@@ -48,8 +48,7 @@ jobs:
 
       - name: Install Pods
         run: |
-          bundle exec pod repo update --verbose
-          bundle exec pod install
+          yarn pods
 
       - name: Build App
         run: "xcodebuild \
