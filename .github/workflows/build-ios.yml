@@ -48,7 +48,7 @@ jobs:
 
       - name: Install Pods
         run: |
-          yarn pods
+          yarn exec pod-install
 
       - name: Build App
         run: "xcodebuild \
