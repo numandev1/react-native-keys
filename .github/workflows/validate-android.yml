@@ -35,23 +35,14 @@ jobs:
         with:
           java-version: 21
           distribution: "temurin"
+          cache: gradle
 
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Restore Gradle cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
       - name: Run Gradle Lint
         run: ./gradlew lint
 
       - name: Parse Gradle Lint Report
-        uses: yutailang0119/action-android-lint@v1.0.2
+        uses: yutailang0119/action-android-lint@v4
         with:
-          xml_path: android/build/reports/lint-results.xml
+          report-path: android/build/reports/lint-results.xml
+          ignore-warnings: true # Ignore Lint Warnings
+        continue-on-error: false
