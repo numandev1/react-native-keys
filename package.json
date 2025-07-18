@@ -26,7 +26,7 @@
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "biome check --write",
     "prepare": "bob build",
     "release": "cd plugin && tsc && cd .. && release-it",
     "example": "yarn --cwd example",
@@ -70,11 +70,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.1.2",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@evilmartians/lefthook": "1.12.2",
     "@expo/config-plugins": "10.1.2",
-    "@react-native-community/eslint-config": "^3.2.0",
     "@release-it/conventional-changelog": "10.0.1",
     "@types/jest": "30.0.0",
     "@types/normalize-path": "3.0.2",
@@ -82,14 +82,9 @@
     "@types/react-native": "0.70.0",
     "@types/xml2js": "0.4.14",
     "del-cli": "6.0.0",
-    "eslint": "9.31.0",
-    "eslint-config-prettier": "10.1.7",
-    "eslint-plugin-ft-flow": "3.0.11",
-    "eslint-plugin-prettier": "4.2.3",
     "jest": "30.0.4",
     "metro-react-native-babel-preset": "^0.77.0",
     "pod-install": "0.3.10",
-    "prettier": "3.6.2",
     "react": "18.2.0",
     "react-native": "0.72.3",
     "react-native-builder-bob": "^0.40.12",
@@ -135,36 +130,6 @@
         "preset": "angular"
       }
     }
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
   },
   "react-native-builder-bob": {
     "source": "src",
