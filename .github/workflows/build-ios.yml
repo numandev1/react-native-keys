@@ -54,7 +54,10 @@ jobs:
             ${{ runner.os }}-pods-
 
       - name: Install Pods
-        run: bundle exec pod check || bundle exec pod install
+        run: |
+          bundle exec pod check
+          bundle exec pod repo update --verbose
+          bundle exec pod install --project-directory=ios
 
       - name: Build App
         run: "xcodebuild \
