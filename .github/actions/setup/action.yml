@@ -6,6 +6,14 @@ runs:
   steps:
     - name: Setup Node.js
       uses: actions/setup-node@v4
+      with:
+        node-version: "lts/*"
+        cache: "yarn"
+
+    - name: Enable corepack and set yarn to latest stable
+      shell: bash
+      run: |
+        yarn set version stable
 
     - name: Restore dependencies
       id: yarn-cache
