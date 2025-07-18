@@ -48,7 +48,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Install node_modules (example/)
-        run: yarn install --frozen-lockfile --cwd example
+        run: yarn --cwd example install --frozen-lockfile
 
       - name: Run TypeScript # Reviewdog tsc errorformat: %f:%l:%c - error TS%n: %m
         run: |
@@ -70,8 +70,9 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
+
       - name: Install node_modules (example/)
-        run: yarn install --frozen-lockfile --cwd example
+        run: yarn --cwd example install --frozen-lockfile
 
       - name: Run ESLint
         run: yarn lint -f @jamesacarr/github-actions
