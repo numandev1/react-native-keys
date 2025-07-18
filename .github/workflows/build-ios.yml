@@ -40,6 +40,7 @@ jobs:
         with:
           ruby-version: 3.4
           bundler-cache: true
+          cache-version: 1
           working-directory: example/ios
 
       - name: Restore Pods cache
