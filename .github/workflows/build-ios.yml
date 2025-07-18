@@ -18,9 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set yarn to latest stable
+      - name: Enable corepack and set yarn to latest stable
         shell: bash
-        run: yarn set version stable
+        run: |
+          corepack enable
+          yarn set version stable
 
       - name: Setup
         uses: ./.github/actions/setup
