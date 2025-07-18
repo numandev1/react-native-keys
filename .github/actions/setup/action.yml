@@ -28,7 +28,6 @@ runs:
           ${{ runner.os }}-yarn-
 
     - name: Install dependencies
-      # if: steps.yarn-cache.outputs.cache-hit != 'true'
       shell: bash
       run: yarn install --immutable --check-cache
 
