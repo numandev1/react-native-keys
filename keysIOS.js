@@ -35,19 +35,19 @@ const makeIosJnuFiles = () => {
   });
   const isGeneratedPrivateKeyFile = makeFileInIosDir(
     generatedPrivateKeyContent,
-    'privateKey.m'
+    'privateKey.m',
   );
 
   const xcConfigFileContent = makeXcConfigFIlle(publicKeys);
   const isDoneCreatedXCodeConfigFile = makeFileInProjectDirectoryIos(
     xcConfigFileContent,
-    'tmp.xcconfig'
+    'tmp.xcconfig',
   );
 
   const generatedDotEnvContent = makeGeneratedDotEnvTemplateIOS(publicKeys);
   const isGeneratedDotEnvFile = makeFileInIosDir(
     generatedDotEnvContent,
-    'GeneratedDotEnv.m'
+    'GeneratedDotEnv.m',
   );
   genTSType(allKeys);
   console.info('react-native-keys', {

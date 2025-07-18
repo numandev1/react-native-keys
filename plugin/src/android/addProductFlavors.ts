@@ -1,12 +1,12 @@
-import { ConfigPlugin, withAppBuildGradle } from '@expo/config-plugins';
+import { type ConfigPlugin, withAppBuildGradle } from '@expo/config-plugins';
 
-import { PluginConfigType } from '../pluginConfig';
+import type { PluginConfigType } from '../pluginConfig';
 
 function convertToGradleProductFlavors(productFlavors: any) {
   let result = 'flavorDimensions "default"\nproductFlavors {\n';
 
   for (const flavor in productFlavors) {
-    if (productFlavors.hasOwnProperty(flavor)) {
+    if (Object.hasOwn(productFlavors, flavor)) {
       const applicationIdSuffix = productFlavors[flavor].applicationIdSuffix;
       result += `  ${flavor} {\n    applicationIdSuffix "${applicationIdSuffix}"\n  }\n`;
     }
@@ -23,25 +23,25 @@ function applyImplementation(appBuildGradle: string, productFlavors: string) {
   appBuildGradle = appBuildGradle.replace(productFlavorsRegex, '');
   // Make sure the project does not have the dependency already
   const signingConfigs = appBuildGradle.match(
-    /signingConfigs\s*\{(?:[^{}]*|(?:(?:[^{}]*\{[^{}]*\})*[^{}]*))*\}/
+    /signingConfigs\s*\{(?:[^{}]*|(?:(?:[^{}]*\{[^{}]*\})*[^{}]*))*\}/,
   )?.[0];
   if (signingConfigs && appBuildGradle.includes(signingConfigs)) {
     return appBuildGradle.replace(
       signingConfigs,
-      `${signingConfigs}\n${productFlavors}`
+      `${signingConfigs}\n${productFlavors}`,
     );
   }
   return appBuildGradle;
 }
 export const withAddProductFlavours: ConfigPlugin<PluginConfigType> = (
   config,
-  props
+  props,
 ) => {
   return withAppBuildGradle(config, (config) => {
     config.modResults.contents = applyImplementation(
       config.modResults.contents,
       //@ts-ignore
-      convertToGradleProductFlavors(props.android.productFlavors)
+      convertToGradleProductFlavors(props.android.productFlavors),
     );
     return config;
   });

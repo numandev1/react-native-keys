@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
-const path = require('path');
+const path = require('node:path');
 const CryptoJS = require('crypto-js');
-const crypto = require('crypto')
+const crypto = require('node:crypto');
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
 const DEFAULT_FILE_NAME = 'keys.development.json';
 
@@ -14,7 +14,7 @@ const exampleDirName =
 
 const PROJECT_ROOT_DIR_PATH = path.join(
   __dirname,
-  isExample ? `../../${exampleDirName}/` : '../../../../'
+  isExample ? `../../${exampleDirName}/` : '../../../../',
 );
 const PACKAGE_ROOT_DIR_PATH = path.join(__dirname, '../../');
 const RN_KEYS_PATH = path.join('node_modules', 'react-native-keys');
@@ -27,24 +27,24 @@ const KEYS_ANDROID_EXAMPLE_PATH = path.join('../', 'android');
 
 const IOS_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
-  isExample ? KEYS_IOS_EXAMPLE_PATH : KEYS_IOS_PATH
+  isExample ? KEYS_IOS_EXAMPLE_PATH : KEYS_IOS_PATH,
 );
 
 const CPP_DIRECTORY_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? '../' : RN_KEYS_PATH,
-  'cpp'
+  'cpp',
 );
 
-const ANDROID_DIR_PATH = path.join(
+const _ANDROID_DIR_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? KEYS_ANDROID_EXAMPLE_PATH : KEYS_ANDROID_PATH,
-  'cpp'
+  'cpp',
 );
 
 const SRC_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
-  isExample ? KEYS_SRC_EXAMPLE_PATH : KEYS_SRC_PATH
+  isExample ? KEYS_SRC_EXAMPLE_PATH : KEYS_SRC_PATH,
 );
 const ANDROID_KEYS_DIR_PATH = path.join(
   PACKAGE_ROOT_DIR_PATH,
@@ -53,7 +53,7 @@ const ANDROID_KEYS_DIR_PATH = path.join(
   'main',
   'java',
   'com',
-  'reactnativekeysjsi'
+  'reactnativekeysjsi',
 );
 
 const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
@@ -71,7 +71,7 @@ module.exports.genTSType = (allKeys) => {
   Object.keys(allKeys?.public ?? {}).forEach((key) => {
     result += `\n  ${key}: string;`;
   });
-  if(!allKeys?.public) {
+  if (!allKeys?.public) {
     result += '\n [key: string]: string;\n};\n\n';
   } else {
     result += '\n};\n\n';
@@ -80,7 +80,7 @@ module.exports.genTSType = (allKeys) => {
   Object.keys(allKeys?.secure ?? {}).forEach((key) => {
     result += `\n  ${key}: string;`;
   });
-  if(!allKeys?.secure) {
+  if (!allKeys?.secure) {
     result += '\n [key: string]: string;\n};\n\n';
   } else {
     result += '\n};\n\n';
@@ -93,7 +93,7 @@ module.exports.makeFileInCPPDir = (fileContent, fileName) => {
     const iosCppFilePath = path.join(CPP_DIRECTORY_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
     return true;
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 };
@@ -103,7 +103,7 @@ module.exports.makeFileInIosDir = (fileContent, fileName) => {
     const iosCppFilePath = path.join(IOS_DIR_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
     return true;
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 };
@@ -113,14 +113,14 @@ module.exports.makeFileInProjectDirectoryIos = (fileContent, fileName) => {
     const iosCppFilePath = path.join(PROJECT_DIRECTORY_IOS_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
     return true;
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 };
 
 module.exports.getIosEnvironmentFile = () => {
   try {
-    let KEYS_FILE_NAME = process.env.KEYSFILE;
+    const KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
       return KEYS_FILE_NAME;
     } else if (process.env.DEFAULT_FILE_NAME) {
@@ -139,21 +139,21 @@ module.exports.getIosEnvironmentFile = () => {
       return debugFile;
     }
     return DEFAULT_FILE_NAME;
-  } catch (error) {
+  } catch (_error) {
     return DEFAULT_FILE_NAME;
   }
 };
 
 module.exports.getAndroidEnvironmentFile = () => {
   try {
-    let KEYS_FILE_NAME = process.env.KEYSFILE;
+    const KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
       return KEYS_FILE_NAME;
     } else if (process.env.DEFAULT_FILE_NAME) {
       return process.env.DEFAULT_FILE_NAME;
     }
     return DEFAULT_FILE_NAME;
-  } catch (error) {
+  } catch (_error) {
     return DEFAULT_FILE_NAME;
   }
 };
@@ -164,13 +164,13 @@ module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
     fs.outputFileSync(filePath, fileContent);
     return true;
   } catch (error) {
-    console.error(error)
+    console.error(error);
     return false;
   }
 };
 
 module.exports.splitPrivateKeyInto3ChunksOfArray = (string) => {
-  var regex = RegExp('.{1,' + Math.ceil(string.length / 3) + '}', 'g');
+  var regex = RegExp(`.{1,${Math.ceil(string.length / 3)}}`, 'g');
   return string.match(regex);
 };
 
@@ -214,7 +214,7 @@ module.exports.generatePassword = () => {
     charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
     retVal = '';
   const bytes = crypto.randomBytes(length);
-  for (var i = 0; i < length; ++i) {
+  for (let i = 0; i < length; ++i) {
     retVal += charset.charAt(bytes[i] % charset.length);
   }
   return retVal;

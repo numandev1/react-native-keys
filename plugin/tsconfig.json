@@ -4,9 +4,7 @@
     "outDir": "build",
     "rootDir": "src",
     "module": "CommonJS",
-    "target": "ES2015",
+    "target": "ES2015"
   },
-  "include": [
-    "./src"
-  ]
+  "include": ["./src"]
 }

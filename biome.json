@@ -10,7 +10,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["!node_modules", "!lib"]
+    "includes": ["**", "!lib", "!.pnp*", "!node_modules"]
   },
   "formatter": {
     "enabled": true,

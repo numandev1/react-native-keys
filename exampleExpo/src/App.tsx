@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import RNKeys from 'react-native-keys';
 export default function App() {
   const [jniValue, setJniValue] = useState('');
