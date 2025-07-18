@@ -1,14 +1,6 @@
 name: Build iOS App
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - ".github/workflows/build-ios.yml"
-      - "ios/**"
-      - "*.podspec"
-      - "example/ios/**"
   pull_request:
     paths:
       - ".github/workflows/build-ios.yml"
