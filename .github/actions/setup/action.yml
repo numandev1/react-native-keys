@@ -4,6 +4,12 @@ description: Setup Node.js and install dependencies
 runs:
   using: composite
   steps:
+    - name: Enable corepack and set yarn to latest stable
+      shell: bash
+      run: |
+        corepack enable
+        yarn set version stable
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
