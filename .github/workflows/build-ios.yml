@@ -57,7 +57,7 @@ jobs:
         run: |
           bundle exec pod check
           bundle exec pod repo update --verbose
-          bundle exec pod install --project-directory=ios
+          bundle exec pod install
 
       - name: Build App
         run: "xcodebuild \
