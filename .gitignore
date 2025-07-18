@@ -71,3 +71,5 @@ android/src/main/java/com/reactnativekeysjsi/PrivateKey.java
 example/vendor
 
 .pnp*
+.yarn/cache
+example/.yarn/cache

@@ -1,20 +1,6 @@
 name: Validate JS
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - ".github/workflows/validate-js.yml"
-      - "src/**"
-      - "*.json"
-      - "*.js"
-      - "*.lock"
-      - "example/src/**"
-      - "example/*.json"
-      - "example/*.js"
-      - "example/*.lock"
-      - "example/*.tsx"
   pull_request:
     paths:
       - ".github/workflows/validate-js.yml"
@@ -61,10 +47,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Enable corepack and set yarn to latest stable
+      - name: Set yarn to latest stable
         shell: bash
-        run: |
-          yarn set version stable
+        run: yarn set version stable
 
       - name: Setup
         uses: ./.github/actions/setup
