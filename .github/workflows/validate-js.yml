@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Install node_modules (example/)
-        run: yarn --cwd example install --immutable --immutable-cache --check-cache
+        run: yarn --cwd example install --immutable --check-cache
 
       - name: Run TypeScript # Reviewdog tsc errorformat: %f:%l:%c - error TS%n: %m
         run: |
@@ -46,7 +46,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Install node_modules (example/)
-        run: yarn --cwd example install --immutable --immutable-cache --check-cache
+        run: yarn --cwd example install --immutable --check-cache
 
       - name: Run Biome with auto-fix
         run: yarn lint

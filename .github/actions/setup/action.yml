@@ -30,7 +30,7 @@ runs:
     - name: Install dependencies
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       shell: bash
-      run: yarn install --immutable --immutable-cache --check-cache
+      run: yarn install --immutable --check-cache
 
     - name: Cache dependencies
       if: steps.yarn-cache.outputs.cache-hit != 'true'
