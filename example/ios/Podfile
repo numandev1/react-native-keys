@@ -65,6 +65,8 @@ target 'KeysExample' do
     projects.each do |project|
       project.build_configurations.each do |config|
         config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
       end
       project.save()
     end
