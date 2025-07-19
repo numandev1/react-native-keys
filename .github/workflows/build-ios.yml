@@ -5,6 +5,8 @@ on:
     paths:
       - "*.podspec"
       - "example/**"
+      - "ios/**"
+      - "example/ios/**"
 
 jobs:
   build:
