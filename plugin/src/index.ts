@@ -1,11 +1,11 @@
-import { ConfigPlugin, createRunOncePlugin } from '@expo/config-plugins';
+import { type ConfigPlugin, createRunOncePlugin } from '@expo/config-plugins';
 
 import {
   withAndroidBuildscriptDependency,
   withAndroidGradleProperties,
 } from './android';
 import { withPreActionScript } from './ios';
-import { PluginConfigType } from './pluginConfig';
+import type { PluginConfigType } from './pluginConfig';
 
 /**
  * A config plugin for configuring `react-native-keys`

@@ -23,7 +23,7 @@ const KeysTurboModule = KeysModule
         get() {
           throw new Error(LINKING_ERROR);
         },
-      }
+      },
     );
 const installed = KeysTurboModule.install();
 if (!installed) {

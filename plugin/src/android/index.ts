@@ -1,6 +1,6 @@
-import { withAndroidBuildscriptDependency } from './buildscriptDependency';
-import { withAndroidGradleProperties } from './buildGradleProperties';
 import { withAddProductFlavours } from './addProductFlavors';
+import { withAndroidGradleProperties } from './buildGradleProperties';
+import { withAndroidBuildscriptDependency } from './buildscriptDependency';
 export {
   withAndroidBuildscriptDependency,
   withAndroidGradleProperties,
