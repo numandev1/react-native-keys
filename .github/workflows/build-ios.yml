@@ -51,8 +51,8 @@ jobs:
         run: |
           cd ios
           "xcodebuild \
-          -workspace CompressorExample.xcworkspace \
-          -scheme CompressorExample \
+          -workspace KeysExample.xcworkspace \
+          -scheme KeysExample \
           -sdk iphonesimulator \
           -configuration Debug \
           -destination \"generic/platform=iOS Simulator\" \
