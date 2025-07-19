@@ -50,3 +50,15 @@ jobs:
 
       - name: Run Biome with auto-fix
         run: yarn lint
+
+  test:
+    name: Test Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run test coverage
+        run: yarn test --coverage
