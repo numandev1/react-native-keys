@@ -54,5 +54,5 @@ jobs:
       - name: Build App
         run: |
           cd ios
-          xcodebuild -project KeysExample.xcodeproj -sdk iphonesimulator -configuration Debug -arch arm64 build
+          xcodebuild -project KeysExample.xcodeproj -sdk iphonesimulator -configuration Debug -arch arm64 build -UseModernBuildSystem=YES CODE_SIGN_STYLE=Automatic
           # yarn exec react-native build-ios --mode Debug
