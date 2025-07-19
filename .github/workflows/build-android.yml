@@ -31,7 +31,6 @@ jobs:
 
       - name: Run Build
         run: |
-          yarn android-build-assets
           cd android
           ./gradlew clean
           ./gradlew assembleDebug

@@ -49,6 +49,5 @@ jobs:
 
       - name: Build App
         run: |
-          yarn ios-build
           cd ios
           xcodebuild -workspace KeysExample.xcworkspace -scheme KeysExample -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,name=iPhone 15" build
