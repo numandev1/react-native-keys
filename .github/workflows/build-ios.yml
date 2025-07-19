@@ -54,4 +54,4 @@ jobs:
       - name: Build App
         run: |
           cd ios
-          xcodebuild -project KeysExample.xcodeproj -sdk iphonesimulator -configuration Debug build
+          xcodebuild -workspace KeysExample.xcworkspace -scheme KeysExample -sdk iphonesimulator -configuration Debug -arch arm64 build
