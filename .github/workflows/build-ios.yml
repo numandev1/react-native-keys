@@ -18,6 +18,8 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
+        with:
+          project-path: example
 
       - name: Setup Ruby (bundle)
         uses: ruby/setup-ruby@v1

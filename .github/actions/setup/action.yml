@@ -1,6 +1,11 @@
 name: Setup
 description: Setup Node.js and install dependencies
 
+inputs:
+  project-path:
+    description: "The path to the project directory (e.g., example/)"
+    required: false
+
 runs:
   using: composite
   steps:
@@ -28,6 +33,7 @@ runs:
           ${{ runner.os }}-yarn-
 
     - name: Install dependencies
+      working-directory: ${{ inputs.project-path }}
       shell: bash
       run: yarn install --immutable --check-cache
 
