@@ -13,9 +13,6 @@ jobs:
   build:
     name: Build Android Example App
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: example/android
     steps:
       - uses: actions/checkout@v4
 
@@ -30,4 +27,6 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Run Gradle Build
-        run: ./gradlew assembleDebug
+        run: |
+          cd example/android
+          ./gradlew assembleDebug
