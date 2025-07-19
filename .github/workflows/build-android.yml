@@ -31,5 +31,5 @@ jobs:
 
       - name: Run Gradle Build
         run: |
-          cd example/android
+          cd android
           ./gradlew assembleDebug
