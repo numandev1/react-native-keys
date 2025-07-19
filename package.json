@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "typescript": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint": "biome check --write",
     "prepare": "bob build",
     "release": "cd plugin && tsc && cd .. && release-it",
