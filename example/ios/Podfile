@@ -58,6 +58,16 @@ target 'KeysExample' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    projects = installer.aggregate_targets
+      .map{ |t| t.user_project }
+      .uniq{ |p| p.path }
+    projects.each do |project|
+      project.build_configurations.each do |config|
+        config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+      end
+      project.save()
+    end
     installer.pods_project.build_configurations.each do |config|
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
     end
