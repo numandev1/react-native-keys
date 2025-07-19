@@ -30,6 +30,4 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Run Gradle Build
-        run: |
-          cd android
-          ./gradlew assembleDebug
+        run: ./android/gradlew assembleDebug
