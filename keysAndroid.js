@@ -30,7 +30,7 @@ const makeAndroidJnuFiles = () => {
     makeCryptographicModuleTemplateAndroid(halfKey);
   const isDoneAddedPrivateKey = makeFileInAndroidMainAssetsFolder(
     cryptographicModuleFileContent,
-    'PrivateKey.java'
+    'PrivateKey.java',
   );
   genTSType(allKeys);
   console.info('react-native-keys', {

@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-keys": [
-        "./src/index.ts"
-      ]
+      "react-native-keys": ["./src/index.ts"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -12,9 +10,7 @@
     "verbatimModuleSyntax": false,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,

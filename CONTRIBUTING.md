@@ -32,10 +32,10 @@ To run the example app on iOS:
 yarn example ios
 ```
 
-Make sure your code passes TypeScript and ESLint. Run the following to verify:
+Make sure your code passes TypeScript and Biome. Run the following to verify:
 
 ```sh
-yarn typescript
+yarn typecheck
 yarn lint
 ```
 
@@ -70,9 +70,9 @@ Our pre-commit hooks verify that your commit message matches this format when co
 
 ### Linting and tests
 
-[ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/)
+[TypeScript](https://www.typescriptlang.org/)
 
-We use [TypeScript](https://www.typescriptlang.org/) for type checking, [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
+We use [TypeScript](https://www.typescriptlang.org/) for type checking, [Biome](https://biomejs.dev) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
 
 Our pre-commit hooks verify that the linter and tests pass when committing.
 
@@ -91,8 +91,8 @@ yarn release
 The `package.json` file contains various scripts for common tasks:
 
 - `yarn bootstrap`: setup project by installing all dependencies and pods.
-- `yarn typescript`: type-check files with TypeScript.
-- `yarn lint`: lint files with ESLint.
+- `yarn typecheck`: type-check files with TypeScript.
+- `yarn lint`: lint files with Biome.
 - `yarn test`: run unit tests with Jest.
 - `yarn example start`: start the Metro server for the example app.
 - `yarn example android`: run the example app on Android.
@@ -186,11 +186,11 @@ Community leaders will follow these Community Impact Guidelines in determining t
 ### Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.0,
-available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+available at <https://www.contributor-covenant.org/version/2/0/code_of_conduct.html>.
 
 Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/diversity).
 
 [homepage]: https://www.contributor-covenant.org
 
 For answers to common questions about this code of conduct, see the FAQ at
-https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.
+<https://www.contributor-covenant.org/faq>. Translations are available at <https://www.contributor-covenant.org/translations>.
