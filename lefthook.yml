@@ -6,7 +6,7 @@ pre-commit:
       run: yarn lint
     types:
       glob: "*.{js,ts, jsx, tsx}"
-      run: yarn typescript
+      run: yarn typecheck
 commit-msg:
   parallel: true
   commands:
