@@ -1,4 +1,4 @@
-module.exports.makeXcConfigFIlle = (keys) => {
+module.exports.makeXcConfigFile = (keys) => {
   try {
     const env_keys = [];
     for (const [key, value] of Object.entries(keys)) {
