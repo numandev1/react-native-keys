@@ -2,18 +2,18 @@
 const {
   getKeys,
   makeFileInIosDir,
-  makeFileInCPPDir,
   getIosEnvironmentFile,
   makeFileInProjectDirectoryIos,
-  splitPrivateKeyInto3ChunksOfArray,
-  makeCppFileTemplate,
   generatePassword,
   encrypt,
   genTSType,
+  CPP_DIRECTORY_PATH
 } = require('./src/util/common');
+const { generateHeaderFile } = require('./src/util/generate-header')
+
 const {
   makePrivateKeyTemplateIOS,
-  makeXcConfigFIlle,
+  makeXcConfigFile,
   makeGeneratedDotEnvTemplateIOS,
 } = require('./src/util/keysFilesTemplateIos');
 
@@ -25,9 +25,7 @@ const makeIosJnuFiles = () => {
   const stringifyKeys = JSON.stringify(secureKeys);
   const password = generatePassword();
   const privateKey = encrypt(stringifyKeys, password);
-  const privateKeyIn3Chunks = splitPrivateKeyInto3ChunksOfArray(privateKey);
-  const cppFileContent = makeCppFileTemplate(privateKeyIn3Chunks, password);
-  const isDoneCryptoCppFile = makeFileInCPPDir(cppFileContent, 'crypto.cpp');
+  generateHeaderFile(CPP_DIRECTORY_PATH, privateKey, password)
 
   const halfKey = privateKey.substr(privateKey.length / 2);
   const generatedPrivateKeyContent = makePrivateKeyTemplateIOS({
@@ -38,7 +36,7 @@ const makeIosJnuFiles = () => {
     'privateKey.m'
   );
 
-  const xcConfigFileContent = makeXcConfigFIlle(publicKeys);
+  const xcConfigFileContent = makeXcConfigFile(publicKeys);
   const isDoneCreatedXCodeConfigFile = makeFileInProjectDirectoryIos(
     xcConfigFileContent,
     'tmp.xcconfig'
@@ -51,7 +49,6 @@ const makeIosJnuFiles = () => {
   );
   genTSType(allKeys);
   console.info('react-native-keys', {
-    isDoneCryptoCppFile,
     isGeneratedPrivateKeyFile,
     isDoneCreatedXCodeConfigFile,
     isGeneratedDotEnvFile,

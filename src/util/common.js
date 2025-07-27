@@ -1,7 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
 const CryptoJS = require('crypto-js');
-const crypto = require('crypto')
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
 const DEFAULT_FILE_NAME = 'keys.development.json';
 
@@ -30,7 +29,7 @@ const IOS_DIR_PATH = path.join(
   isExample ? KEYS_IOS_EXAMPLE_PATH : KEYS_IOS_PATH
 );
 
-const CPP_DIRECTORY_PATH = path.join(
+module.exports.CPP_DIRECTORY_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? '../' : RN_KEYS_PATH,
   'cpp'
@@ -88,15 +87,6 @@ module.exports.genTSType = (allKeys) => {
   fs.outputFileSync(path.join(SRC_PATH, 'type.ts'), result);
 };
 
-module.exports.makeFileInCPPDir = (fileContent, fileName) => {
-  try {
-    const iosCppFilePath = path.join(CPP_DIRECTORY_PATH, fileName);
-    fs.outputFileSync(iosCppFilePath, fileContent);
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
 
 module.exports.makeFileInIosDir = (fileContent, fileName) => {
   try {
@@ -169,56 +159,22 @@ module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
   }
 };
 
-module.exports.splitPrivateKeyInto3ChunksOfArray = (string) => {
-  var regex = RegExp('.{1,' + Math.ceil(string.length / 3) + '}', 'g');
-  return string.match(regex);
-};
 
-module.exports.makeCppFileTemplate = (privateKeyIn3Chunks, password) => {
-  return `
-   #include "crypto.h"
-  #include <string>
-  #include "decryptor.h"
 
-  using namespace std;
+module.exports.generatePassword = (length = 30) => {
+  const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+  let password = "";
 
-  Crypto::Crypto() {
-
+  for (let i = 0; i < length; i++) {
+    const randomBytes = CryptoJS.lib.WordArray.random(1);
+    const randomIndex = Math.abs(randomBytes.words[0]) % chars.length;
+    password += chars[randomIndex];
   }
 
-  string Crypto::getJniJsonStringifyData(string key) {
-      std::string base64Secret1 = "${privateKeyIn3Chunks[0]}";
-      std::string base64Secret2 = "${privateKeyIn3Chunks[1]}";
-      std::string base64Secret3 = "${privateKeyIn3Chunks[2]}";
-      std::string base64Secret = base64Secret1 + base64Secret2 + base64Secret3;
-       std::string password = "${password}";
-      bool binary = false;
-      std::string plaintext = decryptor::dec(base64Secret, password,binary);
-
-      string hash;
-      string halfString=base64Secret.substr(base64Secret.length()/2);
-      if(key==halfString)
-      {
-          return plaintext;
-      }
-      else
-      {
-          return "";
-      }
-  }
-  `;
+  return password;
 };
 
-module.exports.generatePassword = () => {
-  var length = 12,
-    charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-    retVal = '';
-  const bytes = crypto.randomBytes(length);
-  for (var i = 0; i < length; ++i) {
-    retVal += charset.charAt(bytes[i] % charset.length);
-  }
-  return retVal;
-};
 module.exports.encrypt = (message, password, _iv) => {
   const encrypted = CryptoJS.AES.encrypt(message, password, {
     iv: _iv,

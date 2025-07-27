@@ -1,4 +1,4 @@
-module.exports.makeXcConfigFIlle = (keys) => {
+module.exports.makeXcConfigFile = (keys) => {
   try {
     let env_keys = [];
     for (let [key, value] of Object.entries(keys)) {
