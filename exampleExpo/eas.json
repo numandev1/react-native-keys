@@ -1,54 +1,54 @@
 {
-  "cli": {
-    "version": ">= 3.0.0"
-  },
   "build": {
     "development": {
+      "android": {
+        "gradleCommand": ":app:assembleDevelopmentDebug"
+      },
       "developmentClient": true,
+      "distribution": "internal",
       "env": {
         "APP_VARIANT": "development",
         "KEYSFILE": "keys.development.json"
-      },
-      "distribution": "internal",
-      "android": {
-        "gradleCommand": ":app:assembleDevelopmentDebug"
       },
       "ios": {
         "buildConfiguration": "Debug",
         "scheme": "Development"
       }
     },
-    "staging": {
-      "env": {
-        "APP_VARIANT": "staging",
-        "KEYSFILE": "keys.staging.json"
-      },
-      "distribution": "internal",
-      "android": {
-        "gradleCommand": ":app:assembleStagingRelease"
-      },
-      "ios": {
-        "buildConfiguration": "Release",
-        "scheme": "Staging"
-      }
+    "preview": {
+      "distribution": "internal"
     },
     "production": {
+      "android": {
+        "gradleCommand": ":app:assembleProductionRelease"
+      },
+      "distribution": "internal",
       "env": {
         "APP_VARIANT": "production",
         "KEYSFILE": "keys.production.json"
-      },
-      "distribution": "internal",
-      "android": {
-        "gradleCommand": ":app:assembleProductionRelease"
       },
       "ios": {
         "buildConfiguration": "Release",
         "scheme": "Production"
       }
     },
-    "preview": {
-      "distribution": "internal"
-    },
+    "staging": {
+      "android": {
+        "gradleCommand": ":app:assembleStagingRelease"
+      },
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "staging",
+        "KEYSFILE": "keys.staging.json"
+      },
+      "ios": {
+        "buildConfiguration": "Release",
+        "scheme": "Staging"
+      }
+    }
+  },
+  "cli": {
+    "version": ">= 3.0.0"
   },
   "submit": {
     "production": {}

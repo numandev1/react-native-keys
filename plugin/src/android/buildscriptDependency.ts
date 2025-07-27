@@ -1,6 +1,6 @@
-import { ConfigPlugin, withAppBuildGradle } from '@expo/config-plugins';
+import { type ConfigPlugin, withAppBuildGradle } from '@expo/config-plugins';
 
-import { PluginConfigType } from '../pluginConfig';
+import type { PluginConfigType } from '../pluginConfig';
 
 /**
  * Update `<project>/build.gradle`
@@ -9,7 +9,7 @@ import { PluginConfigType } from '../pluginConfig';
 function applyImplementation(
   appBuildGradle: string,
   defaultKeyFile: string = 'keys.development.json',
-  IS_EXAMPLE: string
+  IS_EXAMPLE: string,
 ) {
   const RnkeysImplementation = `
 project.ext.IS_EXAMPLE = ${IS_EXAMPLE};
@@ -18,7 +18,7 @@ apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle
   `;
   if (!appBuildGradle.includes('project.ext.DEFAULT_FILE_NAME')) {
     const enableProguardInReleaseBuildsLine = appBuildGradle.match(
-      /def enableProguardInReleaseBuilds.+/
+      /def enableProguardInReleaseBuilds.+/,
     )?.[0];
     if (
       enableProguardInReleaseBuildsLine &&
@@ -26,11 +26,11 @@ apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle
     ) {
       return appBuildGradle.replace(
         enableProguardInReleaseBuildsLine,
-        `${enableProguardInReleaseBuildsLine}\n${RnkeysImplementation}`
+        `${enableProguardInReleaseBuildsLine}\n${RnkeysImplementation}`,
       );
     }
   } else {
-    let regex = /(project\.ext\.DEFAULT_FILE_NAME\s*=\s*").*?"/;
+    const regex = /(project\.ext\.DEFAULT_FILE_NAME\s*=\s*").*?"/;
     const projectExtKeyFilesLine = appBuildGradle.match(regex)?.[0];
     if (projectExtKeyFilesLine) {
       return appBuildGradle.replace(regex, `$1${defaultKeyFile}"`);
@@ -45,7 +45,7 @@ export const withAndroidBuildscriptDependency: ConfigPlugin<
     config.modResults.contents = applyImplementation(
       config.modResults.contents,
       props?.android?.defaultKeyFile,
-      props?.IS_EXAMPLE ? 'true' : 'false'
+      props?.IS_EXAMPLE ? 'true' : 'false',
     );
     return config;
   });

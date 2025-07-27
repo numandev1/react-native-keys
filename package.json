@@ -25,8 +25,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check --write",
     "prepare": "bob build",
     "release": "cd plugin && tsc && cd .. && release-it",
     "example": "yarn --cwd example",
@@ -70,32 +70,27 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.0.2",
-    "@evilmartians/lefthook": "^1.2.2",
-    "@expo/config-plugins": "^7.2.5",
-    "@react-native-community/eslint-config": "^3.0.2",
-    "@release-it/conventional-changelog": "^5.0.0",
-    "@types/jest": "^28.1.2",
-    "@types/normalize-path": "^3.0.0",
+    "@biomejs/biome": "2.1.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
+    "@evilmartians/lefthook": "1.12.2",
+    "@expo/config-plugins": "10.1.2",
+    "@release-it/conventional-changelog": "10.0.1",
+    "@types/jest": "30.0.0",
+    "@types/normalize-path": "3.0.2",
     "@types/react": "~17.0.21",
     "@types/react-native": "0.70.0",
-    "@types/xml2js": "^0.4.12",
-    "commitlint": "^17.0.2",
-    "del-cli": "^5.0.0",
-    "eslint": "^8.4.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-ft-flow": "^3.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^28.1.1",
+    "@types/xml2js": "0.4.14",
+    "del-cli": "6.0.0",
+    "jest": "30.0.4",
     "metro-react-native-babel-preset": "^0.77.0",
-    "pod-install": "^0.1.0",
-    "prettier": "^2.0.5",
+    "pod-install": "0.3.10",
     "react": "18.2.0",
-    "react-native": "0.72.3",
-    "react-native-builder-bob": "^0.21.3",
-    "release-it": "^15.0.0",
-    "turbo": "^1.10.7",
-    "typescript": "^5.0.2"
+    "react-native": "0.72.17",
+    "react-native-builder-bob": "^0.40.12",
+    "release-it": "19.0.4",
+    "turbo": "2.5.5",
+    "typescript": "5.8.3"
   },
   "resolutions": {
     "@types/react": "17.0.21"
@@ -136,36 +131,6 @@
       }
     }
   },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
@@ -192,5 +157,5 @@
     "type": "modules",
     "jsSrcsDir": "src/spec"
   },
-  "packageManager": "yarn@4.5.3+sha512.3003a14012e2987072d244c720506549c1aab73ee728208f1b2580a9fd67b92d61ba6b08fe93f6dce68fd771e3af1e59a0afa28dd242dd0940d73b95fedd4e90"
+  "packageManager": "yarn@4.9.2"
 }

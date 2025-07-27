@@ -1,6 +1,6 @@
-const CryptoJS = require("crypto-js");
-const fs = require("fs");
-const path = require("path");
+const CryptoJS = require('crypto-js');
+const fs = require('fs');
+const path = require('path');
 
 const getSecureRandomIndex = (arrayLength) => {
   const randomBytes = CryptoJS.lib.WordArray.random(1);
@@ -9,87 +9,87 @@ const getSecureRandomIndex = (arrayLength) => {
 
 const generateRandomFunctionNameOptimized = (count = 10) => {
   const prefixes = [
-    "get",
-    "fetch",
-    "load",
-    "read",
-    "obtain",
-    "retrieve",
-    "extract",
-    "pull",
-    "grab",
-    "access",
-    "decode",
-    "parse",
-    "build",
-    "create",
-    "make",
-    "form",
-    "init",
-    "setup",
-    "config",
-    "process",
+    'get',
+    'fetch',
+    'load',
+    'read',
+    'obtain',
+    'retrieve',
+    'extract',
+    'pull',
+    'grab',
+    'access',
+    'decode',
+    'parse',
+    'build',
+    'create',
+    'make',
+    'form',
+    'init',
+    'setup',
+    'config',
+    'process',
   ];
   const middles = [
-    "Data",
-    "Info",
-    "Value",
-    "Item",
-    "Element",
-    "Part",
-    "Segment",
-    "Block",
-    "Chunk",
-    "Piece",
-    "Key",
-    "Code",
-    "Token",
-    "String",
-    "Text",
-    "Content",
-    "Buffer",
-    "Stream",
-    "Node",
-    "Entry",
+    'Data',
+    'Info',
+    'Value',
+    'Item',
+    'Element',
+    'Part',
+    'Segment',
+    'Block',
+    'Chunk',
+    'Piece',
+    'Key',
+    'Code',
+    'Token',
+    'String',
+    'Text',
+    'Content',
+    'Buffer',
+    'Stream',
+    'Node',
+    'Entry',
   ];
   const suffixes = [
-    "A",
-    "B",
-    "C",
-    "X",
-    "Y",
-    "Z",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "Alpha",
-    "Beta",
-    "Gamma",
-    "Delta",
-    "Epsilon",
-    "Zeta",
-    "Theta",
-    "Lambda",
-    "Sigma",
-    "Omega",
-    "Prime",
-    "Core",
-    "Base",
+    'A',
+    'B',
+    'C',
+    'X',
+    'Y',
+    'Z',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    'Alpha',
+    'Beta',
+    'Gamma',
+    'Delta',
+    'Epsilon',
+    'Zeta',
+    'Theta',
+    'Lambda',
+    'Sigma',
+    'Omega',
+    'Prime',
+    'Core',
+    'Base',
   ];
 
   const usedNames = new Set();
   const selectedNames = [];
 
-  usedNames.add("getPasswordSecureData");
-  usedNames.add("getEncryptedSecureData");
+  usedNames.add('getPasswordSecureData');
+  usedNames.add('getEncryptedSecureData');
 
   const maxPossible = prefixes.length * middles.length * suffixes.length;
 
   if (count > maxPossible) {
     throw new Error(
-      `Cannot generate ${count} unique names. Maximum possible: ${maxPossible}`
+      `Cannot generate ${count} unique names. Maximum possible: ${maxPossible}`,
     );
   }
 
@@ -116,7 +116,7 @@ const generateRandomFunctionNameOptimized = (count = 10) => {
 
   if (selectedNames.length < count) {
     throw new Error(
-      `Could not generate ${count} unique names after ${attempts} attempts. Generated: ${selectedNames.length}`
+      `Could not generate ${count} unique names after ${attempts} attempts. Generated: ${selectedNames.length}`,
     );
   }
 
@@ -176,18 +176,18 @@ const obfuscateStringAdvancedHex = (str) => {
 
 const generateDummyPasswordData = () => {
   const dummyStrings = [
-    "fake_pwd_123",
-    "dummy_key_456",
-    "placeholder_789",
-    "mock_pass_abc",
-    "test_secret_def",
-    "sample_auth_ghi",
-    "random_code_jkl",
-    "noise_token_mno",
-    "decoy_cred_pqr",
-    "false_key_stu",
-    "mislead_pass_vwx",
-    "bogus_auth_yz",
+    'fake_pwd_123',
+    'dummy_key_456',
+    'placeholder_789',
+    'mock_pass_abc',
+    'test_secret_def',
+    'sample_auth_ghi',
+    'random_code_jkl',
+    'noise_token_mno',
+    'decoy_cred_pqr',
+    'false_key_stu',
+    'mislead_pass_vwx',
+    'bogus_auth_yz',
   ];
 
   const randomIndex = getSecureRandomIndex(dummyStrings.length);
@@ -196,16 +196,16 @@ const generateDummyPasswordData = () => {
 
 const generateDummyEncryptedData = () => {
   const dummyEncrypted = [
-    "U2FsdGVkX19fake1234567890abcdef",
-    "U2FsdGVkX18dummy567890abcdef123",
-    "U2FsdGVkX17test890abcdef123456",
-    "U2FsdGVkX16mock123456789abcdef",
-    "U2FsdGVkX15sample456789abcdef12",
-    "U2FsdGVkX14noise789abcdef123456",
-    "U2FsdGVkX13decoy123456789abcde",
-    "U2FsdGVkX12false456789abcdef123",
-    "U2FsdGVkX11fake789abcdef123456",
-    "U2FsdGVkX10dummy123456789abcde",
+    'U2FsdGVkX19fake1234567890abcdef',
+    'U2FsdGVkX18dummy567890abcdef123',
+    'U2FsdGVkX17test890abcdef123456',
+    'U2FsdGVkX16mock123456789abcdef',
+    'U2FsdGVkX15sample456789abcdef12',
+    'U2FsdGVkX14noise789abcdef123456',
+    'U2FsdGVkX13decoy123456789abcde',
+    'U2FsdGVkX12false456789abcdef123',
+    'U2FsdGVkX11fake789abcdef123456',
+    'U2FsdGVkX10dummy123456789abcde',
   ];
 
   const randomIndex = getSecureRandomIndex(dummyEncrypted.length);
@@ -225,8 +225,8 @@ const generateCppFiles = (password, encryptedMessage) => {
   const realEncryptedFunctionNames = allFunctionNames.slice(20, 30);
   const dummyEncryptedFunctionNames = allFunctionNames.slice(30, 40);
 
-  const mainPasswordFunctionName = "getPasswordSecureData";
-  const mainEncryptedFunctionName = "getEncryptedSecureData";
+  const mainPasswordFunctionName = 'getPasswordSecureData';
+  const mainEncryptedFunctionName = 'getEncryptedSecureData';
 
   for (let i = 0; i < passwordParts.length; i++) {
     const obfuscated = obfuscateStringAdvancedHex(passwordParts[i]);
@@ -264,14 +264,14 @@ std::string ${realPasswordFunctionNames[i]}() {
     const unsigned char data[${obfuscated.arraySize}] = {
         ${obfuscated.hexArray
           .map(
-            (byte) => `0x${byte.toString(16).padStart(2, "0").toUpperCase()}`
+            (byte) => `0x${byte.toString(16).padStart(2, '0').toUpperCase()}`,
           )
-          .join(", ")}
+          .join(', ')}
     };
     
     // Extract real data from specific indices (anti-linear pattern)
     std::string result = "";
-    const int realIndices[] = {${obfuscated.realIndices.join(", ")}};
+    const int realIndices[] = {${obfuscated.realIndices.join(', ')}};
     const int realCount = ${obfuscated.realIndices.length};
     
     for (int i = 0; i < realCount; i++) {
@@ -296,14 +296,14 @@ std::string ${dummyPasswordFunctionNames[i]}() {
     const unsigned char data[${obfuscatedDummy.arraySize}] = {
         ${obfuscatedDummy.hexArray
           .map(
-            (byte) => `0x${byte.toString(16).padStart(2, "0").toUpperCase()}`
+            (byte) => `0x${byte.toString(16).padStart(2, '0').toUpperCase()}`,
           )
-          .join(", ")}
+          .join(', ')}
     };
     
     // Extract dummy data from specific indices
     std::string result = "";
-    const int realIndices[] = {${obfuscatedDummy.realIndices.join(", ")}};
+    const int realIndices[] = {${obfuscatedDummy.realIndices.join(', ')}};
     const int realCount = ${obfuscatedDummy.realIndices.length};
     
     for (int i = 0; i < realCount; i++) {
@@ -362,7 +362,7 @@ void initializePasswordDummies() {
   const selectedPasswordDummies = [];
   for (let i = 0; i < 3; i++) {
     const passwordIndex = getSecureRandomIndex(
-      dummyPasswordFunctionNames.length
+      dummyPasswordFunctionNames.length,
     );
     if (!selectedPasswordDummies.includes(passwordIndex)) {
       selectedPasswordDummies.push(passwordIndex);
@@ -404,14 +404,14 @@ std::string ${realEncryptedFunctionNames[i]}() {
     const unsigned char data[${obfuscated.arraySize}] = {
         ${obfuscated.hexArray
           .map(
-            (byte) => `0x${byte.toString(16).padStart(2, "0").toUpperCase()}`
+            (byte) => `0x${byte.toString(16).padStart(2, '0').toUpperCase()}`,
           )
-          .join(", ")}
+          .join(', ')}
     };
     
     // Extract real data from specific indices (anti-linear pattern)
     std::string result = "";
-    const int realIndices[] = {${obfuscated.realIndices.join(", ")}};
+    const int realIndices[] = {${obfuscated.realIndices.join(', ')}};
     const int realCount = ${obfuscated.realIndices.length};
     
     for (int i = 0; i < realCount; i++) {
@@ -436,14 +436,14 @@ std::string ${dummyEncryptedFunctionNames[i]}() {
     const unsigned char data[${obfuscatedDummy.arraySize}] = {
         ${obfuscatedDummy.hexArray
           .map(
-            (byte) => `0x${byte.toString(16).padStart(2, "0").toUpperCase()}`
+            (byte) => `0x${byte.toString(16).padStart(2, '0').toUpperCase()}`,
           )
-          .join(", ")}
+          .join(', ')}
     };
     
     // Extract dummy data from specific indices
     std::string result = "";
-    const int realIndices[] = {${obfuscatedDummy.realIndices.join(", ")}};
+    const int realIndices[] = {${obfuscatedDummy.realIndices.join(', ')}};
     const int realCount = ${obfuscatedDummy.realIndices.length};
     
     for (int i = 0; i < realCount; i++) {
@@ -502,7 +502,7 @@ void initializeEncryptedDummies() {
   const selectedEncryptedDummies = [];
   for (let i = 0; i < 3; i++) {
     const encryptedIndex = getSecureRandomIndex(
-      dummyEncryptedFunctionNames.length
+      dummyEncryptedFunctionNames.length,
     );
     if (!selectedEncryptedDummies.includes(encryptedIndex)) {
       selectedEncryptedDummies.push(encryptedIndex);
@@ -527,12 +527,12 @@ void initializeEncryptedDummies() {
 const generateHeaderFile = (prefixPath, cipherText, password) => {
   const result = generateCppFiles(password, cipherText);
   fs.writeFileSync(
-    path.join(prefixPath, "password_functions.h"),
-    result.passwordHeader
+    path.join(prefixPath, 'password_functions.h'),
+    result.passwordHeader,
   );
   fs.writeFileSync(
-    path.join(prefixPath, "encrypted_functions.h"),
-    result.encryptedHeader
+    path.join(prefixPath, 'encrypted_functions.h'),
+    result.encryptedHeader,
   );
 };
 

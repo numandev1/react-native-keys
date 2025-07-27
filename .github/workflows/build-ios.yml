@@ -1,19 +1,11 @@
 name: Build iOS App
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - ".github/workflows/build-ios.yml"
-      - "ios/**"
-      - "*.podspec"
-      - "example/ios/**"
   pull_request:
     paths:
-      - ".github/workflows/build-ios.yml"
-      - "ios/**"
       - "*.podspec"
+      - "example/**"
+      - "ios/**"
       - "example/ios/**"
 
 jobs:
@@ -22,30 +14,21 @@ jobs:
     runs-on: macOS-latest
     defaults:
       run:
-        working-directory: example/ios
+        working-directory: example
     steps:
       - uses: actions/checkout@v4
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Restore node_modules from cache
-        uses: actions/cache@v4
-        id: yarn-cache
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Install node_modules for example/
-        run: yarn install --frozen-lockfile --cwd ..
+          project-path: example
 
       - name: Setup Ruby (bundle)
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6
-          bundler-cache: true
-          working-directory: example/ios
+          ruby-version: 3.4.5
+          bundler-cache: false
+          cache-version: 3
 
       - name: Restore Pods cache
         uses: actions/cache@v4
@@ -57,14 +40,19 @@ jobs:
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
+
+      - name: Install Gemfile
+        run: |
+          bundle install
+
       - name: Install Pods
-        run: bundle exec pod check || bundle exec pod install
+        run: |
+          cd ios
+          bundle exec pod repo update --verbose
+          bundle exec pod install
+
       - name: Build App
-        run: "xcodebuild \
-          -workspace CompressorExample.xcworkspace \
-          -scheme CompressorExample \
-          -sdk iphonesimulator \
-          -configuration Debug \
-          -destination \"generic/platform=iOS Simulator\" \
-          build \
-          CODE_SIGNING_ALLOWED=NO"
+        run: |
+          cd ios
+          xcodebuild -project KeysExample.xcodeproj -sdk iphonesimulator -configuration Debug -arch arm64 build -UseModernBuildSystem=YES CODE_SIGN_STYLE=Automatic
+          # yarn exec react-native build-ios --mode Debug

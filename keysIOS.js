@@ -7,9 +7,9 @@ const {
   generatePassword,
   encrypt,
   genTSType,
-  CPP_DIRECTORY_PATH
+  CPP_DIRECTORY_PATH,
 } = require('./src/util/common');
-const { generateHeaderFile } = require('./src/util/generate-header')
+const { generateHeaderFile } = require('./src/util/generate-header');
 
 const {
   makePrivateKeyTemplateIOS,
@@ -25,7 +25,7 @@ const makeIosJnuFiles = () => {
   const stringifyKeys = JSON.stringify(secureKeys);
   const password = generatePassword();
   const privateKey = encrypt(stringifyKeys, password);
-  generateHeaderFile(CPP_DIRECTORY_PATH, privateKey, password)
+  generateHeaderFile(CPP_DIRECTORY_PATH, privateKey, password);
 
   const halfKey = privateKey.substr(privateKey.length / 2);
   const generatedPrivateKeyContent = makePrivateKeyTemplateIOS({
@@ -33,19 +33,19 @@ const makeIosJnuFiles = () => {
   });
   const isGeneratedPrivateKeyFile = makeFileInIosDir(
     generatedPrivateKeyContent,
-    'privateKey.m'
+    'privateKey.m',
   );
 
   const xcConfigFileContent = makeXcConfigFile(publicKeys);
   const isDoneCreatedXCodeConfigFile = makeFileInProjectDirectoryIos(
     xcConfigFileContent,
-    'tmp.xcconfig'
+    'tmp.xcconfig',
   );
 
   const generatedDotEnvContent = makeGeneratedDotEnvTemplateIOS(publicKeys);
   const isGeneratedDotEnvFile = makeFileInIosDir(
     generatedDotEnvContent,
-    'GeneratedDotEnv.m'
+    'GeneratedDotEnv.m',
   );
   genTSType(allKeys);
   console.info('react-native-keys', {

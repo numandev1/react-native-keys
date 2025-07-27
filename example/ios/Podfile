@@ -17,7 +17,7 @@ prepare_react_native_project!
 #   dependencies: {
 #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
 # ```
-flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+# flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -40,7 +40,7 @@ target 'KeysExample' do
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
-    :flipper_configuration => flipper_config,
+    # :flipper_configuration => flipper_config,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
@@ -58,5 +58,20 @@ target 'KeysExample' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+    projects = installer.aggregate_targets
+      .map{ |t| t.user_project }
+      .uniq{ |p| p.path }
+    projects.each do |project|
+      project.build_configurations.each do |config|
+        config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+      end
+      project.save()
+    end
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
   end
 end

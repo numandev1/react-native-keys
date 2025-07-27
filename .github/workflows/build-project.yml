@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/build-android.yml"
+      - "android/**"
+      - "example/android/**"
+      - "yarn.lock"
+      - "example/yarn.lock"
+
+jobs:
+  build:
+    name: Prepare / Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Install node_modules (example/)
+        run: yarn --cwd example install --immutable --check-cache
+
+      - name: Prepare / Build
+        run: yarn prepare

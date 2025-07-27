@@ -1,7 +1,7 @@
-const path = require('path');
+const path = require('node:path');
 const pak = require('../package.json');
 
-module.exports = function (api) {
+module.exports = (api) => {
   api.cache(true);
 
   return {

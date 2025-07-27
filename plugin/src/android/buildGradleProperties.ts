@@ -1,6 +1,6 @@
-import { ConfigPlugin, withGradleProperties } from '@expo/config-plugins';
+import { type ConfigPlugin, withGradleProperties } from '@expo/config-plugins';
 
-import { PluginConfigType } from '../pluginConfig';
+import type { PluginConfigType } from '../pluginConfig';
 
 /**
  * Update `android/gradle.properties`
@@ -9,11 +9,11 @@ import { PluginConfigType } from '../pluginConfig';
 const PICK_FIRST_KEY = 'android.packagingOptions.pickFirsts';
 
 export const withAndroidGradleProperties: ConfigPlugin<PluginConfigType> = (
-  config
+  config,
 ) => {
   return withGradleProperties(config, (config) => {
     const pickFirst = config.modResults.find(
-      (item: any) => item.key === PICK_FIRST_KEY
+      (item: any) => item.key === PICK_FIRST_KEY,
     );
     if (!pickFirst) {
       config.modResults.push({

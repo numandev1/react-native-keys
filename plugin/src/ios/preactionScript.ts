@@ -1,16 +1,17 @@
-import { ConfigPlugin, withDangerousMod } from '@expo/config-plugins';
-import { PluginConfigType } from '../pluginConfig';
-import walkSync from 'walk-sync';
+import fs from 'node:fs';
+import { type ConfigPlugin, withDangerousMod } from '@expo/config-plugins';
 import NP from 'normalize-path';
-import fs from 'fs';
-import { parseStringPromise, Builder } from 'xml2js';
+import walkSync from 'walk-sync';
+import { Builder, parseStringPromise } from 'xml2js';
+import type { PluginConfigType } from '../pluginConfig';
+
 const normalizePath = process.platform === 'win32' ? NP : (p: any) => p;
 const iosXcodeproj = 'ios/*.xcodeproj/**/*.xcscheme';
 
 const preAction = (
   BuildableReference: any[],
   IS_EXAMPLE: boolean = false,
-  defaultKeyFile: string = 'keys.development.json'
+  defaultKeyFile: string = 'keys.development.json',
 ) => {
   return {
     PreActions: [
@@ -51,7 +52,7 @@ const preAction = (
 
 export const withPreActionScript: ConfigPlugin<PluginConfigType> = (
   config,
-  props
+  props,
 ) => {
   return withDangerousMod(config, [
     'ios',
@@ -67,7 +68,7 @@ export const withPreActionScript: ConfigPlugin<PluginConfigType> = (
               encoding: 'utf-8',
             });
             const xcSchemeJson = await parseStringPromise(xcSchemeContent);
-            let BuildAction = xcSchemeJson.Scheme.BuildAction;
+            const BuildAction = xcSchemeJson.Scheme.BuildAction;
             const BuildableReference =
               BuildAction[0].BuildActionEntries[0].BuildActionEntry[0]
                 .BuildableReference;
@@ -77,7 +78,7 @@ export const withPreActionScript: ConfigPlugin<PluginConfigType> = (
               ...preAction(
                 BuildableReference,
                 props?.IS_EXAMPLE,
-                props?.ios?.defaultKeyFile
+                props?.ios?.defaultKeyFile,
               ),
             };
             xcSchemeJson.Scheme.BuildAction = BuildAction;
