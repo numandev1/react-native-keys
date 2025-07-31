@@ -149,7 +149,8 @@ android {
         arguments '-DANDROID_STL=c++_shared',
           "-DNODE_MODULES_DIR=${nodeModulesPath}",
           "-DREACT_NATIVE_MINOR_VERSION=${REACT_NATIVE_MINOR_VERSION}",
-          "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+          "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON",
+          "-DANDROID_PAGE_SIZE_16KB=ON"
       }
     }
   }
@@ -221,11 +222,7 @@ repositories {
 
 
 dependencies {
-  // For < 0.71, this will be from the local maven repo
-  // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
-  //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  implementation 'com.android.ndk.thirdparty:openssl:1.1.1l-beta-1'
 }
 
 if (isNewArchitectureEnabled()) {
