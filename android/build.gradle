@@ -93,7 +93,7 @@ if(!found){
   // after which the base path will be null
   while (basePath) {
     nodeModulesDir = Paths.get(basePath.toString(), "node_modules")
-    reactNativeDir = Paths.get(nodeModulesDir.toString(), "react-native/android")
+    reactNativeDir = Paths.get(nodeModulesDir.toString(), "react-native/ReactAndroid")
     if (nodeModulesDir.toFile().exists() && reactNativeDir.toFile().exists()) {
       found = true
       break;
