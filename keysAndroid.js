@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const {
+import {
   getKeys,
   makeFileInAndroidMainAssetsFolder,
   getAndroidEnvironmentFile,
@@ -7,11 +7,9 @@ const {
   encrypt,
   genTSType,
   CPP_DIRECTORY_PATH,
-} = require('./src/util/common');
-const { generateHeaderFile } = require('./src/util/generate-header');
-const {
-  makeCryptographicModuleTemplateAndroid,
-} = require('./src/util/keysFilesTemplateAndroid');
+} from './src/util/common.js';
+import { generateHeaderFile } from './src/util/generate-header.js';
+import { makeCryptographicModuleTemplateAndroid } from './src/util/keysFilesTemplateAndroid.js';
 
 const makeAndroidJnuFiles = () => {
   const KEYS_FILE_NAME = getAndroidEnvironmentFile();
@@ -27,7 +25,7 @@ const makeAndroidJnuFiles = () => {
     makeCryptographicModuleTemplateAndroid(halfKey);
   const isDoneAddedPrivateKey = makeFileInAndroidMainAssetsFolder(
     cryptographicModuleFileContent,
-    'PrivateKey.java',
+    'PrivateKey.kt',
   );
   genTSType(allKeys);
   console.info('react-native-keys', {

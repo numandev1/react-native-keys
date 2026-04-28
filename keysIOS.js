@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const {
+import {
   getKeys,
   makeFileInIosDir,
   getIosEnvironmentFile,
@@ -8,14 +8,14 @@ const {
   encrypt,
   genTSType,
   CPP_DIRECTORY_PATH,
-} = require('./src/util/common');
-const { generateHeaderFile } = require('./src/util/generate-header');
+} from './src/util/common.js';
+import { generateHeaderFile } from './src/util/generate-header.js';
 
-const {
+import {
   makePrivateKeyTemplateIOS,
   makeXcConfigFile,
   makeGeneratedDotEnvTemplateIOS,
-} = require('./src/util/keysFilesTemplateIos');
+} from './src/util/keysFilesTemplateIos.js';
 
 const makeIosJnuFiles = () => {
   const KEYS_FILE_NAME = getIosEnvironmentFile();

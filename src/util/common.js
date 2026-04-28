@@ -1,6 +1,10 @@
-const fs = require('fs-extra');
-const path = require('node:path');
-const CryptoJS = require('crypto-js');
+import fs from 'fs-extra';
+import path from 'node:path';
+import CryptoJS from 'crypto-js';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const isExample = process.env.IS_EXAMPLE === 'TRUE';
 const DEFAULT_FILE_NAME = 'keys.development.json';
@@ -30,7 +34,7 @@ const IOS_DIR_PATH = path.join(
   isExample ? KEYS_IOS_EXAMPLE_PATH : KEYS_IOS_PATH,
 );
 
-module.exports.CPP_DIRECTORY_PATH = path.join(
+export const CPP_DIRECTORY_PATH = path.join(
   PROJECT_ROOT_DIR_PATH,
   isExample ? '../' : RN_KEYS_PATH,
   'cpp',
@@ -58,14 +62,14 @@ const ANDROID_KEYS_DIR_PATH = path.join(
 
 const PROJECT_DIRECTORY_IOS_PATH = path.join(PROJECT_ROOT_DIR_PATH, 'ios');
 
-module.exports.getKeys = (KEYS_FILE_NAME) => {
+export const getKeys = (KEYS_FILE_NAME) => {
   const jniJsonFilePath = `${PROJECT_ROOT_DIR_PATH}${KEYS_FILE_NAME}`.trim();
   const keysJson = fs.readJSONSync(jniJsonFilePath);
   const secureKeys = keysJson;
   return secureKeys;
 };
 
-module.exports.genTSType = (allKeys) => {
+export const genTSType = (allKeys) => {
   let result =
     '// this file is auto generate, please do not modify\nexport type KeyTurboType = {';
   Object.keys(allKeys?.public ?? {}).forEach((key) => {
@@ -88,7 +92,7 @@ module.exports.genTSType = (allKeys) => {
   fs.outputFileSync(path.join(SRC_PATH, 'type.ts'), result);
 };
 
-module.exports.makeFileInCPPDir = (fileContent, fileName) => {
+export const makeFileInCPPDir = (fileContent, fileName) => {
   try {
     const iosCppFilePath = path.join(CPP_DIRECTORY_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
@@ -98,7 +102,7 @@ module.exports.makeFileInCPPDir = (fileContent, fileName) => {
   }
 };
 
-module.exports.makeFileInIosDir = (fileContent, fileName) => {
+export const makeFileInIosDir = (fileContent, fileName) => {
   try {
     const iosCppFilePath = path.join(IOS_DIR_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
@@ -108,7 +112,7 @@ module.exports.makeFileInIosDir = (fileContent, fileName) => {
   }
 };
 
-module.exports.makeFileInProjectDirectoryIos = (fileContent, fileName) => {
+export const makeFileInProjectDirectoryIos = (fileContent, fileName) => {
   try {
     const iosCppFilePath = path.join(PROJECT_DIRECTORY_IOS_PATH, fileName);
     fs.outputFileSync(iosCppFilePath, fileContent);
@@ -118,7 +122,7 @@ module.exports.makeFileInProjectDirectoryIos = (fileContent, fileName) => {
   }
 };
 
-module.exports.getIosEnvironmentFile = () => {
+export const getIosEnvironmentFile = () => {
   try {
     const KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
@@ -144,7 +148,7 @@ module.exports.getIosEnvironmentFile = () => {
   }
 };
 
-module.exports.getAndroidEnvironmentFile = () => {
+export const getAndroidEnvironmentFile = () => {
   try {
     const KEYS_FILE_NAME = process.env.KEYSFILE;
     if (KEYS_FILE_NAME) {
@@ -158,7 +162,7 @@ module.exports.getAndroidEnvironmentFile = () => {
   }
 };
 
-module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
+export const makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
   try {
     const filePath = path.join(ANDROID_KEYS_DIR_PATH, fileName);
     fs.outputFileSync(filePath, fileContent);
@@ -169,12 +173,12 @@ module.exports.makeFileInAndroidMainAssetsFolder = (fileContent, fileName) => {
   }
 };
 
-module.exports.splitPrivateKeyInto3ChunksOfArray = (string) => {
+export const splitPrivateKeyInto3ChunksOfArray = (string) => {
   var regex = RegExp(`.{1,${Math.ceil(string.length / 3)}}`, 'g');
   return string.match(regex);
 };
 
-module.exports.generatePassword = (length = 30) => {
+export const generatePassword = (length = 30) => {
   const chars =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
   let password = '';
@@ -188,7 +192,7 @@ module.exports.generatePassword = (length = 30) => {
   return password;
 };
 
-module.exports.encrypt = (message, password, _iv) => {
+export const encrypt = (message, password, _iv) => {
   const encrypted = CryptoJS.AES.encrypt(message, password, {
     iv: _iv,
   });

@@ -17,16 +17,16 @@ project.ext.DEFAULT_FILE_NAME = "${defaultKeyFile}"
 apply from: project(':react-native-keys').projectDir.getPath() + "/RNKeys.gradle"
   `;
   if (!appBuildGradle.includes('project.ext.DEFAULT_FILE_NAME')) {
-    const enableProguardInReleaseBuildsLine = appBuildGradle.match(
-      /def enableProguardInReleaseBuilds.+/,
+    const enableMinifyInReleaseBuildsLine = appBuildGradle.match(
+      /def enableMinifyInReleaseBuilds.+/,
     )?.[0];
     if (
-      enableProguardInReleaseBuildsLine &&
-      appBuildGradle.includes(enableProguardInReleaseBuildsLine)
+      enableMinifyInReleaseBuildsLine &&
+      appBuildGradle.includes(enableMinifyInReleaseBuildsLine)
     ) {
       return appBuildGradle.replace(
-        enableProguardInReleaseBuildsLine,
-        `${enableProguardInReleaseBuildsLine}\n${RnkeysImplementation}`,
+        enableMinifyInReleaseBuildsLine,
+        `${enableMinifyInReleaseBuildsLine}\n${RnkeysImplementation}`,
       );
     }
   } else {

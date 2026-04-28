@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>KEY FROM SECURE (JNI): {jniValue}</Text>
+      <Text>KEY FROM SECURE (JNI): {String(jniValue)}</Text>
       <Text>KEY FROM PUBLIC: {publicValue}</Text>
     </View>
   );

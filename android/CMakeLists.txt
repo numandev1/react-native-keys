@@ -25,7 +25,7 @@ set(OPENSSL_INCLUDE_DIR ${CPP_DIR}/include)
 
 
 add_library(openssl_crypto STATIC IMPORTED)
-set_target_properties(openssl_crypto PROPERTIES 
+set_target_properties(openssl_crypto PROPERTIES
     IMPORTED_LOCATION ${OPENSSL_LIB_DIR}/libcrypto.a
 )
 
@@ -38,9 +38,6 @@ include_directories(
     ${OPENSSL_INCLUDE_DIR}
 )
 
-file(GLOB LIBRN_DIR "${BUILD_DIR}/react-native-0*/jni/${ANDROID_ABI}")
-message(STATUS "LIBRN_DIR: ${LIBRN_DIR}")
-
 add_library(
     ${PACKAGE_NAME}
     SHARED
@@ -50,27 +47,15 @@ add_library(
     ../cpp/decryptor.cpp
 )
 
+find_package(fbjni REQUIRED CONFIG)
 find_library(
-    LOG_LIB
-    log
-)
-
-find_library(
-    REACT_NATIVE_JNI_LIB
     reactnativejni
     PATHS ${LIBRN_DIR}
     NO_CMAKE_FIND_ROOT_PATH
 )
 
-set_target_properties(
-    ${PACKAGE_NAME} PROPERTIES
-    CXX_STANDARD 17
-    CXX_EXTENSIONS OFF
-    POSITION_INDEPENDENT_CODE ON
-)
-
 # Include directories cho target
-target_include_directories(${PACKAGE_NAME} PRIVATE 
+target_include_directories(${PACKAGE_NAME} PRIVATE
     ${OPENSSL_INCLUDE_DIR}
     ${OPENSSL_INCLUDE_DIR}/openssl
     ${CPP_DIR}
@@ -80,27 +65,9 @@ target_include_directories(${PACKAGE_NAME} PRIVATE
 
 target_link_libraries(
     ${PACKAGE_NAME}
-    ${LOG_LIB}
     ReactAndroid::jsi
     android
     openssl_crypto
-    z
-    dl
+    ReactAndroid::reactnative
+    fbjni::fbjni
 )
-
-if(${REACT_NATIVE_MINOR_VERSION} GREATER_EQUAL 76)
-    target_link_libraries(
-        ${PACKAGE_NAME}
-        ReactAndroid::reactnative
-    )
-else()
-    target_link_libraries(
-        ${PACKAGE_NAME}
-        ReactAndroid::reactnativejni
-        ReactAndroid::react_nativemodule_core
-    )
-endif()
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,-z,max-page-size=16384")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,-z,max-page-size=16384")
-

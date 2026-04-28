@@ -1,4 +1,4 @@
-module.exports.makeXcConfigFile = (keys) => {
+export const makeXcConfigFile = (keys) => {
   try {
     const env_keys = [];
     for (const [key, value] of Object.entries(keys)) {
@@ -10,7 +10,7 @@ module.exports.makeXcConfigFile = (keys) => {
   }
 };
 
-module.exports.makeGeneratedDotEnvTemplateIOS = (keys) => {
+export const makeGeneratedDotEnvTemplateIOS = (keys) => {
   try {
     const env_keys = [];
     for (const [key, value] of Object.entries(keys)) {
@@ -23,7 +23,7 @@ module.exports.makeGeneratedDotEnvTemplateIOS = (keys) => {
   }
 };
 
-module.exports.makePrivateKeyTemplateIOS = (keys) => {
+export const makePrivateKeyTemplateIOS = (keys) => {
   try {
     const env_keys = [];
     for (const [key, value] of Object.entries(keys)) {

@@ -1,6 +1,6 @@
-const CryptoJS = require('crypto-js');
-const fs = require('fs');
-const path = require('path');
+import CryptoJS from 'crypto-js';
+import fs from 'fs';
+import path from 'path';
 
 const getSecureRandomIndex = (arrayLength) => {
   const randomBytes = CryptoJS.lib.WordArray.random(1);
@@ -536,6 +536,4 @@ const generateHeaderFile = (prefixPath, cipherText, password) => {
   );
 };
 
-module.exports = {
-  generateHeaderFile,
-};
+export { generateHeaderFile };

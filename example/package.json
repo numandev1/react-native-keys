@@ -1,39 +1,38 @@
 {
-  "name": "KeysExample",
+  "name": "react-native-rnkeys-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "pods": "pod-install --quiet",
-    "pods-newarch": "cd ios && RCT_NEW_ARCH_ENABLED=1 pod install",
-    "android-build-assets": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
-    "android-dev": "react-native run-android --variant=developmentDebug --appIdSuffix dev",
-    "android-dev-kyc": "react-native run-android --variant=developmentDebug",
-    "ios-dev": "react-native run-ios --scheme=KeysExample-Dev --simulator='iPhone 14'",
-    "android-staging": "react-native run-android --variant=stagingDebug --appIdSuffix staging",
-    "android-staging-prod": "react-native run-android --variant=stagingRelease --appIdSuffix staging",
-    "ios-staging": "react-native run-ios --scheme=KeysExample-Staging --simulator='iPhone 14'",
-    "ios-build": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios/",
-    "android-prod": "react-native run-android --variant=productionRelease",
-    "ios-prod": "react-native run-ios --scheme=KeysExample-Production",
-    "android-dev-prod": "react-native run-android --variant=developmentRelease"
+    "build:android": "react-native build-android --extra-params \"--no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a\"",
+    "build:ios": "react-native build-ios --mode Debug",
+    "web": "vite",
+    "build:web": "vite build"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-native": "0.72.17"
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.0",
+    "react-native-web": "~0.21.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@babel/preset-env": "^7.20.0",
-    "@babel/runtime": "^7.20.0",
-    "@react-native/metro-config": "^0.72.9",
-    "babel-plugin-module-resolver": "^5.0.0",
-    "metro-react-native-babel-preset": "0.76.7"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "packageManager": "yarn@4.9.2"
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-android": "20.1.0",
+    "@react-native-community/cli-platform-ios": "20.1.0",
+    "@react-native/babel-preset": "0.85.0",
+    "@react-native/jest-preset": "0.85.0",
+    "@react-native/metro-config": "0.85.0",
+    "@react-native/typescript-config": "0.85.0",
+    "@types/react": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "react-native-builder-bob": "^0.41.0",
+    "react-native-monorepo-config": "^0.3.3",
+    "vite": "^7.1.1",
+    "vite-plugin-commonjs": "^0.10.4"
+  }
 }
